@@ -1,0 +1,15 @@
+.pageBody {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 150vh; 
+    height: auto;
+    background-image: linear-gradient(to bottom, transparent, transparent, #000000 20%);
+}
+
+@media only screen and (max-width: 1024px) {
+    .pageBody {
+        background-image: linear-gradient(to bottom, transparent, transparent, #000000 10%);
+    }
+  }

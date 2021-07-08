@@ -1,0 +1,70 @@
+.sectionBody {
+  min-height: 50vh;
+  height: auto;
+}
+
+.title {
+  font-size: 10rem;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 8rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.smallSubtitle {
+  font-size: 3rem;
+  font-weight: 100;
+  margin: 0;
+}
+
+.innerImageTopGradient {
+    background-image: linear-gradient(to top, transparent, transparent, transparent, #000000 100%);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.innerImageBottomGradient {
+    background-image: linear-gradient(to bottom, transparent, transparent, transparent, #000000 100%);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .title {
+    font-size: 6rem;
+  }
+
+  .subtitle {
+    font-size: 4rem;
+  }
+
+  .smallSubtitle {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .sectionBody {
+    min-height: 10vh;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+
+  .smallSubtitle {
+    font-size: 1rem;
+  }
+}
