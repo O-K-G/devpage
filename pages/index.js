@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Section from "../components/section";
 import Image from "next/image";
 import parallax from "../components/UI/parallax";
+import sectionsData from "../components/sectionsData.json";
 
 // Making repetitive sections change the position's offset on scroll will cause them to separate differently on different screens,
 // thus creating "holes" in which you can see through the underlying elements (unwanted behavior in this case).
@@ -31,34 +32,19 @@ const Home = () => {
       </div>
 
       <main>
-        <Section
-          id="0"
-          marginTop="25vh"
-          title="MAIN TITLE"
-          subtitle="TEXT TEXT TEXT"
-          smallSubtitle="TEXT TEXT TEXT TEXT"
-        />
-        <Section
-          id="1"
-          title="MAIN TITLE"
-          subtitle="TEXT TEXT TEXT"
-          smallSubtitle="TEXT TEXT TEXT TEXT"
-          backgroundColor="pink"
-        />
-        <Section
-          id="2"
-          title="MAIN TITLE"
-          subtitle="TEXT TEXT TEXT"
-          smallSubtitle="TEXT TEXT TEXT TEXT"
-          backgroundColor="yellow"
-        />
-        <Section
-          id="3"
-          title="MAIN TITLE"
-          subtitle="TEXT TEXT TEXT"
-          smallSubtitle="TEXT TEXT TEXT TEXT"
-          backgroundColor="blue"
-        />
+        {sectionsData.map((sectionEntry) => {
+          return (
+            <Section
+              key={sectionEntry.id}
+              id={sectionEntry.id}
+              marginTop={sectionEntry.marginTop}
+              title={sectionEntry.title}
+              subtitle={sectionEntry.subtitle}
+              smallSubtitle={sectionEntry.smallSubtitle}
+              backgroundColor={sectionEntry.backgroundColor}
+            />
+          );
+        })}
       </main>
       <footer></footer>
     </>

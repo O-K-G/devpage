@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "marginTop": "25vh",
+    "title": "MAIN TITLE",
+    "subtitle": "TEXT TEXT TEXT",
+    "smallSubtitle": "TEXT TEXT TEXT TEXT"
+  },
+  {
+    "id": 2,
+    "title": "MAIN TITLE",
+    "subtitle": "TEXT TEXT TEXT",
+    "smallSubtitle": "TEXT TEXT TEXT TEXT",
+    "backgroundColor": "pink"
+  },
+  {
+    "id": 3,
+    "title": "MAIN TITLE",
+    "subtitle": "TEXT TEXT TEXT",
+    "smallSubtitle": "TEXT TEXT TEXT TEXT",
+    "backgroundColor": "blue"
+  },
+  {
+    "id": 4,
+    "title": "MAIN TITLE",
+    "subtitle": "TEXT TEXT TEXT",
+    "smallSubtitle": "TEXT TEXT TEXT TEXT",
+    "backgroundColor": "green"
+  }
+]
