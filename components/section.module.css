@@ -13,19 +13,6 @@
   margin: 0;
 }
 
-.animate {
-  animation: animate 0.5s reverse;
-}
-
-@keyframes animate {
-  0% {
-    transform: rotateX(0deg);
-  }
-  100% {
-    transform: rotateX(90deg);
-  }
-}
-
 .subtitle {
   font-size: 8rem;
   font-weight: 300;
