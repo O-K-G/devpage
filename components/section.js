@@ -1,12 +1,13 @@
 import classes from "./section.module.css";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import getPosition from "./UI/getPosition";
 import textScaler from "./UI/textScaler";
 
 const Section = (props) => {
   const [textPosition, setTextPosition] = useState(false);
   props.id && getPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
-  let textScaleY = textScaler(textPosition); // Scales the text according to it's position on screen.
+  const textScaleY = useRef(null);
+  textScaler(textPosition, textScaleY); // Scales the text according to it's position on screen.
 
   return (
     <div
@@ -22,7 +23,7 @@ const Section = (props) => {
             className={classes.title}
             style={{
               transition: ".3s ease-out",
-              transform: textScaleY && `scaleY(${textScaleY})`,
+              transform: textScaleY && `scaleY(${textScaleY.current})`,
             }}
           >
             {props.title}
@@ -33,7 +34,7 @@ const Section = (props) => {
               className={classes.subtitle}
               style={{
                 transition: ".6s ease-out",
-                transform: textScaleY && `scaleY(${textScaleY})`,
+                transform: textScaleY && `scaleY(${textScaleY.current})`,
               }}
             >
               {props.subtitle}
@@ -44,7 +45,7 @@ const Section = (props) => {
               className={classes.smallSubtitle}
               style={{
                 transition: ".8s ease-out",
-                transform: textScaleY && `scaleY(${textScaleY})`,
+                transform: textScaleY && `scaleY(${textScaleY.current})`,
               }}
             >
               {props.smallSubtitle}
