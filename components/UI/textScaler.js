@@ -1,23 +1,20 @@
 // Scales the text according to it's position on screen.
+// If you "return textPosition / <some value(s)>" to match the scale() range between 0-1,
+// The text will change it's scale according to the user's scroll.
+// However, that behavior doesn't always *feel* smooth and *may* be annoying to the user.
+// It gives the feeling of "semi-automatic" and being stuck in-between\incomplete at times.
 
 const textScaler = (textPosition, textScaleY) => {
-  
-  if (textPosition >= 60 || textPosition <= 0) {
-    // Rules for below 0% or above 60% (not above 100% so changes won't start at the last moment of scrolling).
-    return textScaleY.current = `0`;
-  } else if (textPosition < 60 && textPosition >= 50) {
-    // Rules for between 60% and 50%.
-    // The "1 -" is there to get the difference, as values start from above 100 and below 0 when scrolling.
-    // "/ 100" is for scaling down the values to a scale of 0-1.
-    return textScaleY.current = 1 - textPosition / 100;
-  } else if (textPosition < 50 && textPosition > 0) {
-    // Rules for between 50% and 0%.
-    if (textPosition / 100 > 0.075) {
-      return textScaleY.current = `1`;
-    } else {
-      return textScaleY.current = textPosition / 100;
-    }
+  const maxTextScale = 1; // For the CSS scale().
+  const minTextScale = 0; // For the CSS scale().
+  const maxDisplayPosition = 50; // Pixels percentage of position on screen (100 is the element's top), according to the viewport.
+  const minDisplayPosition = 20; // Pixels percentage of position on screen (100 is the element's top), according to the viewport.
+
+  if (textPosition > maxDisplayPosition || textPosition <= minDisplayPosition) {
+    return (textScaleY.current = minTextScale);
+  } else if (textPosition <= maxDisplayPosition) {
+    return (textScaleY.current = maxTextScale);
   }
-}
+};
 
 export default textScaler;

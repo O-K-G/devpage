@@ -1,30 +1,44 @@
 [
   {
     "id": 1,
-    "marginTop": "25vh",
     "title": "MAIN TITLE",
     "subtitle": "TEXT TEXT TEXT",
-    "smallSubtitle": "TEXT TEXT TEXT TEXT"
+    "smallSubtitle": "TEXT TEXT TEXT TEXT",
+    "src": "/images/mountains.jpg",
+    "alt": "Mountains",
+    "paddingTop": "30vh",
+    "zIndex": 2,
+    "offsetValue": 0.2
   },
   {
     "id": 2,
     "title": "MAIN TITLE",
     "subtitle": "TEXT TEXT TEXT",
     "smallSubtitle": "TEXT TEXT TEXT TEXT",
-    "backgroundColor": "pink"
+    "src": "/images/burger.jpg",
+    "alt": "Burger",
+    "paddingTop": "50vh",
+    "zIndex": 1,
+    "offsetValue": 0.05
   },
   {
     "id": 3,
     "title": "MAIN TITLE",
     "subtitle": "TEXT TEXT TEXT",
     "smallSubtitle": "TEXT TEXT TEXT TEXT",
-    "backgroundColor": "blue"
+    "backgroundColor": "blue",
+    "paddingTop": "50vh",
+    "zIndex": 0,
+    "offsetValue": -0.05
   },
   {
     "id": 4,
     "title": "MAIN TITLE",
     "subtitle": "TEXT TEXT TEXT",
     "smallSubtitle": "TEXT TEXT TEXT TEXT",
-    "backgroundColor": "green"
+    "backgroundColor": "green",
+    "paddingTop": "50vh",
+    "zIndex": 4,
+    "offsetValue": -0.03
   }
 ]

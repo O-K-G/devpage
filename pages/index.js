@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Section from "../components/section";
-import Image from "next/image";
-import parallax from "../components/UI/parallax";
 import sectionsData from "../components/sectionsData.json";
 
 // Making repetitive sections change the position's offset on scroll will cause them to separate differently on different screens,
@@ -11,26 +9,11 @@ import sectionsData from "../components/sectionsData.json";
 // Image component (1) and all the other sections (2).
 
 const Home = () => {
-  const [offset, setOffset] = useState(0);
-  parallax(offset, setOffset); // Passes the current and new offset parameters to the parallax function.
+
 
   return (
     <>
       <header></header>
-
-      <div
-        className="backgroundImage"
-        style={{ transform: `translateY(${offset * -0.5}px)` }}
-      >
-        <Image
-          src="/images/mountains.png" // Used under license from https://pixabay.com/photos/boat-lake-nature-water-mountain-4899802 (Free for commercial use. No attribution required).
-          alt="Mountains"
-          height="1080"
-          width="1920"
-          layout="responsive"
-        />
-      </div>
-
       <main>
         {sectionsData.map((sectionEntry) => {
           return (
@@ -42,6 +25,11 @@ const Home = () => {
               subtitle={sectionEntry.subtitle}
               smallSubtitle={sectionEntry.smallSubtitle}
               backgroundColor={sectionEntry.backgroundColor}
+              src={sectionEntry.src}
+              alt={sectionEntry.alt}
+              paddingTop={sectionEntry.paddingTop}
+              zIndex={sectionEntry.zIndex}
+              offsetValue={sectionEntry.offsetValue}
             />
           );
         })}

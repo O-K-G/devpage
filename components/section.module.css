@@ -4,25 +4,44 @@
   width: 100%;
   display: block;
   position: relative;
-  padding: 16px;
-  z-index: 2;
+}
+
+.topGradient {
+  background: linear-gradient(to bottom, black 50%, transparent);
+  display: block;
+  position: absolute;
+  height: 30%;
+  width: 100%;
+  top: 0;
+}
+
+.BottomGradient {
+  background: linear-gradient(to top, black 50%, transparent);
+  display: block;
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  bottom: 0;
 }
 
 .title {
   font-size: 10rem;
-  margin: 10vh 0 0 0;
+  margin: 0;
+  padding-left: 16px;
 }
 
 .subtitle {
   font-size: 8rem;
   font-weight: 300;
   margin: 0;
+  padding-left: 16px;
 }
 
 .smallSubtitle {
   font-size: 3rem;
   font-weight: 100;
   margin: 0;
+  padding-left: 16px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -41,7 +60,6 @@
 
 @media only screen and (max-width: 600px) {
   .title {
-    margin-top: 5rem;
     font-size: 2.5rem;
   }
 
