@@ -2,7 +2,9 @@
 // If you "return textPosition / <some value(s)>" to match the scale() range between 0-1,
 // The text will change it's scale according to the user's scroll.
 // However, that behavior doesn't always *feel* smooth and *may* be annoying to the user.
-// It gives the feeling of "semi-automatic" and being stuck in-between\incomplete at times.
+// It gives a "semi-automatic" feeling and being stuck in-between\incomplete at times.
+// Another option is to use "IntersectionObserver()", that option however is less sensitive (true\false and that's it) -
+// and can't compensate for a changing offset.
 
 const textScaler = (textPosition, textScaleY) => {
   const maxTextScale = 1; // For the CSS scale().

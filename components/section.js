@@ -1,5 +1,5 @@
 import classes from "./section.module.css";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo } from "react";
 import getPosition from "./UI/getPosition";
 import textScaler from "./UI/textScaler";
 import Image from "next/image";
@@ -7,12 +7,14 @@ import parallax from "./UI/parallax";
 
 const Section = (props) => {
   const [textPosition, setTextPosition] = useState(false);
-  props.id && getPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
   const textScaleY = useRef(null);
-  textScaler(textPosition, textScaleY); // Scales the text according to it's position on screen.
   const [offset, setOffset] = useState(0);
+  props.id && getPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
+  useMemo(() => {
+    return textScaler(textPosition, textScaleY); // Scales the text according to it's position on screen.
+  }, [textPosition]); 
   parallax(offset, setOffset); // Passes the current and new offset parameters to the parallax function.
-props.id === 2 && console.log(textPosition);
+
   return (
     <div
       className={classes.body}
@@ -20,7 +22,7 @@ props.id === 2 && console.log(textPosition);
         backgroundColor: props.backgroundColor,
         paddingTop: props.paddingTop,
         zIndex: props.zIndex,
-        transform: `translateY(${offset * props.offsetValue}px)`
+        transform: `translateY(${offset * props.offsetValue}px)`,
       }}
     >
       {props.src && (
@@ -32,8 +34,8 @@ props.id === 2 && console.log(textPosition);
           quality={100}
         />
       )}
-      {(props.id !== 1) && <div className={classes.topGradient} />}
-      {(props.id !== 4) && <div className={classes.BottomGradient} />}
+      {props.id !== 1 && <div className={classes.topGradient} />}
+      {props.id !== 4 && <div className={classes.BottomGradient} />}
       <div id={props.id}>
         <>
           <h1
