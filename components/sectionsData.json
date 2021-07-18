@@ -7,7 +7,7 @@
     "src": "/images/mountains.jpg",
     "alt": "Mountains",
     "paddingTop": "30vh",
-    "zIndex": 2,
+    "zIndex": 1,
     "offsetValue": 0.2
   },
   {
@@ -18,7 +18,7 @@
     "src": "/images/burger.jpg",
     "alt": "Burger",
     "paddingTop": "50vh",
-    "zIndex": 1,
+    "zIndex": 2,
     "offsetValue": 0.05
   },
   {
@@ -28,7 +28,7 @@
     "smallSubtitle": "TEXT TEXT TEXT TEXT",
     "backgroundColor": "blue",
     "paddingTop": "50vh",
-    "zIndex": 0,
+    "zIndex": 3,
     "offsetValue": -0.05
   },
   {
@@ -36,9 +36,9 @@
     "title": "MAIN TITLE",
     "subtitle": "TEXT TEXT TEXT",
     "smallSubtitle": "TEXT TEXT TEXT TEXT",
-    "backgroundColor": "green",
+    "backgroundColor": "pink",
     "paddingTop": "50vh",
     "zIndex": 4,
-    "offsetValue": -0.03
+    "offsetValue": -0.06
   }
 ]

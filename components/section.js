@@ -12,7 +12,7 @@ const Section = (props) => {
   props.id && getPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
   useMemo(() => {
     return textScaler(textPosition, textScaleY); // Scales the text according to it's position on screen.
-  }, [textPosition]); 
+  }, [textPosition]);
   parallax(offset, setOffset); // Passes the current and new offset parameters to the parallax function.
 
   return (
@@ -34,8 +34,7 @@ const Section = (props) => {
           quality={100}
         />
       )}
-      {props.id !== 1 && <div className={classes.topGradient} />}
-      {props.id !== 4 && <div className={classes.BottomGradient} />}
+
       <div id={props.id}>
         <>
           <h1
@@ -82,6 +81,10 @@ const Section = (props) => {
           )}
         </>
       </div>
+      <div
+        className={classes.sectionShadows}
+        style={{ display: props.id === 1 && "none" }}
+      />
     </div>
   );
 };

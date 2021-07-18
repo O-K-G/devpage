@@ -6,24 +6,6 @@
   position: relative;
 }
 
-.topGradient {
-  background: linear-gradient(to bottom, black 50%, transparent);
-  display: block;
-  position: absolute;
-  height: 30%;
-  width: 100%;
-  top: 0;
-}
-
-.BottomGradient {
-  background: linear-gradient(to top, black 50%, transparent);
-  display: block;
-  position: absolute;
-  height: 10%;
-  width: 100%;
-  bottom: 0;
-}
-
 .title {
   font-size: 10rem;
   margin: 0;
@@ -44,7 +26,19 @@
   padding-left: 16px;
 }
 
+.sectionShadows {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: -30px 150px 90px -50px #000000 inset, 0px -35px 25px 10px #000000;
+}
+
 @media only screen and (max-width: 1024px) {
+  .sectionShadows {
+    box-shadow: 0 150px 90px -50px #000000 inset, 0px 0px 20px 20px #000000;
+  }
+
   .title {
     font-size: 6rem;
   }
