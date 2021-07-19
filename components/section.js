@@ -4,6 +4,7 @@ import getPosition from "./UI/getPosition";
 import textScaler from "./UI/textScaler";
 import Image from "next/image";
 import parallax from "./UI/parallax";
+import Table from "./table";
 
 const Section = (props) => {
   const [textPosition, setTextPosition] = useState(false);
@@ -34,6 +35,8 @@ const Section = (props) => {
           quality={100}
         />
       )}
+
+      {props.id === 3 && <Table /> }
 
       <div id={props.id}>
         <>

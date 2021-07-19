@@ -23,10 +23,6 @@
   },
   {
     "id": 3,
-    "title": "MAIN TITLE",
-    "subtitle": "TEXT TEXT TEXT",
-    "smallSubtitle": "TEXT TEXT TEXT TEXT",
-    "backgroundColor": "blue",
     "paddingTop": "50vh",
     "zIndex": 3,
     "offsetValue": -0.05
