@@ -4,7 +4,7 @@ import getPosition from "./UI/getPosition";
 import textScaler from "./UI/textScaler";
 import Image from "next/image";
 import parallax from "./UI/parallax";
-import Table from "./table";
+import Table from "./table/table";
 
 const Section = (props) => {
   const [textPosition, setTextPosition] = useState(false);

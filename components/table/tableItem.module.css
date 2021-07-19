@@ -1,0 +1,18 @@
+.items {
+    flex: 1 1 1rem;
+    margin: 8px;
+    min-height: 100px;
+    min-width: 100px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    overflow: hidden;
+  }
+
+.itemsText {
+    display: block;
+    text-align: center;
+    margin: 8px;
+  }

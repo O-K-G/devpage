@@ -1,0 +1,12 @@
+.mainContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  min-height: 100vh;
+  margin: 10vh 0 10vh 0;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}

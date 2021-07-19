@@ -1,10 +1,10 @@
 import classes from "./table.module.css";
-import TableItem from "./tableItem";
+import TableGroup from "./tableGroup";
 
 const Table = () => {
   return (
     <div className={classes.mainContainer}>
-      <TableItem
+      <TableGroup
         mainTitle="GROUP 1"
         mainTitleBackgroundColor="pink"
         item1BackgroundColor="yellow"
@@ -25,7 +25,7 @@ const Table = () => {
         itemsSubText4="SUBTEXT 4"
       />
 
-      <TableItem
+      <TableGroup
         mainTitle="GROUP 2"
         mainTitleBackgroundColor="pink"
         item1BackgroundColor="yellow"
@@ -46,7 +46,7 @@ const Table = () => {
         itemsSubText4="SUBTEXT 4"
       />
 
-      <TableItem
+      <TableGroup
         mainTitle="GROUP 3"
         mainTitleBackgroundColor="pink"
         item1BackgroundColor="yellow"
@@ -67,7 +67,7 @@ const Table = () => {
         itemsSubText4="SUBTEXT 4"
       />
 
-      <TableItem
+      <TableGroup
         mainTitle="GROUP 4"
         mainTitleBackgroundColor="pink"
         item1BackgroundColor="yellow"
@@ -88,7 +88,7 @@ const Table = () => {
         itemsSubText4="SUBTEXT 4"
       />
 
-      <TableItem
+      <TableGroup
         mainTitle="GROUP 5"
         mainTitleBackgroundColor="pink"
         item1BackgroundColor="yellow"
@@ -109,7 +109,7 @@ const Table = () => {
         itemsSubText4="SUBTEXT 4"
       />
 
-      <TableItem
+      <TableGroup
         mainTitle="GROUP 6"
         mainTitleBackgroundColor="pink"
         item1BackgroundColor="yellow"
@@ -130,7 +130,7 @@ const Table = () => {
         itemsSubText4="SUBTEXT 4"
       />
 
-      <TableItem
+      <TableGroup
         mainTitle="GROUP 7"
         mainTitleBackgroundColor="pink"
         item1BackgroundColor="yellow"
@@ -151,7 +151,7 @@ const Table = () => {
         itemsSubText4="SUBTEXT 4"
       />
 
-      <TableItem
+      <TableGroup
         mainTitle="GROUP 8"
         mainTitleBackgroundColor="pink"
         item1BackgroundColor="yellow"
@@ -172,7 +172,7 @@ const Table = () => {
         itemsSubText4="SUBTEXT 4"
       />
 
-      <TableItem
+      <TableGroup
         mainTitle="GROUP 9"
         mainTitleBackgroundColor="pink"
         item1BackgroundColor="yellow"
@@ -193,7 +193,7 @@ const Table = () => {
         itemsSubText4="SUBTEXT 4"
       />
 
-      <TableItem
+      <TableGroup
         mainTitle="GROUP 10"
         mainTitleBackgroundColor="pink"
         item1BackgroundColor="yellow"

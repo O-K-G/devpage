@@ -1,0 +1,26 @@
+.groupContainer {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  .groupTitleItem {
+    margin: 32px 8px 8px 8px;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  .groupTitleText {
+      margin: 8px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .groupContainer {
+      width: 50%;
+    }
+  }
