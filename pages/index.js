@@ -30,7 +30,7 @@ const Home = () => {
         />
         <Section
           id={3}
-          paddingTop="50vh"
+          paddingTop="20vh"
           zIndex="3"
           offsetValue="-0.05"
           backgroundColor="#000000"

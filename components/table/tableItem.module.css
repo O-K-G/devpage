@@ -1,18 +1,37 @@
 .items {
-    flex: 1 1 1rem;
-    margin: 8px;
-    min-height: 100px;
-    min-width: 100px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    overflow: hidden;
-  }
+  flex: 1 1 1rem;
+  margin: 8px;
+  min-height: 50px;
+  min-width: 100px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.items:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+/* ".mask" of the div is instead of -webkit-mask. Temporary until all browsers support mask. */
+
+.mask {
+  min-width: 95px;
+  min-height: 45px;
+  position: absolute;
+  background-color: black;
+  border-radius: 10px;
+}
 
 .itemsText {
-    display: block;
-    text-align: center;
-    margin: 8px;
-  }
+  display: block;
+  position: absolute;
+  text-align: center;
+  margin: 8px;
+}

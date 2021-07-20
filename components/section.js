@@ -35,6 +35,10 @@ const Section = (props) => {
           quality={100}
         />
       )}
+      <div
+        className={classes.sectionShadows}
+        style={{ display: props.id === 1 && "none" }}
+      />
 
       {props.id === 3 && <Table /> }
 
@@ -84,10 +88,7 @@ const Section = (props) => {
           )}
         </>
       </div>
-      <div
-        className={classes.sectionShadows}
-        style={{ display: props.id === 1 && "none" }}
-      />
+      
     </div>
   );
 };
