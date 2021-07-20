@@ -3,7 +3,7 @@ import TableItem from "./tableItem";
 
 const TableGroup = (props) => {
   return (
-    <ul className={classes.groupContainer}>
+    <ul className={classes.groupsContainer}>
       <TableItem
         background={props.groupTitleBackground}
         itemsText={props.groupTitleText}

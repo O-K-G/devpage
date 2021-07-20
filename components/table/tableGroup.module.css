@@ -1,4 +1,4 @@
-.groupContainer {
+.groupsContainer {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -7,10 +7,11 @@
     padding: 0;
     margin: 0;
     list-style-type: none;
+    width: 8%;
   }
 
   @media only screen and (max-width: 1024px) {
-    .groupContainer {
+    .groupsContainer {
       width: 50%;
     }
   }

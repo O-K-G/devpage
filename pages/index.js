@@ -30,20 +30,20 @@ const Home = () => {
         />
         <Section
           id={3}
-          paddingTop="20vh"
           zIndex="3"
           offsetValue="-0.05"
-          backgroundColor="#000000"
+          backgroundColor="#202E38"
+          paddingTop="15vh"
+      
         />
         <Section
           id={4}
           title="MAIN TITLE"
           subtitle="TEXT TEXT TEXT"
           smallSubtitle="TEXT TEXT TEXT TEXT"
-          backgroundColor="pink"
           paddingTop="50vh"
           zIndex="4"
-          offsetValue="-0.06"
+          offsetValue="-0.1"
         />
       </main>
       <footer></footer>
