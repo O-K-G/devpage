@@ -40,7 +40,7 @@ const Section = (props) => {
         style={{ display: props.id === 1 && "none" }}
       />
 
-      {props.id === 3 && <Table /> }
+      {props.id === 3 && <Table offset={offset} offsetValue={props.offsetValue}/> }
 
       <div id={props.id}>
         <>

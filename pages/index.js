@@ -33,7 +33,7 @@ const Home = () => {
           zIndex="3"
           offsetValue="-0.05"
           backgroundColor="#202E38"
-          paddingTop="15vh"
+          paddingTop="10vh"
       
         />
         <Section
