@@ -1,0 +1,13 @@
+.form {
+    border: 1px solid red;
+    left: 50%;
+    position: absolute;
+    z-index: 1;
+    padding: 16px;
+    font-size: 2rem;
+}
+
+.input {
+    font-size: 2rem;
+    color: #000000;
+}

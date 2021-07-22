@@ -5,6 +5,7 @@ import textScaler from "./UI/textScaler";
 import Image from "next/image";
 import parallax from "./UI/parallax";
 import Table from "./table/table";
+import Form from "./form";
 
 const Section = (props) => {
   const [textPosition, setTextPosition] = useState(false);
@@ -47,6 +48,8 @@ const Section = (props) => {
 
       <div id={props.id}>
         <>
+        {props.id === 4 && <Form />}
+
           <h1
             className={classes.title}
             style={{
