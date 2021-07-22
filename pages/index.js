@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Section from "../components/section";
 
 const Home = () => {
+  const [offset, setOffset] = useState(0);
+
   return (
     <>
       <header></header>
@@ -16,6 +18,8 @@ const Home = () => {
           paddingTop="30vh"
           zIndex="1"
           offsetValue="0.2"
+          offset={offset}
+          setOffset={setOffset}
         />
         <Section
           id={2}
@@ -27,6 +31,8 @@ const Home = () => {
           paddingTop="50vh"
           zIndex="2"
           offsetValue="0.05"
+          offset={offset}
+          setOffset={setOffset}
         />
         <Section
           id={3}
@@ -34,7 +40,9 @@ const Home = () => {
           offsetValue="-0.05"
           backgroundColor="#202E38"
           paddingTop="10vh"
-      
+          offset={offset}
+          offsetValue={offset <= 1100 ? "0.05" : "0.01"}
+          setOffset={setOffset}
         />
         <Section
           id={4}
@@ -43,7 +51,9 @@ const Home = () => {
           smallSubtitle="TEXT TEXT TEXT TEXT"
           paddingTop="50vh"
           zIndex="4"
-          offsetValue="-0.1"
+          offsetValue="-0.02"
+          offset={offset}
+          setOffset={setOffset}
         />
       </main>
       <footer></footer>

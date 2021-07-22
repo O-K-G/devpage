@@ -9,12 +9,12 @@ import Table from "./table/table";
 const Section = (props) => {
   const [textPosition, setTextPosition] = useState(false);
   const textScaleY = useRef(null);
-  const [offset, setOffset] = useState(0);
+
   props.id && getPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
   useMemo(() => {
     return textScaler(textPosition, textScaleY); // Scales the text according to it's position on screen.
   }, [textPosition]);
-  parallax(offset, setOffset); // Passes the current and new offset parameters to the parallax function.
+  parallax(props.offset, props.setOffset); // Passes the current and new offset parameters to the parallax function.
 
   return (
     <div
@@ -23,7 +23,8 @@ const Section = (props) => {
         backgroundColor: props.backgroundColor,
         paddingTop: props.paddingTop,
         zIndex: props.zIndex,
-        transform: `translateY(${offset * props.offsetValue}px)`,
+        transform: `translateY(${props.offset * props.offsetValue}px)`,
+        transition: props.id === 3 && "0.3s",
       }}
     >
       {props.src && (
@@ -40,7 +41,9 @@ const Section = (props) => {
         style={{ display: props.id === 1 && "none" }}
       />
 
-      {props.id === 3 && <Table offset={offset} offsetValue={props.offsetValue}/> }
+      {props.id === 3 && (
+        <Table offset={props.offset} offsetValue={props.offsetValue} />
+      )}
 
       <div id={props.id}>
         <>
@@ -50,7 +53,9 @@ const Section = (props) => {
               transition: ".3s ease-out",
               transform:
                 textScaleY &&
-                `scaleY(${textScaleY.current}) translateY(${offset * -0.1}px)`,
+                `scaleY(${textScaleY.current}) translateY(${
+                  props.offset * -0.1
+                }px)`,
             }}
           >
             {props.title}
@@ -64,7 +69,7 @@ const Section = (props) => {
                 transform:
                   textScaleY &&
                   `scaleY(${textScaleY.current}) translateY(${
-                    offset * -0.1
+                    props.offset * -0.1
                   }px)`,
               }}
             >
@@ -79,7 +84,7 @@ const Section = (props) => {
                 transform:
                   textScaleY &&
                   `scaleY(${textScaleY.current}) translateY(${
-                    offset * -0.1
+                    props.offset * -0.1
                   }px)`,
               }}
             >
@@ -88,7 +93,6 @@ const Section = (props) => {
           )}
         </>
       </div>
-      
     </div>
   );
 };

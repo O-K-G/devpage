@@ -1,9 +1,6 @@
-import classes from "./tableTitle.module.css";
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-const TableTitle = () => {
-
-  const [isIntersecting, setIsIntersecting] = useState(false);
+const observer = (isIntersecting, setIsIntersecting) => {
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,16 +19,6 @@ const TableTitle = () => {
 
     return () => observer.disconnect();
   }, [isIntersecting]);
-
-  return (
-    <h1
-          className={classes.title}
-          style={{ transform: isIntersecting && "scaleY(1)"}}
-          id="tableTitle"
-        >
-          TITLE
-        </h1>
-  )
 };
 
-export default TableTitle;
+export default observer;
