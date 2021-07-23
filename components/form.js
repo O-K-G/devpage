@@ -10,11 +10,25 @@ const Form = () => {
       [e.target.name]: e.target.value,
     }));
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(value);
-  };
+    
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+      const response = await fetch("/api/send", {
+        method: 'POST',
+       mode: 'cors',
+       credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(value)
+      });
+      const reply = await response.json();
+      console.log(reply.message);
+    } catch (error) {
+      console.warn(error);
+    }
+    }
 
   return (
     <form onSubmit={handleSubmit} className={classes.form}>
