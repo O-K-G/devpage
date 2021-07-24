@@ -1,13 +1,44 @@
-.form {
-    border: 1px solid red;
-    left: 50%;
-    position: absolute;
-    z-index: 1;
-    padding: 16px;
+.formBackground {
+    position: fixed;
+    z-index: 99;
+    padding: 0;
+    margin: 0;
     font-size: 2rem;
+    background-color:rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.formContainer {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.form {
+    position: fixed;
+    z-index: 100;
+    width: auto;
+    height: auto;
+    background-color:rgba(0, 0, 0, 1);
+    padding: 16px;
 }
 
 .input {
     font-size: 2rem;
     color: #000000;
+}
+
+@media only screen and (max-width: 1024px) {
+    .input {
+        font-size: 1rem;
+    }
 }

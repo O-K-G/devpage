@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./form.module.css";
 
-const Form = () => {
+const Form = (props) => {
   const [value, setValue] = useState({
     fName: "",
     lName: "",
@@ -51,6 +51,9 @@ const Form = () => {
   };
 
   return (
+    <>
+    <div className={classes.formBackground} onClick={() => props.setOpen(false)} />
+    <div className={classes.formContainer}>
     <form onSubmit={handleSubmit} className={classes.form}>
       <label htmlFor="fName">First name: </label>
       <input
@@ -120,7 +123,10 @@ const Form = () => {
       >
         <path d="M3 21h18v-2H3v2zm6-4h12v-2H9v2zm-6-4h18v-2H3v2zm6-4h12V7H9v2zM3 3v2h18V3H3z"></path>
       </svg>
+      <button style={{color: "red"}} onClick={() => props.setOpen(false)}>CLOSE</button>
     </form>
+    </div>
+    </>
   );
 };
 

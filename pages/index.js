@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Section from "../components/section";
+import Form from "../components/form";
 
 const Home = () => {
   const [offset, setOffset] = useState(0);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -56,6 +58,8 @@ const Home = () => {
           setOffset={setOffset}
         />
       </main>
+      {open && <Form open={open} setOpen={setOpen} />}
+      <button style={{color: "black"}} onClick={() => setOpen(true)}>FORM TEST</button>
       <footer></footer>
     </>
   );
