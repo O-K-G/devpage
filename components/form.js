@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./form.module.css";
 
 const Form = () => {
-  const [value, setValue] = useState({ fName: "", lName: "", email: "", message: "" });
+  const [value, setValue] = useState({ fName: "", lName: "", email: "", message: "", rtl: false });
 
   const handleChange = (e) => {
     setValue((prevValue) => ({
