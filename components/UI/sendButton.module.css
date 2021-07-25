@@ -1,0 +1,16 @@
+.button {
+    fill: rgb(255, 255, 255);
+    width: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.5s;
+    display: flex;
+  }
+  
+  .button:hover {
+    background-color: rgb(66, 66, 66);
+  }
+  
+  .button:active {
+    background-color: rgb(252, 203, 67);
+  }

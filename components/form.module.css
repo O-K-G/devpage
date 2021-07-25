@@ -30,14 +30,33 @@
     height: auto;
     background-color:rgba(0, 0, 0, 1);
     padding: 16px;
+    border-radius: 4px;
+}
+
+.form:focus {
+    border: none;
 }
 
 .input {
     font-size: 2rem;
     color: #000000;
+    border-radius: 30px;
+    padding: 8px;
+    resize: none;
+    border: none;
+    transition: 0.2s;
+}
+
+.input:focus {
+    box-shadow: -2px -5px 1px -2px rgb(192, 21, 21) inset;
+    outline: none;
 }
 
 @media only screen and (max-width: 1024px) {
+    .form {
+        border-radius: 0px;
+        width: 100%;
+    }
     .input {
         font-size: 1rem;
     }

@@ -3,6 +3,7 @@ import nodemailer from "nodemailer";
 
 const sendForm = async (req, res) => {
   if (req.method === "POST") {
+    if (req.body.message.length <= 300) {
     try {
       let transporter = nodemailer.createTransport({
         host: process.env.HOST,
@@ -48,6 +49,13 @@ const sendForm = async (req, res) => {
           message: `Sorry, the message didn't go through for some reason and the error was reported. But, you can still email me to ${process.env.SUPPORT_EMAIL} . :)`,
         });
     }
+  } else {
+    res
+        .status(418) // In case that for some reason more than 300 characters are sent to the backend.
+        .send({
+          message: `Sorry, the message didn't go through for some reason and the error was reported. But, you can still email me to ${process.env.SUPPORT_EMAIL} . :)`,
+        });
+  }
   } else {
     res.status(404).send("Sorry, what you're looking for isn't here.");
   }

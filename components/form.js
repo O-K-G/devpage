@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import classes from "./form.module.css";
+import ElementsGroup from "./UI/elementsGroup";
+import SendButton from "./UI/sendButton";
 
 const Form = (props) => {
   const [value, setValue] = useState({
@@ -52,80 +54,67 @@ const Form = (props) => {
 
   return (
     <>
-    <div className={classes.formBackground} onClick={() => props.setOpen(false)} />
-    <div className={classes.formContainer}>
-    <form onSubmit={handleSubmit} className={classes.form}>
-      <label htmlFor="fName">First name: </label>
-      <input
-        type="text"
-        name="fName"
-        value={value.fName}
-        onChange={handleChange}
-        className={classes.input}
-        dir={value.rtl ? "rtl" : "ltr"}
+      <div
+        className={classes.formBackground}
+        onClick={() => props.setOpen(false)}
       />
-      <br />
-      <br />
-      <label htmlFor="lName">Last name: </label>
-      <input
-        type="text"
-        name="lName"
-        value={value.lName}
-        onChange={handleChange}
-        className={classes.input}
-        dir={value.rtl ? "rtl" : "ltr"}
-      />
-      <br />
-      <br />
-      <label htmlFor="email">email: </label>
-      <input
-        type="email"
-        name="email"
-        value={value.email}
-        onChange={handleChange}
-        className={classes.input}
-      />
-      <br />
-      <br />
-      <label htmlFor="message">Message: </label>
-      <textarea
-        type="message"
-        name="message"
-        value={value.message}
-        onChange={handleChange}
-        className={classes.input}
-        rows="10"
-        cols="30"
-        dir={value.rtl ? "rtl" : "ltr"}
-      />
-      <br />
-      <br />
-      <input className={classes.input} type="submit" value="Submit" />
+      <div className={classes.formContainer}>
+        <form onSubmit={handleSubmit} className={classes.form}>
+          <input
+            type="text"
+            name="fName"
+            value={value.fName}
+            onChange={handleChange}
+            className={classes.input}
+            dir={value.rtl ? "rtl" : "ltr"}
+            placeholder="First name"
+          />
+          <br />
+          <br />
 
-      <svg
-        focusable="false"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        data-testid="FormatAlignLeftIcon"
-        style={{ fill: "red", width: "32px" }}
-        onClick={handleLtr}
-      >
-        <path d="M15 15H3v2h12v-2zm0-8H3v2h12V7zM3 13h18v-2H3v2zm0 8h18v-2H3v2zM3 3v2h18V3H3z"></path>
-      </svg>
+          <input
+            type="text"
+            name="lName"
+            value={value.lName}
+            onChange={handleChange}
+            className={classes.input}
+            dir={value.rtl ? "rtl" : "ltr"}
+            placeholder="Last name"
+          />
+          <br />
+          <br />
 
-      <svg
-        focusable="false"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        data-testid="FormatAlignRightIcon"
-        style={{ fill: "red", width: "32px" }}
-        onClick={handleRtl}
-      >
-        <path d="M3 21h18v-2H3v2zm6-4h12v-2H9v2zm-6-4h18v-2H3v2zm6-4h12V7H9v2zM3 3v2h18V3H3z"></path>
-      </svg>
-      <button style={{color: "red"}} onClick={() => props.setOpen(false)}>CLOSE</button>
-    </form>
-    </div>
+          <input
+            type="email"
+            name="email"
+            value={value.email}
+            onChange={handleChange}
+            className={classes.input}
+            placeholder="Your email"
+          />
+          <br />
+          <br />
+
+          <textarea
+            type="message"
+            name="message"
+            value={value.message}
+            onChange={handleChange}
+            className={classes.input}
+            rows="10"
+            cols="30"
+            maxLength="300"
+            placeholder="Your message"
+            dir={value.rtl ? "rtl" : "ltr"}
+          />
+          <ElementsGroup handleLtr={handleLtr} handleRtl={handleRtl} message={value.message} />
+          <SendButton handleSubmit={handleSubmit}/>
+          
+          <button style={{ color: "red" }} onClick={() => props.setOpen(false)}>
+            CLOSE
+          </button>
+        </form>
+      </div>
     </>
   );
 };
