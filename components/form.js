@@ -58,8 +58,8 @@ const Form = (props) => {
       props.setSentStatus({
         sent: true,
         message: "Sending...",
+        backgroundColor: "blue",
       });
-      setTimeout(() => props.setSentStatus({ sent: false, message: "" }), 3000);
       try {
         const response = await fetch("/api/send", {
           method: "POST",
@@ -79,11 +79,8 @@ const Form = (props) => {
             sent: true,
             message:
               "Thank you, your message was sent successfully and I will reply soon.",
+            backgroundColor: "green",
           });
-          setTimeout(
-            () => props.setSentStatus({ sent: false, message: "" }),
-            3000
-          );
           setValue((prevValue) => ({
             ...prevValue,
             fName: "",
@@ -99,11 +96,8 @@ const Form = (props) => {
             sent: true,
             message:
               "Hmmmmm... something invalid was sent to the server, so the message didn't go through.",
+            backgroundColor: "red",
           });
-          setTimeout(
-            () => props.setSentStatus({ sent: false, message: "" }),
-            3000
-          );
         }
 
         // All other replies from the server.
@@ -112,12 +106,20 @@ const Form = (props) => {
             sent: true,
             message:
               "Sorry, the message didn't go through for some reason and the error was reported.",
+            backgroundColor: "pink",
           });
-          setTimeout(
-            () => props.setSentStatus({ sent: false, message: "" }),
-            3000
-          );
         }
+
+        // Hides the modal after 10 seconds.
+        setTimeout(
+          () =>
+            props.setSentStatus({
+              sent: false,
+              message: "",
+              backgroundColor: "transparent",
+            }),
+          10000
+        );
       } catch (error) {
         console.warn(error);
       }

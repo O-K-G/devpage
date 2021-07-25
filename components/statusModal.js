@@ -6,7 +6,7 @@ const StatusModal = (props) => {
       <div
         className={classes.statusModal}
         style={{
-          backgroundColor: props.sentStatus.sent ? "red" : "transparent"
+          backgroundColor: props.sentStatus.sent && props.sentStatus.backgroundColor
         }}
       >
       <p>{props.sentStatus.message}</p>

@@ -61,7 +61,7 @@ const Home = () => {
           setOffset={setOffset}
         />
       </main>
-      {open && <Form open={open} setOpen={setOpen} setSentStatus={setSentStatus} />}
+      {open && <Form open={open} setOpen={setOpen} sentStatus={sentStatus} setSentStatus={setSentStatus} />}
       
       <footer></footer>
       <StatusModal sentStatus={sentStatus} />
