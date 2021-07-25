@@ -19,6 +19,7 @@
   width: 32px;
   transition: 0.5s;
   display: flex;
+  cursor: pointer;
 }
 
 .button:hover {

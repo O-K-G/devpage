@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import classes from "./form.module.css";
 import ElementsGroup from "./UI/elementsGroup";
 import SendButton from "./UI/sendButton";
+import ExitButton from "./UI/exitButton";
 
 const Form = (props) => {
+  const [error, setError] = useState(false);
   const [value, setValue] = useState({
     fName: "",
     lName: "",
@@ -33,22 +35,97 @@ const Form = (props) => {
     }));
   };
 
+  // When the user sends a message.
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("/api/send", {
-        method: "POST",
-        mode: "cors",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(value),
+
+    // Text fields validation.
+
+    if (
+      value.message.length <= 300 &&
+      value.fName.length <= 50 &&
+      value.lName.length <= 50 &&
+      value.email.length <= 50 &&
+      value.message.length > 0 &&
+      value.fName.length > 0 &&
+      value.lName.length > 0 &&
+      value.email.length > 0
+    ) {
+      // If no errors were found:
+
+      setError(false);
+      props.setSentStatus({
+        sent: true,
+        message: "Sending...",
       });
-      const reply = await response.json();
-      console.log(reply.message);
-    } catch (error) {
-      console.warn(error);
+      setTimeout(() => props.setSentStatus({ sent: false, message: "" }), 3000);
+      try {
+        const response = await fetch("/api/send", {
+          method: "POST",
+          mode: "cors",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(value),
+        });
+        await response;
+
+        // If the message was sent successfully.
+
+        if (response.status === 200) {
+          props.setSentStatus({
+            sent: true,
+            message:
+              "Thank you, your message was sent successfully and I will reply soon.",
+          });
+          setTimeout(
+            () => props.setSentStatus({ sent: false, message: "" }),
+            3000
+          );
+          setValue((prevValue) => ({
+            ...prevValue,
+            fName: "",
+            lName: "",
+            email: "",
+            message: "",
+          }));
+        }
+
+        // Something in the text fields validation still failed.
+        else if (response.status === 400) {
+          props.setSentStatus({
+            sent: true,
+            message:
+              "Hmmmmm... something invalid was sent to the server, so the message didn't go through.",
+          });
+          setTimeout(
+            () => props.setSentStatus({ sent: false, message: "" }),
+            3000
+          );
+        }
+
+        // All other replies from the server.
+        else {
+          props.setSentStatus({
+            sent: true,
+            message:
+              "Sorry, the message didn't go through for some reason and the error was reported.",
+          });
+          setTimeout(
+            () => props.setSentStatus({ sent: false, message: "" }),
+            3000
+          );
+        }
+      } catch (error) {
+        console.warn(error);
+      }
+    }
+
+    // If errors were found on text fields validation.
+    else {
+      setError(true);
     }
   };
 
@@ -60,6 +137,8 @@ const Form = (props) => {
       />
       <div className={classes.formContainer}>
         <form onSubmit={handleSubmit} className={classes.form}>
+          <h1 className={classes.title}>Contact Me</h1>
+          <ExitButton setOpen={props.setOpen} />
           <input
             type="text"
             name="fName"
@@ -68,6 +147,13 @@ const Form = (props) => {
             className={classes.input}
             dir={value.rtl ? "rtl" : "ltr"}
             placeholder="First name"
+            maxLength="50"
+            style={{
+              backgroundColor:
+                error &&
+                (value.fName.length > 50 || value.fName.length) <= 0 &&
+                "#ffc0cb",
+            }}
           />
           <br />
           <br />
@@ -80,6 +166,13 @@ const Form = (props) => {
             className={classes.input}
             dir={value.rtl ? "rtl" : "ltr"}
             placeholder="Last name"
+            maxLength="50"
+            style={{
+              backgroundColor:
+                error &&
+                (value.lName.length > 50 || value.lName.length) <= 0 &&
+                "#ffc0cb",
+            }}
           />
           <br />
           <br />
@@ -91,6 +184,13 @@ const Form = (props) => {
             onChange={handleChange}
             className={classes.input}
             placeholder="Your email"
+            maxLength="50"
+            style={{
+              backgroundColor:
+                error &&
+                (value.email.length > 50 || value.email.length) <= 0 &&
+                "#ffc0cb",
+            }}
           />
           <br />
           <br />
@@ -106,13 +206,19 @@ const Form = (props) => {
             maxLength="300"
             placeholder="Your message"
             dir={value.rtl ? "rtl" : "ltr"}
+            style={{
+              backgroundColor:
+                error &&
+                (value.message.length > 300 || value.message.length) <= 0 &&
+                "#ffc0cb",
+            }}
           />
-          <ElementsGroup handleLtr={handleLtr} handleRtl={handleRtl} message={value.message} />
-          <SendButton handleSubmit={handleSubmit}/>
-          
-          <button style={{ color: "red" }} onClick={() => props.setOpen(false)}>
-            CLOSE
-          </button>
+          <ElementsGroup
+            handleLtr={handleLtr}
+            handleRtl={handleRtl}
+            message={value.message}
+          />
+          <SendButton handleSubmit={handleSubmit} />
         </form>
       </div>
     </>

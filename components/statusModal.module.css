@@ -1,0 +1,14 @@
+.statusModal {
+  width: 100%;
+  height: 32px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 102;
+  transition: 0.5s;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}

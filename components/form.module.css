@@ -37,6 +37,10 @@
     border: none;
 }
 
+.title {
+    text-align: center;
+}
+
 .input {
     font-size: 2rem;
     color: #000000;
@@ -45,6 +49,7 @@
     resize: none;
     border: none;
     transition: 0.2s;
+    width: 100%;
 }
 
 .input:focus {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Section from "../components/section";
 import Form from "../components/form";
 
-const Home = () => {
+const Home = (props) => {
   const [offset, setOffset] = useState(0);
   const [open, setOpen] = useState(false);
 
@@ -10,6 +10,7 @@ const Home = () => {
     <>
       <header></header>
       <main>
+      <button style={{color: "black"}} onClick={() => setOpen(true)}>FORM TEST</button>
         <Section
           id={1}
           title="MAIN TITLE"
@@ -58,8 +59,8 @@ const Home = () => {
           setOffset={setOffset}
         />
       </main>
-      {open && <Form open={open} setOpen={setOpen} />}
-      <button style={{color: "black"}} onClick={() => setOpen(true)}>FORM TEST</button>
+      {open && <Form open={open} setOpen={setOpen} setSentStatus={props.setSentStatus} />}
+      
       <footer></footer>
     </>
   );
