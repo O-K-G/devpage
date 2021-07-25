@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Section from "../components/section";
 import Form from "../components/form";
+import StatusModal from "../components/statusModal";
 
-const Home = (props) => {
+const Home = () => {
   const [offset, setOffset] = useState(0);
   const [open, setOpen] = useState(false);
+  const [sentStatus, setSentStatus] = useState({sent: false, message: ""});
 
   return (
     <>
@@ -59,9 +61,10 @@ const Home = (props) => {
           setOffset={setOffset}
         />
       </main>
-      {open && <Form open={open} setOpen={setOpen} setSentStatus={props.setSentStatus} />}
+      {open && <Form open={open} setOpen={setOpen} setSentStatus={setSentStatus} />}
       
       <footer></footer>
+      <StatusModal sentStatus={sentStatus} />
     </>
   );
 };

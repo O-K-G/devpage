@@ -136,7 +136,7 @@ const Form = (props) => {
         onClick={() => props.setOpen(false)}
       />
       <div className={classes.formContainer}>
-        <form onSubmit={handleSubmit} className={classes.form}>
+        <form className={classes.form}>
           <h1 className={classes.title}>Contact Me</h1>
           <ExitButton setOpen={props.setOpen} />
           <input
