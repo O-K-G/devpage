@@ -12,14 +12,13 @@ const Home = () => {
     <>
       <header></header>
       <main>
-      <button style={{color: "black"}} onClick={() => setOpen(true)}>FORM TEST</button>
         <Section
           id={1}
           title="MAIN TITLE"
           subtitle="TEXT TEXT TEXT"
           smallSubtitle="TEXT TEXT TEXT TEXT"
-          src="/images/mountains.jpg"
-          alt="Mountains"
+          src="/images/city.webp" /* Used under free for commercial use license with no attribution required from: https://pixabay.com/photos/cityscape-light-zoom-city-urban-2008177 */
+          alt="City"
           paddingTop="30vh"
           zIndex="1"
           offsetValue="0.2"
@@ -62,7 +61,7 @@ const Home = () => {
         />
       </main>
       {open && <Form open={open} setOpen={setOpen} sentStatus={sentStatus} setSentStatus={setSentStatus} />}
-      
+      <button style={{color: "black"}} onClick={() => setOpen(true)}>FORM TEST</button>
       <footer></footer>
       <StatusModal sentStatus={sentStatus} />
     </>

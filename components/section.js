@@ -46,9 +46,14 @@ const Section = (props) => {
       )}
 
       <div id={props.id}>
-        <>
-       
-
+      {/* The following <div> is a visual test and can be deleted if not necessary. Before that it was just <>. */}
+        <div
+          className={classes.textBackground}
+          style={{
+            backgroundImage:
+              props.id === 1 ? "linear-gradient(45deg, #ff0099, rgba(0, 0, 0, 0.7), #6303B1)" : "transparent",
+          }}
+        />
           <h1
             className={classes.title}
             style={{
@@ -93,9 +98,9 @@ const Section = (props) => {
               {props.smallSubtitle}
             </h5>
           )}
-        </>
+        </div>
       </div>
-    </div>
+    
   );
 };
 
