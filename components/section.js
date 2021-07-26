@@ -28,13 +28,21 @@ const Section = (props) => {
       }}
     >
       {props.src && (
-        <Image
-          src={props.src}
-          alt={props.alt}
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        />
+        /* The following <div> is a visual test and can be deleted if not necessary. */
+        <div
+          className={classes.imageBackground}
+          style={{
+            transform: props.id === 1 && `translateY(${props.offset * 0.1}px)`,
+          }}
+        >
+          <Image
+            src={props.src}
+            alt={props.alt}
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
+        </div>
       )}
       <div
         className={classes.sectionShadows}
@@ -46,18 +54,36 @@ const Section = (props) => {
       )}
 
       <div id={props.id}>
-      {/* The following <div> is a visual test and can be deleted if not necessary. Before that it was just <>. */}
+        {/* The following <div> is a visual test and can be deleted if not necessary. Before that it was just <>. */}
         <div
           className={classes.textBackground}
           style={{
+            display: props.id === 1 && "block",
             backgroundImage:
-              props.id === 1 ? "linear-gradient(45deg, #ff0099, rgba(0, 0, 0, 0.7), #6303B1)" : "transparent",
+              props.id === 1
+                ? "linear-gradient(45deg, #ff0099, rgba(0, 0, 0, 0.7), #6303B1)"
+                : "transparent",
           }}
         />
-          <h1
-            className={classes.title}
+        <h1
+          className={classes.title}
+          style={{
+            transition: ".3s ease-out",
+            transform:
+              textScaleY &&
+              `scaleY(${textScaleY.current}) translateY(${
+                props.offset * -0.1
+              }px)`,
+          }}
+        >
+          {props.title}
+        </h1>
+
+        {props.subtitle && (
+          <h3
+            className={classes.subtitle}
             style={{
-              transition: ".3s ease-out",
+              transition: ".6s ease-out",
               transform:
                 textScaleY &&
                 `scaleY(${textScaleY.current}) translateY(${
@@ -65,42 +91,26 @@ const Section = (props) => {
                 }px)`,
             }}
           >
-            {props.title}
-          </h1>
-
-          {props.subtitle && (
-            <h3
-              className={classes.subtitle}
-              style={{
-                transition: ".6s ease-out",
-                transform:
-                  textScaleY &&
-                  `scaleY(${textScaleY.current}) translateY(${
-                    props.offset * -0.1
-                  }px)`,
-              }}
-            >
-              {props.subtitle}
-            </h3>
-          )}
-          {props.smallSubtitle && (
-            <h5
-              className={classes.smallSubtitle}
-              style={{
-                transition: ".8s ease-out",
-                transform:
-                  textScaleY &&
-                  `scaleY(${textScaleY.current}) translateY(${
-                    props.offset * -0.1
-                  }px)`,
-              }}
-            >
-              {props.smallSubtitle}
-            </h5>
-          )}
-        </div>
+            {props.subtitle}
+          </h3>
+        )}
+        {props.smallSubtitle && (
+          <h5
+            className={classes.smallSubtitle}
+            style={{
+              transition: ".8s ease-out",
+              transform:
+                textScaleY &&
+                `scaleY(${textScaleY.current}) translateY(${
+                  props.offset * -0.1
+                }px)`,
+            }}
+          >
+            {props.smallSubtitle}
+          </h5>
+        )}
       </div>
-    
+    </div>
   );
 };
 
