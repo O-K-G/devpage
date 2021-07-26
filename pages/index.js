@@ -6,7 +6,7 @@ import StatusModal from "../components/statusModal";
 const Home = () => {
   const [offset, setOffset] = useState(0);
   const [open, setOpen] = useState(false);
-  const [sentStatus, setSentStatus] = useState({sent: false, message: ""});
+  const [sentStatus, setSentStatus] = useState({sent: false, message: "", backgroundImage: "transparent"});
 
   return (
     <>

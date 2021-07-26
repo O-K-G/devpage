@@ -58,7 +58,7 @@ const Form = (props) => {
       props.setSentStatus({
         sent: true,
         message: "Sending...",
-        backgroundColor: "blue",
+        backgroundImage: "linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)",
       });
       try {
         const response = await fetch("/api/send", {
@@ -79,7 +79,7 @@ const Form = (props) => {
             sent: true,
             message:
               "Thank you, your message was sent successfully and I will reply soon.",
-            backgroundColor: "green",
+            backgroundImage: "linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)",
           });
           setValue((prevValue) => ({
             ...prevValue,
@@ -96,7 +96,7 @@ const Form = (props) => {
             sent: true,
             message:
               "Hmmmmm... something invalid was sent to the server, so the message didn't go through.",
-            backgroundColor: "red",
+            backgroundImage: "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)",
           });
         }
 
@@ -106,7 +106,7 @@ const Form = (props) => {
             sent: true,
             message:
               "Sorry, the message didn't go through for some reason and the error was reported.",
-            backgroundColor: "pink",
+            backgroundImage: "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)",
           });
         }
 
@@ -116,7 +116,7 @@ const Form = (props) => {
             props.setSentStatus({
               sent: false,
               message: "",
-              backgroundColor: "transparent",
+              backgroundImage: "transparent",
             }),
           10000
         );
@@ -139,7 +139,7 @@ const Form = (props) => {
       />
       <div className={classes.formContainer}>
         <form className={classes.form}>
-          <h1 className={classes.title}>Contact Me</h1>
+          <h1 className={classes.title}>Send a Message</h1>
           <ExitButton setOpen={props.setOpen} />
           <input
             type="text"

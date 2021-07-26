@@ -8,7 +8,31 @@
   transition: 0.5s;
   text-align: center;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transform: scaleY(0);
+  overflow: hidden;
+}
+
+.backgroundLayer {
+  width: 100%;
+  height: 95%;
+  transition: 3s;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.text {
+  font: 700 1.5rem "Poppins", sans-serif;
+}
+
+@media only screen and (max-width: 1023px) {
+  .text {
+    font-size: 0.75rem;
+  }
 }

@@ -6,6 +6,7 @@
     right: 0;
     top: 0;
     cursor: pointer;
+    margin: 16px 24px 0 0;
   }
   
   .button:hover {
