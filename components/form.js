@@ -35,6 +35,33 @@ const Form = (props) => {
     }));
   };
 
+  const style = {
+    fName: {
+      backgroundColor:
+        error &&
+        (value.fName.length > 50 || value.fName.length) <= 0 &&
+        "#ffc0cb",
+    },
+    lName: {
+      backgroundColor:
+        error &&
+        (value.lName.length > 50 || value.lName.length) <= 0 &&
+        "#ffc0cb",
+    },
+    email: {
+      backgroundColor:
+        error &&
+        (value.email.length > 50 || value.email.length) <= 0 &&
+        "#ffc0cb",
+    },
+    message: {
+      backgroundColor:
+        error &&
+        (value.message.length > 300 || value.message.length) <= 0 &&
+        "#ffc0cb",
+    },
+  };
+
   // When the user sends a message.
 
   const handleSubmit = async (e) => {
@@ -58,7 +85,8 @@ const Form = (props) => {
       props.setSentStatus({
         sent: true,
         message: "Sending...",
-        backgroundImage: "linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)",
+        backgroundImage:
+          "linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)",
       });
       try {
         const response = await fetch("/api/send", {
@@ -79,7 +107,8 @@ const Form = (props) => {
             sent: true,
             message:
               "Thank you, your message was sent successfully and I will reply soon.",
-            backgroundImage: "linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)",
+            backgroundImage:
+              "linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)",
           });
           setValue((prevValue) => ({
             ...prevValue,
@@ -96,7 +125,8 @@ const Form = (props) => {
             sent: true,
             message:
               "Hmmmmm... something invalid was sent to the server, so the message didn't go through.",
-            backgroundImage: "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)",
+            backgroundImage:
+              "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)",
           });
         }
 
@@ -106,7 +136,8 @@ const Form = (props) => {
             sent: true,
             message:
               "Sorry, the message didn't go through for some reason and the error was reported.",
-            backgroundImage: "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)",
+            backgroundImage:
+              "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)",
           });
         }
 
@@ -150,12 +181,7 @@ const Form = (props) => {
             dir={value.rtl ? "rtl" : "ltr"}
             placeholder="First name"
             maxLength="50"
-            style={{
-              backgroundColor:
-                error &&
-                (value.fName.length > 50 || value.fName.length) <= 0 &&
-                "#ffc0cb",
-            }}
+            style={style.fName}
           />
           <br />
           <br />
@@ -169,12 +195,7 @@ const Form = (props) => {
             dir={value.rtl ? "rtl" : "ltr"}
             placeholder="Last name"
             maxLength="50"
-            style={{
-              backgroundColor:
-                error &&
-                (value.lName.length > 50 || value.lName.length) <= 0 &&
-                "#ffc0cb",
-            }}
+            style={style.lName}
           />
           <br />
           <br />
@@ -187,12 +208,7 @@ const Form = (props) => {
             className={classes.input}
             placeholder="Your email"
             maxLength="50"
-            style={{
-              backgroundColor:
-                error &&
-                (value.email.length > 50 || value.email.length) <= 0 &&
-                "#ffc0cb",
-            }}
+            style={style.email}
           />
           <br />
           <br />
@@ -208,12 +224,7 @@ const Form = (props) => {
             maxLength="300"
             placeholder="Your message"
             dir={value.rtl ? "rtl" : "ltr"}
-            style={{
-              backgroundColor:
-                error &&
-                (value.message.length > 300 || value.message.length) <= 0 &&
-                "#ffc0cb",
-            }}
+            style={style.message}
           />
           <ElementsGroup
             handleLtr={handleLtr}

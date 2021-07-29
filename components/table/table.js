@@ -4,7 +4,6 @@ import TableGroup from "./tableGroup";
 import observer from "../UI/observer";
 
 const Table = () => {
-
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   observer(isIntersecting, setIsIntersecting, "tableTitle");
@@ -30,14 +29,16 @@ const Table = () => {
   const group10BackgroundColor =
     "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)";
 
+  const style = {
+    title: {
+      transform: isIntersecting && "scaleY(1)",
+    },
+  };
   return (
     <div className={classes.mainContainer}>
-      <h1
-        className={classes.title}
-        style={{ transform: isIntersecting && "scaleY(1)" }}
-        id="tableTitle"
-      >
-        TITLE TITLE TITLE TITLETITLETITLETITLE TITLE TITLE TITLETITLETITLE TITLETITLE   TITLETITLETITLE TITLETITLE
+      <h1 className={classes.title} style={style.title} id="tableTitle">
+        TITLE TITLE TITLE TITLETITLETITLETITLE TITLE TITLE TITLETITLETITLE
+        TITLETITLE TITLETITLETITLE TITLETITLE
       </h1>
       <TableGroup
         groupTitleBackground={group1BackgroundColor}

@@ -1,0 +1,56 @@
+.project {
+  width: 20vw;
+  padding-top: 1rem;
+  min-height: auto;
+  height: auto;
+  margin-top: 40vh;
+  position: relative;
+  border-radius: 4px;
+}
+
+.imageTitle {
+  margin: 0 0 1rem 0;
+  text-align: center;
+  max-height: 2rem; /* Margin + 1rem; */
+  overflow: hidden;
+  font: 700 1.5rem "Poppins", sans-serif;
+}
+
+.image {
+  cursor: pointer;
+}
+
+.description {
+  color: #ffffff;
+  position: relative;
+  width: 100%;
+  border: 1px solid red;
+  margin: 0;
+  padding: 16px;
+  overflow: hidden;
+  height: 15rem;
+  font: 700 1.5rem "Poppins", sans-serif;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width: 1024px) {
+  .project {
+    width: 50%;
+    margin-top: 22vh;
+    border-radius: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .project {
+    width: 100%;
+    margin-top: 22vh;
+    border-radius: 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .description {
+    font-size: 1rem;
+  }
+}

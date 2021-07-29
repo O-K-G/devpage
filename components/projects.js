@@ -1,78 +1,47 @@
 import React, { useState } from "react";
 import classes from "./projects.module.css";
 import observer from "./UI/observer";
-import Image from "next/image";
-import { useRouter } from "next/router";
+import ProjectCard from "./projectCard";
 
 const Projects = () => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   observer(isIntersecting, setIsIntersecting, "projectsTitle");
-  const router = useRouter();
-
-  const handleClick = (e) => {
-    const alt = e.target.alt;
-    if (alt === "polykick.com") {
-      router.push("https://polykick.herokuapp.com");
-    }
+  const style = {
+    title: {
+      transform: isIntersecting && "scaleY(1)",
+    },
   };
 
   return (
     <div className={classes.container}>
-      <h1
-        className={classes.title}
-        style={{ transform: isIntersecting && "scaleY(1)" }}
-        id="projectsTitle"
-      >
-        Text text text text text text text text Text text text text text text text textText text text text text text text textText text text text text text text textText text text text text text text text
+      <h1 className={classes.title} style={style.title} id="projectsTitle">
+        Text text text text text text text text Text text text text text text
+        text textText text text text text text text textText text text text text
+        text text textText text text text text text text text
       </h1>
-      <div className={classes.project} onClick={handleClick}>
-      <h3 className={classes.imageTitle}>Text</h3>
-        <Image
-          src="/images/polykick.webp"
-          width="1920"
-          height="1080"
-          layout="responsive"
-          quality={100}
-          alt="polykick.com"
-        />
-        <h3
-        className={classes.description}
-      >
-        Text text text text text text text text Text text text text text text text textText text text text text text text textText text text text text text text textText text text text text text text text
-      </h3>
-      </div>
-      <div className={classes.project} onClick={handleClick}>
-      <h3 className={classes.imageTitle}>Text</h3>
-        <Image
-          src="/images/polykick.webp"
-          width="1920"
-          height="1080"
-          layout="responsive"
-          quality={100}
-          alt="polykick.com"
-        />
-        <h3
-        className={classes.description}
-      >
-        Text text text text text text text text Text text text text text text text textText text text text text text text textText text text text text text text textText text text text text text text text
-      </h3>
-      </div>
-      <div className={classes.project} onClick={handleClick}>
-      <h3 className={classes.imageTitle}>Text</h3>
-        <Image
-          src="/images/polykick.webp"
-          width="1920"
-          height="1080"
-          layout="responsive"
-          quality={100}
-          alt="polykick.com"
-        />
-        <h3
-        className={classes.description}
-      >
-        Text text text text text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text teText text text text text text text text Text text text text Text text text text text text text textText text text text text text text textText text text text text text text textText text text text text text text text
-      </h3>
-      </div>
+      <ProjectCard
+        backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
+        imageTitle="TEXT TEXT"
+        imageSrc="/images/polykick.webp"
+        imageAlt="polykick.com"
+        description="Up to 146 characters allowed."
+      />
+
+      <ProjectCard
+        backgroundImage="linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)"
+        imageTitle="TEXT TEXT"
+        imageSrc="/images/polykick.webp"
+        imageAlt="polykick.com"
+        description="Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed."
+      />
+
+      <ProjectCard
+        backgroundImage="linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)"
+        imageTitle="TEXT TEXT"
+        imageSrc="/images/polykick.webp"
+        imageAlt="polykick.com"
+        description="Up to 146 characters allowed."
+      />
     </div>
   );
 };
