@@ -8,10 +8,12 @@
     margin: 0;
     list-style-type: none;
     width: 8%;
+    margin-bottom: 10vh;
   }
 
   @media only screen and (max-width: 1024px) {
     .groupsContainer {
       width: 50%;
+      margin-bottom: 20vh;
     }
   }

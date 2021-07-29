@@ -24,6 +24,7 @@ const Home = () => {
           offsetValue="0.2"
           offset={offset}
           setOffset={setOffset}
+          displayText={true}
         />
         <Section
           id={2}
@@ -37,6 +38,8 @@ const Home = () => {
           offsetValue="0.05"
           offset={offset}
           setOffset={setOffset}
+          backgroundColor="#000000"
+          displayText={true}
         />
         <Section
           id={3}
@@ -55,9 +58,10 @@ const Home = () => {
           smallSubtitle="TEXT TEXT TEXT TEXT"
           paddingTop="50vh"
           zIndex="4"
-          offsetValue="-0.02"
+          offsetValue="-0.05"
           offset={offset}
           setOffset={setOffset}
+          backgroundColor="#000000"
         />
       </main>
       {open && <Form open={open} setOpen={setOpen} sentStatus={sentStatus} setSentStatus={setSentStatus} />}

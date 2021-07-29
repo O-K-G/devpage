@@ -7,7 +7,7 @@ const Table = () => {
 
   const [isIntersecting, setIsIntersecting] = useState(false);
 
-  observer(isIntersecting, setIsIntersecting);
+  observer(isIntersecting, setIsIntersecting, "tableTitle");
 
   const group1BackgroundColor =
     "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)";
@@ -37,7 +37,7 @@ const Table = () => {
         style={{ transform: isIntersecting && "scaleY(1)" }}
         id="tableTitle"
       >
-        TITLE
+        TITLE TITLE TITLE TITLETITLETITLETITLE TITLE TITLE TITLETITLETITLE TITLETITLE   TITLETITLETITLE TITLETITLE
       </h1>
       <TableGroup
         groupTitleBackground={group1BackgroundColor}

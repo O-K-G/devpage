@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const observer = (isIntersecting, setIsIntersecting) => {
+const observer = (isIntersecting, setIsIntersecting, id) => {
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -15,7 +15,7 @@ const observer = (isIntersecting, setIsIntersecting) => {
       { threshold: [0] }
     ); // 0: Just coming into view. 1: Fully in view.
 
-    observer.observe(document.getElementById("tableTitle"));
+    observer.observe(document.getElementById(id));
 
     return () => observer.disconnect();
   }, [isIntersecting]);

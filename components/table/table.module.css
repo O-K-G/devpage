@@ -4,9 +4,10 @@
   justify-content: center;
   align-items: center;
   align-content: flex-start;
-  margin: 25vh 0 10vh 0;
-  min-height: 100vh;
+  margin-top: 25vh;
   width: 100%;
+  height: auto;
+  margin-bottom: 15vh;
   overflow: hidden;
 }
 
@@ -19,4 +20,7 @@
   text-align: center;
   font-size: 5rem;
   transform: scaleY(0);
+  overflow: hidden;
+  width: 100%;
+  max-height: 6rem; /* Font size + 1rem. */
 }

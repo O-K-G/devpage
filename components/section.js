@@ -5,6 +5,7 @@ import textScaler from "./UI/textScaler";
 import Image from "next/image";
 import parallax from "./UI/parallax";
 import Table from "./table/table";
+import Projects from "./projects.js";
 
 const Section = (props) => {
   const [textPosition, setTextPosition] = useState(false);
@@ -54,6 +55,7 @@ const Section = (props) => {
       )}
 
       <div id={props.id}>
+        {props.id === 4 && <Projects />}
         {/* The following <div> is a visual test and can be deleted if not necessary. Before that it was just <>. */}
         <div
           className={classes.textBackground}
@@ -68,6 +70,7 @@ const Section = (props) => {
         <h1
           className={classes.title}
           style={{
+            display: props.displayText && "block",
             transition: ".3s ease-out",
             transform:
               textScaleY &&
@@ -83,6 +86,7 @@ const Section = (props) => {
           <h3
             className={classes.subtitle}
             style={{
+              display: props.displayText && "block",
               transition: ".6s ease-out",
               transform:
                 textScaleY &&
@@ -98,6 +102,7 @@ const Section = (props) => {
           <h5
             className={classes.smallSubtitle}
             style={{
+              display: props.displayText && "block",
               transition: ".8s ease-out",
               transform:
                 textScaleY &&

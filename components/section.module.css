@@ -25,6 +25,7 @@
   font-size: 10rem;
   margin: 0;
   padding-left: 16px;
+  display: none;
 }
 
 .subtitle {
@@ -32,6 +33,7 @@
   font-weight: 300;
   margin: 0;
   padding-left: 16px;
+  display: none;
 }
 
 .smallSubtitle {
@@ -39,6 +41,7 @@
   font-weight: 100;
   margin: 0;
   padding-left: 16px;
+  display: none;
 }
 
 .sectionShadows {
