@@ -28,7 +28,7 @@
   z-index: 100;
   width: auto;
   height: auto;
-  background-color: #202e38;
+  background-image: linear-gradient(45deg, #eebb13, rgba(0, 0, 0, 1), #238ac5);
   padding: 16px;
   border-radius: 4px;
 }

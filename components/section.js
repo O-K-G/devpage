@@ -6,6 +6,7 @@ import Image from "next/image";
 import parallax from "./UI/parallax";
 import Table from "./table/table";
 import Projects from "./projects.js";
+import FormButton from "./formButton";
 
 const Section = (props) => {
   const [textPosition, setTextPosition] = useState(false);
@@ -41,8 +42,8 @@ const Section = (props) => {
       transform:
         textScaleY &&
         `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
-        textAlign: props.id === 2 && "right",
-        paddingRight: props.id === 2 && "16px"
+      textAlign: props.id === 2 && "right",
+      paddingRight: props.id === 2 && "16px",
     },
     subtitle: {
       display: props.displayText && "block",
@@ -50,8 +51,8 @@ const Section = (props) => {
       transform:
         textScaleY &&
         `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
-        textAlign: props.id === 2 && "right",
-        paddingRight: props.id === 2 && "16px"
+      textAlign: props.id === 2 && "right",
+      paddingRight: props.id === 2 && "16px",
     },
     smallSubtitle: {
       display: props.displayText && "block",
@@ -59,8 +60,8 @@ const Section = (props) => {
       transform:
         textScaleY &&
         `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
-        textAlign: props.id === 2 && "right",
-        paddingRight: props.id === 2 && "16px"
+      textAlign: props.id === 2 && "right",
+      paddingRight: props.id === 2 && "16px",
     },
   };
 
@@ -100,13 +101,7 @@ const Section = (props) => {
             {props.smallSubtitle}
           </h5>
         )}
-        {props.id === 2 && (
-        <div className={classes.formButtonContainer} onClick={() => props.setOpen(true)}>
-          <div className={classes.formButton}>
-          <p className={classes.formButtonText}>Let's talk over coffee!</p>
-          </div>
-        </div>
-      )}
+        {props.id === 2 && <FormButton setOpen={props.setOpen}/>}
       </div>
     </div>
   );
