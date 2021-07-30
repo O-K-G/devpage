@@ -19,6 +19,7 @@
   width: 100%;
   transform: skewY(25deg);
   display: none;
+  background-image: linear-gradient(45deg, #ff0099, rgba(0, 0, 0, 0.7), #6303B1);
 }
 
 .title {

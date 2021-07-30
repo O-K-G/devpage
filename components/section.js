@@ -34,10 +34,6 @@ const Section = (props) => {
     },
     textBackground: {
       display: props.id === 1 && "block",
-      backgroundImage:
-        props.id === 1
-          ? "linear-gradient(45deg, #ff0099, rgba(0, 0, 0, 0.7), #6303B1)"
-          : "transparent",
     },
     title: {
       display: props.displayText && "block",
@@ -45,6 +41,8 @@ const Section = (props) => {
       transform:
         textScaleY &&
         `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
+        textAlign: props.id === 2 && "right",
+        paddingRight: props.id === 2 && "16px"
     },
     subtitle: {
       display: props.displayText && "block",
@@ -52,6 +50,8 @@ const Section = (props) => {
       transform:
         textScaleY &&
         `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
+        textAlign: props.id === 2 && "right",
+        paddingRight: props.id === 2 && "16px"
     },
     smallSubtitle: {
       display: props.displayText && "block",
@@ -59,6 +59,8 @@ const Section = (props) => {
       transform:
         textScaleY &&
         `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
+        textAlign: props.id === 2 && "right",
+        paddingRight: props.id === 2 && "16px"
     },
   };
 
