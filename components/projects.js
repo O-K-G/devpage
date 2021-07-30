@@ -30,16 +30,16 @@ const Projects = () => {
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)"
         imageTitle="TEXT TEXT"
-        imageSrc="/images/polykick.webp"
-        imageAlt="polykick.com"
+        imageSrc="/images/typologyExercise.webp"
+        imageAlt="Typology Exercise"
         description="Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed."
       />
 
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)"
         imageTitle="TEXT TEXT"
-        imageSrc="/images/polykick.webp"
-        imageAlt="polykick.com"
+        imageSrc="/images/eventSpace.webp"
+        imageAlt="Event Space Station"
         description="Up to 146 characters allowed."
       />
     </div>
