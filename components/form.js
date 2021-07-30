@@ -170,7 +170,7 @@ const Form = (props) => {
       />
       <div className={classes.formContainer}>
         <form className={classes.form}>
-          <h1 className={classes.title}>Send a Message</h1>
+          <h1 className={classes.title}>Send me a Message</h1>
           <ExitButton setOpen={props.setOpen} />
           <input
             type="text"

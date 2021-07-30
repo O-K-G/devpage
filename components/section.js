@@ -100,6 +100,13 @@ const Section = (props) => {
             {props.smallSubtitle}
           </h5>
         )}
+        {props.id === 2 && (
+        <div className={classes.formButtonContainer} onClick={() => props.setOpen(true)}>
+          <div className={classes.formButton}>
+          <p className={classes.formButtonText}>Let's talk over coffee!</p>
+          </div>
+        </div>
+      )}
       </div>
     </div>
   );

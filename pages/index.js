@@ -31,7 +31,7 @@ const Home = () => {
           title="MAIN TITLE"
           subtitle="TEXT TEXT TEXT"
           smallSubtitle="TEXT TEXT TEXT TEXT"
-          src="/images/coffee.webp"
+          src="/images/coffee.webp" /* Used under free for commercial use license with no attribution required from: https://www.pexels.com/photo/cup-of-coffee-spilled-on-black-table-1235717 */
           alt="Coffee"
           paddingTop="50vh"
           zIndex="2"
@@ -40,6 +40,7 @@ const Home = () => {
           setOffset={setOffset}
           backgroundColor="#000000"
           displayText={true}
+          setOpen={setOpen}
         />
         <Section
           id={3}
@@ -65,7 +66,6 @@ const Home = () => {
         />
       </main>
       {open && <Form open={open} setOpen={setOpen} sentStatus={sentStatus} setSentStatus={setSentStatus} />}
-      <button style={{color: "black"}} onClick={() => setOpen(true)}>FORM TEST</button>
       <footer></footer>
       <StatusModal sentStatus={sentStatus} />
     </>
