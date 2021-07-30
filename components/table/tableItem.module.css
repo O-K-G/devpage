@@ -24,29 +24,82 @@
 }
 
 .itemsText {
-    display: block;
-    position: relative;
-    text-align: center;
-    background-clip: text;
-      -webkit-background-clip: text;
+  display: block;
+  position: relative;
+  text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font: 700 1.5rem "Poppins", sans-serif;
+}
+
+@media only screen and (max-width: 1800px) {
+  .items {
+    min-height: 50px;
+    min-width: 90px;
+    margin: 5px;
+  }
+
+  .textBackground {
+    min-height: 45px;
+    height: 45px;
+    min-width: 83px;
+    width: 83px;
+  }
+
+  .itemsText {
+    font: 700 1rem "Poppins", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .items {
+    min-height: 40px;
+    min-width: 70px;
+    margin: 5px;
+  }
+
+  .textBackground {
+    min-height: 35px;
+    height: 35px;
+    min-width: 65px;
+    width: 65px;
+  }
+
+  .itemsText {
+    font: 700 0.7rem "Poppins", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .items {
+    min-height: 90px;
+    min-width: 140px;
+    margin: 5px;
+  }
+
+  .textBackground {
+    min-height: 80px;
+    min-width: 135px;
+  }
+
+  .itemsText {
     font: 700 1.5rem "Poppins", sans-serif;
   }
+}
 
-  @media only screen and (max-width: 767px) {
-    .items {
-      min-height: 50px;
-      min-width: 90px;
-      margin: 1vh 0 1vh 0;
-    }
-
-    .textBackground {
-      min-height: 45px;
-      height: 45px;
-      min-width: 80px;
-      width: 80px;
-    }
-
-    .itemsText {
-      font: 700 1rem "Poppins", sans-serif;
-    }
+@media only screen and (max-width: 300px) {
+  .items {
+    min-height: 45px;
+    min-width: 70px;
+    margin: 5px;
   }
+
+  .textBackground {
+    min-height: 40px;
+    min-width: 35px;
+  }
+
+  .itemsText {
+    font: 700 0.7rem "Poppins", sans-serif;
+  }
+}
