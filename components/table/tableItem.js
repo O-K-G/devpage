@@ -24,7 +24,6 @@ const TableItem = (props) => {
     <li
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      onClick={() => console.log(props.itemsText)}
       className={classes.items}
       style={style.items}
     >
