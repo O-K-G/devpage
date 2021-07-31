@@ -6,6 +6,7 @@
   margin-top: 40vh;
   position: relative;
   border-radius: 4px;
+  transition: 2s;
 }
 
 .imageTitle {
@@ -17,7 +18,7 @@
 }
 
 .image {
-  transition: 2s;
+  display: block;
 }
 
 .description {

@@ -25,6 +25,16 @@ const Projects = () => {
         imageSrc="/images/polykick.webp"
         imageAlt="polykick.com"
         description="Up to 146 characters allowed."
+        url="https://polykick.herokuapp.com"
+      />
+
+<ProjectCard
+        backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
+        imageTitle="TEXT TEXT"
+        imageSrc="/images/codeSnippets.webp"
+        imageAlt="cup-o-code.herokuapp.com"
+        description="Up to 146 characters allowed."
+        url="https://cup-o-code.herokuapp.com"
       />
 
       <ProjectCard

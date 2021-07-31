@@ -5,12 +5,9 @@ import Image from "next/image";
 const ProjectCard = (props) => {
   const [filter, setFilter] = useState(false);
 
-  const handleClick = (e) => {
-    const alt = e.target.alt;
-    if (alt === "polykick.com") {
-      window.open("https://polykick.herokuapp.com", "_blank", "noreferrer"); // Next.js router.push() isn't good at this stage for "_blank" links.
-    } else {
-      setFilter(true); // Sets a grayscale filter for images with no URLs to link to.
+  const handleClick = () => {
+    if (!props.url) {
+      setFilter(true); // Sets a grayscale filter for images with no props.url.
       setTimeout(() => setFilter(false), 5000);
     }
   };
@@ -18,9 +15,6 @@ const ProjectCard = (props) => {
   const style = {
     project: {
       backgroundImage: props.backgroundImage,
-    },
-    image: {
-      cursor: props.imageAlt === "polykick.com" ? "pointer" : "not-allowed",
       filter: filter && "grayscale(100%)",
     },
   };
@@ -28,7 +22,12 @@ const ProjectCard = (props) => {
   return (
     <div className={classes.project} style={style.project}>
       <h3 className={classes.imageTitle}>{props.imageTitle}</h3>
-      <div className={classes.image} style={style.image}>
+      <a
+        href={props.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes.image}
+      >
         <Image
           src={props.imageSrc}
           width="1920"
@@ -38,7 +37,7 @@ const ProjectCard = (props) => {
           alt={props.imageAlt}
           onClick={handleClick}
         />
-      </div>
+      </a>
       <h3 className={classes.description}>
         {props.description.length > 146
           ? props.description.slice(0, 145) + "..."
