@@ -79,13 +79,18 @@ const Section = (props) => {
         </div>
       )}
       <div className={classes.sectionShadows} style={style.sectionShadows} />
-
-      {props.id === 3 && (
-        <Table offset={props.offset} offsetValue={props.offsetValue} />
-      )}
+      {useMemo(() => {
+        return (
+          props.id === 3 && (
+            <Table offset={props.offset} offsetValue={props.offsetValue} />
+          )
+        );
+      }, [])}
 
       <div id={props.id}>
-        {props.id === 4 && <Projects />}
+        {useMemo(() => {
+          return props.id === 4 && <Projects />;
+        }, [])}
         <div className={classes.textBackground} style={style.textBackground} />
         <h1 className={classes.title} style={style.title}>
           {props.title}
@@ -101,7 +106,9 @@ const Section = (props) => {
             {props.smallSubtitle}
           </h5>
         )}
-        {props.id === 2 && <FormButton setOpen={props.setOpen}/>}
+        {useMemo(() => {
+          return props.id === 2 && <FormButton setOpen={props.setOpen} />;
+        }, [])}
       </div>
     </div>
   );
