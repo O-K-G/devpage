@@ -21,36 +21,36 @@ const Projects = () => {
       </h1>
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
-        imageTitle="TEXT TEXT"
+        imageTitle="TITLE TITLE"
         imageSrc="/images/polykick.webp"
         imageAlt="polykick.com"
-        description="Up to 146 characters allowed."
+        description="TEXT TEXT"
         url="https://polykick.herokuapp.com"
       />
 
-<ProjectCard
+      <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
-        imageTitle="TEXT TEXT"
+        imageTitle="TITLE TITLE"
         imageSrc="/images/codeSnippets.webp"
         imageAlt="cup-o-code.herokuapp.com"
-        description="Up to 146 characters allowed."
+        description="TEXT TEXT"
         url="https://cup-o-code.herokuapp.com"
       />
 
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)"
-        imageTitle="TEXT TEXT"
+        imageTitle="TITLE TITLE"
         imageSrc="/images/typologyExercise.webp"
         imageAlt="Typology Exercise"
-        description="Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed. Up to 146 characters allowed."
+        description="TEXT TEXT"
       />
 
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)"
-        imageTitle="TEXT TEXT"
+        imageTitle="TITLE TITLE"
         imageSrc="/images/eventSpace.webp"
         imageAlt="Event Space Station"
-        description="Up to 146 characters allowed."
+        description="TEXT TEXT"
       />
     </div>
   );
