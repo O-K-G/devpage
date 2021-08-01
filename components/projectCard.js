@@ -36,6 +36,7 @@ const ProjectCard = (props) => {
           quality={100}
           alt={props.imageAlt}
           onClick={handleClick}
+          priority={true}
         />
       </a>
       <h3 className={classes.description}>

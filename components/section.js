@@ -75,6 +75,7 @@ const Section = (props) => {
             layout="fill"
             objectFit="cover"
             quality={100}
+            priority={true}
           />
         </div>
       )}
