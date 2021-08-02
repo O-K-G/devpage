@@ -21,6 +21,7 @@ const FormButton = (props) => {
           layout="fill"
           quality={100}
           className={classes.buttonImage}
+          priority={true}
         />
         <p className={classes.formButtonText}>
           {`Let's talk over coffee, send me a message by clicking here! ${
