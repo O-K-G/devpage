@@ -15,16 +15,14 @@ const ProjectCard = (props) => {
           <div className={classes.image}>
             <Image
               src={props.imageSrc}
-              width="1920"
-              height="1080"
-              layout="responsive"
+           objectFit="cover"
+              layout="fill"
               quality={100}
               alt={props.imageAlt}
               priority={true}
             />
           </div>
 
-          <h1 className={classes.svgContainer}>SVG ICON</h1>
         </div>
         <a href={props.url} target="_blank" rel="noopener noreferrer">
           <div className={classes.cardBack} style={style.cardBack}>

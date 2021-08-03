@@ -26,6 +26,7 @@
   animation: roll 2s infinite;
   transform: rotate(3deg);
   animation-direction: alternate;
+  overflow: hidden;
 }
 
 @keyframes roll {
@@ -43,7 +44,7 @@
 }
 
 .formButtonText {
-  font: 700 1.5rem "Poppins", sans-serif;
+  font: 700 3rem "Poppins", sans-serif;
   color: #000a35;
   text-align: center;
   display: inline-block;
@@ -60,7 +61,7 @@
     width: 200px;
   }
   .formButtonText {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 }
 
@@ -75,7 +76,7 @@
     width: 300px;
   }
   .formButtonText {
-    font-size: 2rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -88,7 +89,7 @@
     width: 200px;
   }
   .formButtonText {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -101,6 +102,13 @@
     width: 180px;
   }
   .formButtonText {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .formButtonText {
     font-size: 1rem;
   }
 }
+

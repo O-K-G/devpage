@@ -24,7 +24,7 @@ const FormButton = (props) => {
           priority={true}
         />
         <p className={classes.formButtonText}>
-          {`Let's talk over coffee, send me a message by clicking here! ${
+          {`Send me a message! ${
             mouseEnter ? "C:" : "(:"
           }`}
         </p>

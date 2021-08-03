@@ -1,9 +1,10 @@
 .card {
   background-color: transparent;
-  width: 300px;
-  height: 500px;
+  width: 570px;
+  height: 390px;
   perspective: 1000px;
-  margin: 20vh 0 0 0;
+  margin-top: 20vh;
+  transition: 0.5s;
 }
 
 .cardInner {
@@ -37,15 +38,9 @@
 }
 
 .image {
-  border-bottom: 4px solid rgba(255, 255, 255, 1);
   width: 100%;
   height: auto;
   display: block;
-}
-
-.svgContainer {
-  display: block;
-  margin-top: 50%;
 }
 
 .cardBack {
@@ -71,48 +66,24 @@
   text-align: left;
   max-height: 26rem;
 }
+@media only screen and (max-width: 1300px) {
+  .card {
+    width: 250px;
+    height: 144px;
+  }
+}
 
 @media only screen and (max-width: 1024px) {
   .card {
-    height: 250px;
-    width: 200px;
-  }
-
-  .cardInner {
-    height: 250px;
-    width: 200px;
-  }
-
-  .svgContainer {
-    margin-top: 25%;
-  }
-
-  .cardFront,
-  .cardBack {
-    height: 250px;
-    width: 200px;
-  }
-
-  .title {
-    font-size: 1.2rem;
+    width: 570px;
+    height: 390px;
+    margin-top: 5vh;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .card {
-    height: 300px;
-  }
-
-  .cardInner {
-    height: 300px;
-  }
-
-  .svgContainer {
-    margin-top: 45%;
-  }
-
-  .cardFront,
-  .cardBack {
-    height: 300px;
+    width: 250px;
+  height: 200px;
   }
 }
