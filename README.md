@@ -1,1 +1,1 @@
-This is a Next.js landing page under construction, and the readme file will be expanded later on.
+This is a Next.js landing page under construction and still in progress. The readme file will be expanded later on.
