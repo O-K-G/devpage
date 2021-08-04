@@ -22,6 +22,7 @@
   transform: scaleY(0);
   overflow: hidden;
   width: 100%;
+  padding: 0 16px 0 16px;
   max-height: 6rem; /* Font size + 1rem. */
 }
 

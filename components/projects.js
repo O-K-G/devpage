@@ -21,10 +21,10 @@ const Projects = () => {
       </h1>
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
-        imageTitle="TITLE TITLE"
+        imageTitle="TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE"
         imageSrc="/images/polykick.webp"
         imageAlt="polykick.com"
-        description="TEXT TEXT"
+        description="TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXT"
         url="https://polykick.herokuapp.com"
       />
 
