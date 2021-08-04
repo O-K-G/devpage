@@ -1,24 +1,30 @@
-.button {
-    fill: rgb(255, 255, 255);
-    width: 32px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: 0.5s;
-    display: flex;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: rgb(66, 66, 66);
-  }
-  
-  .button:active {
-    background-color: rgb(252, 203, 67);
-  }
+.container {
+  transition: 0.5s;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  width: 32px;
+}
 
-  .caption {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    font-size: 0.75rem;
-  }
+.container:hover {
+  background-color: rgb(66, 66, 66);
+}
+
+.container:active {
+  background-color: rgb(252, 203, 67);
+}
+
+.button {
+  fill: rgb(255, 255, 255);
+}
+
+.caption {
+  text-align: center;
+  margin: 0;
+  font-size: 0.75rem;
+}
