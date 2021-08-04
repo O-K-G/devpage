@@ -1,7 +1,5 @@
 "use strict";
 import nodemailer from "nodemailer";
-import envConfig from "../../components/envConfig/envConfig";
-const cfg = envConfig();
 
 const sendForm = async (req, res) => {
   if (req.method === "POST") {
@@ -17,18 +15,18 @@ const sendForm = async (req, res) => {
     ) {
       try {
         let transporter = nodemailer.createTransport({
-          host: cfg.host,
-          port: cfg.port,
-          secure: cfg.secure, // true for 465, false for other ports
+          host: process.env.HOST,
+          port: process.env.PORT,
+          secure: process.env.SECURE,
           auth: {
-            user: cfg.user,
-            pass: cfg.password,
+            user: process.env.USER,
+            pass: process.env.PASSWORD,
           },
         });
 
         await transporter.sendMail({
-          from: cfg.from, // sender address (example: '"Mr. John" <john@someemailaccount.com>')
-          to: cfg.to, // list of receivers
+          from: process.env.FROM, // sender address (example: '"Mr. John" <john@someemailaccount.com>')
+          to: process.env.TO, // list of receivers
           subject: `Message from: ${req.body.fName} ${req.body.lName}`, // Subject line
           text: `Message from: ${req.body.fName} ${req.body.lName} (${
             req.body.email
