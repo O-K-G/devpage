@@ -8,12 +8,12 @@ const FormButton = (props) => {
   return (
     <div
       className={classes.formButtonContainer}
-      onClick={() => props.setOpen(true)}
     >
       <div
         className={classes.formButton}
         onMouseEnter={() => setMouseEnter(true)}
         onMouseLeave={() => setMouseEnter(false)}
+        onClick={() => props.setOpen(true)}
       >
         <Image
           src="/images/coffeeStain.webp" // Used under free for commercial use license with no attribution required from: https://pixabay.com/illustrations/old-paper-vintage-coffee-stain-2228749

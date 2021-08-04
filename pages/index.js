@@ -45,7 +45,6 @@ const Home = () => {
         <Section
           id={3}
           zIndex="3"
-          offsetValue="-0.05"
           backgroundColor="#202E38"
           paddingTop="10vh"
           offset={offset}

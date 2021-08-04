@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import classes from "./projects.module.css";
-import observer from "./UI/observer";
+import Observe from "./UI/observe";
 import ProjectCard from "./projectCard";
 
 const Projects = () => {
   const [isIntersecting, setIsIntersecting] = useState(false);
-  observer(isIntersecting, setIsIntersecting, "projectsTitle");
+  Observe(isIntersecting, setIsIntersecting, "projectsTitle");
   const style = {
     title: {
       transform: isIntersecting && "scaleY(1)",
@@ -21,10 +21,10 @@ const Projects = () => {
       </h1>
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
-        imageTitle="TITLE TITLE"
+        imageTitle="TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE"
         imageSrc="/images/polykick.webp"
         imageAlt="polykick.com"
-        description="TEXT TEXT"
+        description="TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXT"
         url="https://polykick.herokuapp.com"
       />
 

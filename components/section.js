@@ -1,9 +1,9 @@
 import classes from "./section.module.css";
 import React, { useState, useRef, useMemo } from "react";
-import getPosition from "./UI/getPosition";
+import GetPosition from "./UI/getPosition";
 import textScaler from "./UI/textScaler";
 import Image from "next/image";
-import parallax from "./UI/parallax";
+import Parallax from "./UI/parallax";
 import Table from "./table/table";
 import Projects from "./projects.js";
 import FormButton from "./formButton";
@@ -11,11 +11,11 @@ import FormButton from "./formButton";
 const Section = (props) => {
   const [textPosition, setTextPosition] = useState(false);
   const textScaleY = useRef(null);
-  props.id && getPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
+  props.id && GetPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
   useMemo(() => {
     return textScaler(textPosition, textScaleY); // Scales the text according to it's position on screen.
   }, [textPosition]);
-  parallax(props.offset, props.setOffset); // Passes the current and new offset parameters to the parallax function.
+  Parallax(props.offset, props.setOffset); // Passes the current and new offset parameters to the parallax function.
 
   // All the CSS values are located in the CSS file unless dynamic CSS values are needed here in the 'style' object.
 
@@ -86,12 +86,12 @@ const Section = (props) => {
             <Table offset={props.offset} offsetValue={props.offsetValue} />
           )
         );
-      }, [])}
+      }, [props.id, props.offset, props.offsetValue])}
 
       <div id={props.id}>
         {useMemo(() => {
           return props.id === 4 && <Projects />;
-        }, [])}
+        }, [props.id])}
         <div className={classes.textBackground} style={style.textBackground} />
         <h1 className={classes.title} style={style.title}>
           {props.title}
@@ -109,7 +109,7 @@ const Section = (props) => {
         )}
         {useMemo(() => {
           return props.id === 2 && <FormButton setOpen={props.setOpen} />;
-        }, [])}
+        }, [props.id, props.setOpen])}
       </div>
     </div>
   );

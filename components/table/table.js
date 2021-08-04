@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import classes from "./table.module.css";
 import TableGroup from "./tableGroup";
-import observer from "../UI/observer";
+import Observe from "../UI/observe";
 
 const Table = () => {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
-  observer(isIntersecting, setIsIntersecting, "tableTitle");
+  Observe(isIntersecting, setIsIntersecting, "tableTitle");
 
   const group1BackgroundColor =
     "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)";

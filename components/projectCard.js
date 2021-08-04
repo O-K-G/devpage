@@ -26,10 +26,10 @@ const ProjectCard = (props) => {
         </div>
         <a href={props.url} target="_blank" rel="noopener noreferrer">
           <div className={classes.cardBack} style={style.cardBack}>
-            <h1 className={classes.title}>{props.imageTitle.slice(0, 16)}</h1>
+            <h1 className={classes.title}>{props.imageTitle.slice(0, 15)}</h1>
             <p className={classes.text}>
               {props.description.length > 243
-                ? props.description.slice(0, 240) + "..."
+                ? props.description.slice(0, 73) + "..."
                 : props.description}
             </p>
           </div>
