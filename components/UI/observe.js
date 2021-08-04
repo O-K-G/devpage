@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const observer = (isIntersecting, setIsIntersecting, id) => {
+const Observe = (isIntersecting, setIsIntersecting, id) => {
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -18,7 +18,7 @@ const observer = (isIntersecting, setIsIntersecting, id) => {
     observer.observe(document.getElementById(id));
 
     return () => observer.disconnect();
-  }, [isIntersecting]);
+  }, [id, isIntersecting, setIsIntersecting]);
 };
 
-export default observer;
+export default Observe;

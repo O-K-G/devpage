@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import classes from "./projects.module.css";
-import observer from "./UI/observer";
+import Observe from "./UI/observe";
 import ProjectCard from "./projectCard";
 
 const Projects = () => {
   const [isIntersecting, setIsIntersecting] = useState(false);
-  observer(isIntersecting, setIsIntersecting, "projectsTitle");
+  Observe(isIntersecting, setIsIntersecting, "projectsTitle");
   const style = {
     title: {
       transform: isIntersecting && "scaleY(1)",

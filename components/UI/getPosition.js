@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const getPosition = (id, setTextPosition, textPosition) => {
+const GetPosition = (id, setTextPosition, textPosition) => {
   useEffect(() => {
     // Sets the initial text position once, after the page loads for the first time.
     !textPosition &&
@@ -24,7 +24,7 @@ const getPosition = (id, setTextPosition, textPosition) => {
     return () => {
       window.removeEventListener("scroll", getXY);
     };
-  }, []);
+  }, [id, setTextPosition, textPosition]);
 };
 
-export default getPosition;
+export default GetPosition;
