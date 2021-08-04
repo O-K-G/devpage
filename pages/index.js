@@ -84,7 +84,7 @@ const Home = () => {
       <footer>
       <div className="footerLogo" onClick={scrollToToP}>
       <Image
-            src="/images/cat.svg"
+            src="/images/cat.svg" // No copyright. https://openclipart.org/detail/267720/cat-black-1
             alt="cat"
             height="1080"
             width="1920"
