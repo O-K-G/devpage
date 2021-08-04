@@ -15,3 +15,10 @@
   .button:active {
     background-color: rgb(252, 203, 67);
   }
+
+  .caption {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 0.75rem;
+  }
