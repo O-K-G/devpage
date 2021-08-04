@@ -31,6 +31,7 @@
   background-image: linear-gradient(45deg, #eebb13, rgba(0, 0, 0, 1), #238ac5);
   padding: 16px;
   border-radius: 4px;
+  overflow: hidden;
 }
 
 .form:focus {
@@ -42,15 +43,14 @@
 }
 
 .input {
-  font-size: 2rem;
+  font-size: 1rem;
   color: #000000;
   border-radius: 4px;
-  padding: 8px;
+  padding: 8px 8px 8px 16px;
   resize: none;
   border: none;
   transition: 0.2s;
   width: 100%;
-  padding-left: 16px;
 }
 
 .input:focus {
@@ -73,8 +73,3 @@
   }
 }
 
-@media only screen and (max-width: 300px) {
-  .title {
-    font-size: 1rem;
-  }
-}
