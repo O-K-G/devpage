@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: #000000;
+  background-color: #000000;
 }
 
 * {
@@ -20,4 +20,31 @@ body {
 
 img {
   -webkit-user-drag: none;
+}
+
+footer {
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.footerLogo {
+  width: 10%;
+  cursor: pointer;
+}
+
+.footerText {
+  padding: 0;
+  margin: 0 0 1vh 0;
+  color: #555555;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 1024px) {
+  .footerLogo {
+    width: 25%;
+  }
 }
