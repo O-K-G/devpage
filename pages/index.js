@@ -24,9 +24,9 @@ const Home = () => {
       <main ref={myRef}>
         <Section
           id={1}
-          title="MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title"
-          subtitle="MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.tit"
-          smallSubtitle="MAIN TITLE  MAILEEE dfdd MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.t"
+          title="WEB DEVELOPMENT"
+          subtitle="DESIGN & INNOVATION"
+          smallSubtitle="I DON'T LIVE IN THIS CITY, BUT IT'S A NICE BACKGROUND, DON'T YOU THINK?"
           src="/images/city.webp" /* Used under free for commercial use license with no attribution required from: https://pixabay.com/photos/cityscape-light-zoom-city-urban-2008177 */
           alt="City"
           paddingTop="30vh"
@@ -38,9 +38,9 @@ const Home = () => {
         />
         <Section
           id={2}
-          title="MAIN TITLE"
-          subtitle="TEXT TEXT TEXT"
-          smallSubtitle="TEXT TEXT TEXT TEXT"
+          title="TONS OF COFFEE"
+          subtitle="FOR SMOOTH APPS"
+          smallSubtitle="I STUDIED ARCHAEOLOGY ONCE, IT COMES WITH THE COFFEE"
           src="/images/coffee.webp" /* Used under free for commercial use license with no attribution required from: https://www.pexels.com/photo/cup-of-coffee-spilled-on-black-table-1235717 */
           alt="Coffee"
           paddingTop="50vh"

@@ -17,6 +17,7 @@ const TableItem = (props) => {
     itemsText: {
       WebkitTextFillColor: !hover ? "transparent" : "#202E38",
       backgroundImage: props.background,
+      fontSize: props.itemsText?.length > 20 && "1rem"
     },
   };
 
