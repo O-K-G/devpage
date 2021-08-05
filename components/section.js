@@ -9,7 +9,7 @@ import Projects from "./projects.js";
 import FormButton from "./formButton";
 
 const Section = (props) => {
-  const [textPosition, setTextPosition] = useState(false);
+  const [textPosition, setTextPosition] = useState(40);
   const textScaleY = useRef(null);
   props.id && GetPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
   useMemo(() => {

@@ -23,7 +23,6 @@
 }
 
 .title, .subtitle, .smallSubtitle {
-  overflow: hidden;
   margin: 0;
   padding-left: 16px;
   display: none;
@@ -31,18 +30,15 @@
 
 .title {
   font-size: 10rem;
-  max-height: 10rem;
 }
 
 .subtitle {
   font-size: 8rem;
-  max-height: 8rem;
   font-weight: 300;
 }
 
 .smallSubtitle {
   font-size: 2.5rem;
-  height: auto;
   font-weight: 100;
 }
 

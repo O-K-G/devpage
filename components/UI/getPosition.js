@@ -4,12 +4,6 @@ import { useEffect } from "react";
 
 const GetPosition = (id, setTextPosition, textPosition) => {
   useEffect(() => {
-    // Sets the initial text position once, after the page loads for the first time.
-    !textPosition &&
-      setTimeout(() => {
-        setTextPosition(40), 1000;
-      });
-
     const getXY = () => {
       const topPosition = document
         .getElementById(id)
