@@ -24,9 +24,9 @@ const Home = () => {
       <main ref={myRef}>
         <Section
           id={1}
-          title="MAIN TITLE"
-          subtitle="TEXT TEXT TEXT"
-          smallSubtitle="TEXT TEXT TEXT TEXT"
+          title="MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title"
+          subtitle="MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.tit"
+          smallSubtitle="MAIN TITLE  MAILEEE dfdd MAINN TITLE MAIN TITLE props.title props.title props.title props.title MAIN TITLE MAIN TITLEEE MAINN TITLE MAIN TITLE props.title props.title props.t"
           src="/images/city.webp" /* Used under free for commercial use license with no attribution required from: https://pixabay.com/photos/cityscape-light-zoom-city-urban-2008177 */
           alt="City"
           paddingTop="30vh"

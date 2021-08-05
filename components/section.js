@@ -62,6 +62,7 @@ const Section = (props) => {
         `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
       textAlign: props.id === 2 && "right",
       paddingRight: props.id === 2 && "16px",
+      textAlign: props.smallSubtitle?.length >= 250 && "justify",
     },
   };
 
@@ -93,13 +94,15 @@ const Section = (props) => {
           return props.id === 4 && <Projects />;
         }, [props.id])}
         <div className={classes.textBackground} style={style.textBackground} />
-        <h1 className={classes.title} style={style.title}>
-          {props.title}
-        </h1>
+        {props.title && (
+          <h1 className={classes.title} style={style.title}>
+            {props.title.slice(0, 22)}
+          </h1>
+        )}
 
         {props.subtitle && (
           <h3 className={classes.subtitle} style={style.subtitle}>
-            {props.subtitle}
+            {props.subtitle.slice(0, 28)}
           </h3>
         )}
         {props.smallSubtitle && (
