@@ -66,7 +66,7 @@ const Section = (props) => {
   };
 
   return (
-    <div className={classes.body} style={style.body}>
+    <section className={classes.body} style={style.body}>
       {props.src && (
         <div className={classes.imageBackground} style={style.imageBackground}>
           <Image
@@ -111,7 +111,7 @@ const Section = (props) => {
           return props.id === 2 && <FormButton setOpen={props.setOpen} />;
         }, [props.id, props.setOpen])}
       </div>
-    </div>
+    </section>
   );
 };
 
