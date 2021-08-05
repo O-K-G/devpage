@@ -1,5 +1,5 @@
 import classes from "./section.module.css";
-import React, { useState, useRef, useMemo } from "react";
+import React, { useState, useRef, useMemo, useEffect } from "react";
 import GetPosition from "./UI/getPosition";
 import textScaler from "./UI/textScaler";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import Projects from "./projects.js";
 import FormButton from "./formButton";
 
 const Section = (props) => {
-  const [textPosition, setTextPosition] = useState(40);
+  const [textPosition, setTextPosition] = useState(false);
   const textScaleY = useRef(null);
   props.id && GetPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
   useMemo(() => {
@@ -18,6 +18,14 @@ const Section = (props) => {
   Parallax(props.offset, props.setOffset); // Passes the current and new offset parameters to the parallax function.
 
   // All the CSS values are located in the CSS file unless dynamic CSS values are needed here in the 'style' object.
+
+  // This will delay the appearance of the text on initial page load.
+  // It should be kept separate from other dependencies, so it won't start more than once.
+  useEffect(() => {
+    setTimeout(() => {
+      setTextPosition(40);
+    }, 1000);
+  }, [setTextPosition]);
 
   const style = {
     body: {
