@@ -62,7 +62,6 @@ const Section = (props) => {
         `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
       textAlign: props.id === 2 && "right",
       paddingRight: props.id === 2 && "16px",
-      textAlign: props.smallSubtitle?.length >= 250 && "justify",
     },
   };
 
