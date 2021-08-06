@@ -2,6 +2,11 @@
 import nodemailer from "nodemailer";
 
 const sendForm = async (req, res) => {
+  const ip =
+    req.headers["x-forwarded-for"] ||
+    "".split(",")[0] ||
+    req.connection.remoteAddress;
+
   if (req.method === "POST") {
     if (
       req.body.message.length <= 300 &&
@@ -30,18 +35,16 @@ const sendForm = async (req, res) => {
           subject: `Message from: ${req.body.fName} ${req.body.lName}`, // Subject line
           text: `Message from: ${req.body.fName} ${req.body.lName} (${
             req.body.email
-          }) , sent at: ${new Date().toISOString()} : ${req.body.message}`, // plain text body
+          }) , sent at: ${new Date().toString()} : ${req.body.message}`, // plain text body
           html: `<p>Message from: <b dir=${req.body.rtl ? "rtl" : "ltr"}>${
             req.body.fName
           } ${req.body.lName}</b> (<b>${
             req.body.email
-          }</b>), sent at <b>${new Date().toISOString()}</b> : </p><p dir=${
+          }</b>), sent at <b>${new Date().toString()}</b> : </p><p dir=${
             req.body.rtl ? "rtl" : "ltr"
           }>${
             req.body.message
-          }</p><p> - - - - - - -</p><b>Technical message request data: </b><p>${JSON.stringify(
-            req.headers
-          )}</p>`, // html body
+          }</p><p> - - - - - - -</p><b>This message was sent from the IP address (without certainty): </b><p style="color: #606091">${ip}</p>`, // html body
         });
 
         res.status(200).send();
