@@ -27,10 +27,12 @@ const sendForm = (req, res) => {
         },
       });
 
-      // Try to retrieve the client's IP address.
+      // Try and retrieve the client's IP address.
 
-      const ip = req.headers["x-forwarded-for"] || "".split(",")[0] ||
-      req.connection.remoteAddress;
+      const ip =
+        req.headers["x-forwarded-for"] ||
+        "".split(",")[0] ||
+        req.connection.remoteAddress;
 
       // Different email responses according to IP address being found or not found.
 
@@ -44,21 +46,21 @@ const sendForm = (req, res) => {
       // Fetch geodata according to the ip address and create the email message.
 
       const fetchData = async () => {
+        let data = false;
         const getGeoData = await fetch(
           `http://api.ipstack.com/${ip ? ip : undefined}?access_key=${
             process.env.IPSTACK_API_KEY
-          }`,
+          }&fields=city,region_name,country_name,zip`,
           {
             method: "GET",
           }
         ).catch((err) => console.log(err));
 
+        getGeoData && (data = await getGeoData.json());
+
         // If geodata was received successfully, proceed.
 
-        if (getGeoData) {
-          const { city, region_name, country_name, zip } =
-            await getGeoData.json();
-
+        if (data.success === undefined) {
           // Email options with the rest of the message.
 
           const options = {
@@ -84,10 +86,10 @@ const sendForm = (req, res) => {
                         <div style="margin-top: 4px">
                         <p style="display: inline">
                         ${
-                          city
+                          data.city
                             ? `<b style="color: #000000">Approximated message location of origin (without certainty): </b>
                           </p>
-                          <p style="display: inline; color: #ffffff">${city}, ${region_name}, ${country_name} ${zip}</p>`
+                          <p style="display: inline; color: #ffffff">${data.city}, ${data.region_name}, ${data.country_name} ${data.zip}</p>`
                             : `<p style="color: #000000">No message approximated location of origin found.</p>`
                         }</div>
                 </div>`, // html body
