@@ -5,8 +5,7 @@
   align-items: flex-start;
   width: 100%;
   height: auto;
-  position: absolute;
-  top: 0;
+  position: relative;
   padding-top: 20vh;
 }
 
@@ -28,7 +27,6 @@
 @media only screen and (max-width: 1024px) {
   .container {
     flex-flow: column wrap;
-    justify-content: space-around;
     align-items: center;
   }
 }

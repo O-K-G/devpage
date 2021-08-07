@@ -5,41 +5,36 @@
     align-items: center;
     align-content: center;
     padding: 0;
-    margin: 0 0 20vh 0;
     list-style-type: none;
-    width: 8%;
+    width: 9%;
   }
 
   @media only screen and (max-width: 1800px) {
     .groupsContainer {
       width: 6%;
-      margin: 0 0 30vh 0;
     }
   }
 
   @media only screen and (max-width: 1600px) {
     .groupsContainer {
       width: 7%;
-      margin: 0 0 21vh 0;
     }
   }
 
   @media only screen and (max-width: 1350px) {
     .groupsContainer {
-      width: 8%;
+      width: 11%;
     }
   }
 
   @media only screen and (max-width: 900px) {
     .groupsContainer {
       width: 33.3%;
-      margin: 0 0 10vh 0;
     }
   }
 
-  @media only screen and (max-width: 440px) {
+  @media only screen and (max-width: 500px) {
     .groupsContainer {
       width: 50%;
-      margin: 0 0 8vh 0;
     }
   }

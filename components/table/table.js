@@ -8,6 +8,8 @@ const Table = () => {
 
   Observe(isIntersecting, setIsIntersecting, "tableTitle");
 
+  const titlesBackground =
+    "linear-gradient(to bottom right, #ffffff 0%, #ffc171 100%)";
   const group1BackgroundColor =
     "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)";
   const group2BackgroundColor =
@@ -26,8 +28,6 @@ const Table = () => {
     "linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)";
   const group9BackgroundColor =
     "linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)";
-  const group10BackgroundColor =
-    "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)";
 
   const style = {
     title: {
@@ -37,208 +37,99 @@ const Table = () => {
   return (
     <div className={classes.mainContainer}>
       <h1 className={classes.title} style={style.title} id="tableTitle">
-        TITLE TITLE TITLE TITLETITLETITLETITLE TITLE TITLE TITLETITLETITLE
-        TITLETITLE TITLETITLETITLE TITLETITLE
+        MY STACK
       </h1>
       <TableGroup
-        groupTitleBackground={group1BackgroundColor}
-        groupTitleText="GROUP 1"
+        groupTitleBackground={titlesBackground}
+        groupTitleText="CORE"
         itemBackground1={group1BackgroundColor}
-        itemsTitle1="TITLE 1"
-        itemsText1="TEXT 1"
-        itemsSubText1="SUBTEXT 1"
+        itemsText1="JavaScript"
         itemBackground2={group1BackgroundColor}
-        itemsTitle2="TITLE 2"
-        itemsText2="TEXT 2"
-        itemsSubText2="SUBTEXT 2"
+        itemsText2="HTML"
         itemBackground3={group1BackgroundColor}
-        itemsTitle3="TITLE 3"
-        itemsText3="TEXT 3"
-        itemsSubText3="SUBTEXT 3"
-        itemBackground4={group1BackgroundColor}
-        itemsTitle4="TITLE 4"
-        itemsText4="TEXT 4"
-        itemsSubText4="SUBTEXT 4"
+        itemsText3="CSS"
       />
       <TableGroup
-        groupTitleBackground={group2BackgroundColor}
-        groupTitleText="GROUP 2"
+        groupTitleBackground={titlesBackground}
+        groupTitleText="FRONTEND"
         itemBackground1={group2BackgroundColor}
-        itemsTitle1="TITLE 1"
-        itemsText1="TEXT 1"
-        itemsSubText1="SUBTEXT 1"
+        itemsText1="React.js"
         itemBackground2={group2BackgroundColor}
-        itemsTitle2="TITLE 2"
-        itemsText2="TEXT 2"
-        itemsSubText2="SUBTEXT 2"
-        itemBackground3={group2BackgroundColor}
-        itemsTitle3="TITLE 3"
-        itemsText3="TEXT 3"
-        itemsSubText3="SUBTEXT 3"
-        itemBackground4={group2BackgroundColor}
-        itemsTitle4="TITLE 4"
-        itemsText4="TEXT 4"
-        itemsSubText4="SUBTEXT 4"
+        itemsText2="Next.js"
       />
       <TableGroup
-        groupTitleBackground={group3BackgroundColor}
-        groupTitleText="GROUP 3"
+        groupTitleBackground={titlesBackground}
+        groupTitleText="BACKEND"
         itemBackground1={group3BackgroundColor}
-        itemsTitle1="TITLE 1"
-        itemsText1="TEXT 1"
-        itemsSubText1="SUBTEXT 1"
+        itemsText1="Node.js"
         itemBackground2={group3BackgroundColor}
-        itemsTitle2="TITLE 2"
-        itemsText2="TEXT 2"
-        itemsSubText2="SUBTEXT 2"
+        itemsText2="Express.js"
         itemBackground3={group3BackgroundColor}
-        itemsTitle3="TITLE 3"
-        itemsText3="TEXT 3"
-        itemsSubText3="SUBTEXT 3"
-        itemBackground4={group3BackgroundColor}
-        itemsTitle4="TITLE 4"
-        itemsText4="TEXT 4"
-        itemsSubText4="SUBTEXT 4"
+        itemsText3="Passport.js"
       />
       <TableGroup
-        groupTitleBackground={group4BackgroundColor}
-        groupTitleText="GROUP 4"
+        groupTitleBackground={titlesBackground}
+        groupTitleText="DESIGN"
         itemBackground1={group4BackgroundColor}
-        itemsTitle1="TITLE 1"
-        itemsText1="TEXT 1"
-        itemsSubText1="SUBTEXT 1"
+        itemsText1="Material UI"
         itemBackground2={group4BackgroundColor}
-        itemsTitle2="TITLE 2"
-        itemsText2="TEXT 2"
-        itemsSubText2="SUBTEXT 2"
-        itemBackground3={group4BackgroundColor}
-        itemsTitle3="TITLE 3"
-        itemsText3="TEXT 3"
-        itemsSubText3="SUBTEXT 3"
-        itemBackground4={group4BackgroundColor}
-        itemsTitle4="TITLE 4"
-        itemsText4="TEXT 4"
-        itemsSubText4="SUBTEXT 4"
+        itemsText2="Bootstrap"
       />
       <TableGroup
-        groupTitleBackground={group5BackgroundColor}
-        groupTitleText="GROUP 5"
+        groupTitleBackground={titlesBackground}
+        groupTitleText="DATABASES"
         itemBackground1={group5BackgroundColor}
-        itemsTitle1="TITLE 1"
-        itemsText1="TEXT 1"
-        itemsSubText1="SUBTEXT 1"
+        itemsText1="MongoDB"
         itemBackground2={group5BackgroundColor}
-        itemsTitle2="TITLE 2"
-        itemsText2="TEXT 2"
-        itemsSubText2="SUBTEXT 2"
+        itemsText2="MySQL"
         itemBackground3={group5BackgroundColor}
-        itemsTitle3="TITLE 3"
-        itemsText3="TEXT 3"
-        itemsSubText3="SUBTEXT 3"
+        itemsText3="Google Cloud"
         itemBackground4={group5BackgroundColor}
-        itemsTitle4="TITLE 4"
-        itemsText4="TEXT 4"
-        itemsSubText4="SUBTEXT 4"
+        itemsText4="SQL/NoSQL"
       />
       <TableGroup
-        groupTitleBackground={group6BackgroundColor}
-        groupTitleText="GROUP 6"
+        groupTitleBackground={titlesBackground}
+        groupTitleText="APIs"
         itemBackground1={group6BackgroundColor}
-        itemsTitle1="TITLE 1"
-        itemsText1="TEXT 1"
-        itemsSubText1="SUBTEXT 1"
+        itemsText1="RESTful API"
         itemBackground2={group6BackgroundColor}
-        itemsTitle2="TITLE 2"
-        itemsText2="TEXT 2"
-        itemsSubText2="SUBTEXT 2"
-        itemBackground3={group6BackgroundColor}
-        itemsTitle3="TITLE 3"
-        itemsText3="TEXT 3"
-        itemsSubText3="SUBTEXT 3"
-        itemBackground4={group6BackgroundColor}
-        itemsTitle4="TITLE 4"
-        itemsText4="TEXT 4"
-        itemsSubText4="SUBTEXT 4"
+        itemsText2="JSON"
       />
       <TableGroup
-        groupTitleBackground={group7BackgroundColor}
-        groupTitleText="GROUP 7"
+        groupTitleBackground={titlesBackground}
+        groupTitleText="DEV TOOLS"
         itemBackground1={group7BackgroundColor}
-        itemsTitle1="TITLE 1"
-        itemsText1="TEXT 1"
-        itemsSubText1="SUBTEXT 1"
+        itemsText1="NPM"
         itemBackground2={group7BackgroundColor}
-        itemsTitle2="TITLE 2"
-        itemsText2="TEXT 2"
-        itemsSubText2="SUBTEXT 2"
+        itemsText2="Git"
         itemBackground3={group7BackgroundColor}
-        itemsTitle3="TITLE 3"
-        itemsText3="TEXT 3"
-        itemsSubText3="SUBTEXT 3"
+        itemsText3="GitHub / GitLab / BitBucket"
         itemBackground4={group7BackgroundColor}
-        itemsTitle4="TITLE 4"
-        itemsText4="TEXT 4"
-        itemsSubText4="SUBTEXT 4"
+        itemsText4="DOCKER"
       />
       <TableGroup
-        groupTitleBackground={group8BackgroundColor}
-        groupTitleText="GROUP 8"
+        groupTitleBackground={titlesBackground}
+        groupTitleText="STYLE"
         itemBackground1={group8BackgroundColor}
-        itemsTitle1="TITLE 1"
-        itemsText1="TEXT 1"
-        itemsSubText1="SUBTEXT 1"
+        itemsText1="Reusuable Concise Code"
         itemBackground2={group8BackgroundColor}
-        itemsTitle2="TITLE 2"
-        itemsText2="TEXT 2"
-        itemsSubText2="SUBTEXT 2"
+        itemsText2="Async JavaScript"
         itemBackground3={group8BackgroundColor}
-        itemsTitle3="TITLE 3"
-        itemsText3="TEXT 3"
-        itemsSubText3="SUBTEXT 3"
+        itemsText3="Functional Programming"
         itemBackground4={group8BackgroundColor}
-        itemsTitle4="TITLE 4"
-        itemsText4="TEXT 4"
-        itemsSubText4="SUBTEXT 4"
+        itemsText4="Object Oriented Programming"
       />
       <TableGroup
-        groupTitleBackground={group9BackgroundColor}
-        groupTitleText="GROUP 9"
+        groupTitleBackground={titlesBackground}
+        groupTitleText="EXTRAS"
         itemBackground1={group9BackgroundColor}
-        itemsTitle1="TITLE 1"
-        itemsText1="TEXT 1"
-        itemsSubText1="SUBTEXT 1"
+        itemsText1="jQuery"
         itemBackground2={group9BackgroundColor}
-        itemsTitle2="TITLE 2"
-        itemsText2="TEXT 2"
-        itemsSubText2="SUBTEXT 2"
+        itemsText2="EJS"
         itemBackground3={group9BackgroundColor}
-        itemsTitle3="TITLE 3"
-        itemsText3="TEXT 3"
-        itemsSubText3="SUBTEXT 3"
+        itemsText3="Adobe Illustrator / Photoshop"
         itemBackground4={group9BackgroundColor}
-        itemsTitle4="TITLE 4"
-        itemsText4="TEXT 4"
-        itemsSubText4="SUBTEXT 4"
-      />
-      <TableGroup
-        groupTitleBackground={group10BackgroundColor}
-        groupTitleText="GROUP 10"
-        itemBackground1={group10BackgroundColor}
-        itemsTitle1="TITLE 1"
-        itemsText1="TEXT 1"
-        itemsSubText1="SUBTEXT 1"
-        itemBackground2={group10BackgroundColor}
-        itemsTitle2="TITLE 2"
-        itemsText2="TEXT 2"
-        itemsSubText2="SUBTEXT 2"
-        itemBackground3={group10BackgroundColor}
-        itemsTitle3="TITLE 3"
-        itemsText3="TEXT 3"
-        itemsSubText3="SUBTEXT 3"
-        itemBackground4={group10BackgroundColor}
-        itemsTitle4="TITLE 4"
-        itemsText4="TEXT 4"
-        itemsSubText4="SUBTEXT 4"
+        itemsText4="Krita / Inkscape"
       />
     </div>
   );

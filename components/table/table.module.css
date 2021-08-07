@@ -7,8 +7,8 @@
   margin-top: 25vh;
   width: 100%;
   height: auto;
-  margin-bottom: 20vh;
   overflow: hidden;
+  padding-bottom: 50vh;
 }
 
 .title {
@@ -26,20 +26,8 @@
   max-height: 6rem; /* Font size + 1rem. */
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 500px) {
   .mainContainer {
-    margin-bottom: 30vh;
-  }
-}
-
-@media only screen and (max-width: 440px) {
-  .mainContainer {
-    margin-bottom: 34vh;
-  }
-}
-
-@media only screen and (max-width: 300px) {
-  .mainContainer {
-    margin-bottom: 20vh;
+    padding-bottom: 55vh;
   }
 }

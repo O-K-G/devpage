@@ -1,5 +1,5 @@
 import classes from "./section.module.css";
-import React, { useState, useRef, useMemo } from "react";
+import React, { useState, useRef, useMemo, useEffect } from "react";
 import GetPosition from "./UI/getPosition";
 import textScaler from "./UI/textScaler";
 import Image from "next/image";
@@ -18,6 +18,14 @@ const Section = (props) => {
   Parallax(props.offset, props.setOffset); // Passes the current and new offset parameters to the parallax function.
 
   // All the CSS values are located in the CSS file unless dynamic CSS values are needed here in the 'style' object.
+
+  // This will delay the appearance of the text on initial page load.
+  // It should be kept separate from other dependencies, so it won't start more than once.
+  useEffect(() => {
+    setTimeout(() => {
+      setTextPosition(40);
+    }, 1000);
+  }, [setTextPosition]);
 
   const style = {
     body: {
@@ -66,7 +74,7 @@ const Section = (props) => {
   };
 
   return (
-    <div className={classes.body} style={style.body}>
+    <section className={classes.body} style={style.body}>
       {props.src && (
         <div className={classes.imageBackground} style={style.imageBackground}>
           <Image
@@ -93,13 +101,15 @@ const Section = (props) => {
           return props.id === 4 && <Projects />;
         }, [props.id])}
         <div className={classes.textBackground} style={style.textBackground} />
-        <h1 className={classes.title} style={style.title}>
-          {props.title}
-        </h1>
+        {props.title && (
+          <h1 className={classes.title} style={style.title}>
+            {props.title.slice(0, 22)}
+          </h1>
+        )}
 
         {props.subtitle && (
           <h3 className={classes.subtitle} style={style.subtitle}>
-            {props.subtitle}
+            {props.subtitle.slice(0, 28)}
           </h3>
         )}
         {props.smallSubtitle && (
@@ -111,7 +121,7 @@ const Section = (props) => {
           return props.id === 2 && <FormButton setOpen={props.setOpen} />;
         }, [props.id, props.setOpen])}
       </div>
-    </div>
+    </section>
   );
 };
 

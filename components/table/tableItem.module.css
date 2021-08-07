@@ -1,31 +1,31 @@
-.items {
-  flex: 1 1 1rem;
-  margin: 18px;
-  min-height: 90px;
-  min-width: 140px;
+.items, .textBackground {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   align-content: center;
-  overflow: hidden;
   transition: 0.5s;
+}
+
+.items {
+  flex: 1 1 1rem;
+  margin: 16px;
+  min-height: 90px;
+  min-width: 155px;
+  overflow: hidden;
 }
 
 .textBackground {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  min-height: 75px;
-  min-width: 135px;
-  transition: 0.5s;
+  min-height: 85px;
+  min-width: 150px;
+  padding: 8px;
 }
 
 .itemsText {
+  max-height: 95%;
+  max-width: 95%;
   display: block;
-  position: relative;
+  position: absolute;
   text-align: center;
   background-clip: text;
   -webkit-background-clip: text;
@@ -47,26 +47,25 @@
   }
 
   .itemsText {
-    font: 700 1rem "Poppins", sans-serif;
+    font: 700 0.6rem "Poppins", sans-serif !important;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .items {
-    min-height: 40px;
-    min-width: 70px;
-    margin: 5px;
+    min-height: 65px;
+    min-width: 100px;
   }
 
   .textBackground {
-    min-height: 35px;
-    height: 35px;
-    min-width: 65px;
-    width: 65px;
+    min-height: 60px;
+    height: 60px;
+    min-width: 95px;
+    width: 95px;
   }
 
   .itemsText {
-    font: 700 0.7rem "Poppins", sans-serif;
+    font: 700 0.8rem "Poppins", sans-serif !important;
   }
 }
 
@@ -74,7 +73,6 @@
   .items {
     min-height: 85px;
     min-width: 140px;
-    margin: 5px;
   }
 
   .textBackground {
@@ -83,23 +81,22 @@
   }
 
   .itemsText {
-    font: 700 1.5rem "Poppins", sans-serif;
+    font: 700 1rem "Poppins", sans-serif !important;
   }
 }
 
 @media only screen and (max-width: 300px) {
   .items {
-    min-height: 45px;
-    min-width: 70px;
-    margin: 5px;
+    min-height: 70px;
+    min-width: 115px;
   }
 
   .textBackground {
-    min-height: 40px;
-    min-width: 35px;
+    min-height: 60px;
+    min-width: 105px;
   }
 
   .itemsText {
-    font: 700 0.7rem "Poppins", sans-serif;
+    font: 700 0.6rem "Poppins", sans-serif !important;
   }
 }
