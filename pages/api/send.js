@@ -15,7 +15,7 @@ const sendForm = (req, res) => {
       req.body.lName.length > 0 &&
       req.body.email.length > 0
     ) {
-      // Setup mail account variables.
+      // Configure mail account variables.
 
       let transporter = nodemailer.createTransport({
         host: process.env.HOST,
@@ -34,117 +34,77 @@ const sendForm = (req, res) => {
         "".split(",")[0] ||
         req.connection.remoteAddress;
 
-      // Different email responses according to IP address being found or not found.
-
-      const iPStatusMessage = ip
-        ? `<p style="display: inline">
-                <b style="color: #000000">This message was sent from the IP address (without certainty): </b>
-            </p>
-            <p style="display: inline; color: #ffffff">${ip}</p>`
-        : `<p style="color: #000000">Attempt to retrieve the origin IP address of the message failed.</p>`;
-
-      // Fetch geodata according to the ip address and create the email message.
+      // Fetch geodata according to the ip address.
 
       const fetchData = async () => {
-        let data = false;
+        // ipstack.com's api returns the "success" object only when there's an error, and it's "success: false".
+        let data = false; // Initially set as false, to prevent code breaks when no data is fetched.
         const getGeoData = await fetch(
-          `http://api.ipstack.com/${ip ? ip : undefined}?access_key=${
+          `http://api.ipstack.com/${
+            ip ? ip : undefined // Returning "undefined" this way prevents code breaks if no IP address value is returned.
+          }?access_key=${
             process.env.IPSTACK_API_KEY
           }&fields=city,region_name,country_name,zip`,
           {
             method: "GET",
           }
-        ).catch((err) => console.log(err));
+        ).catch((err) => console.log(err)); // Logs general errors.
 
-        getGeoData && (data = await getGeoData.json());
-
+        getGeoData && (data = await getGeoData.json()); // First checks if there even is an object fetched, to prevent code breaks.
+        data.success === false && console.log(data); // Logs ipstack.com's error messages.
         // If geodata was received successfully, proceed.
 
-        if (data.success === undefined) {
-          // Email options with the rest of the message.
+        // Email options with the rest of the message.
 
-          const options = {
-            from: process.env.FROM, // sender address (example: '"Mr. John" <john@someemailaccount.com>')
-            to: process.env.TO, // list of receivers
-            subject: `Message from: ${req.body.fName} ${req.body.lName}`, // Subject line
-            text: `Message from: ${req.body.fName} ${req.body.lName} (${
-              req.body.email
-            }) , sent at: ${new Date().toString()} : ${req.body.message}`, // plain text body
-            html: `<p>Message from: <b dir=${req.body.rtl ? "rtl" : "ltr"}>${
-              req.body.fName
-            } ${req.body.lName}</b> (<b>${
-              req.body.email
-            }</b>), sent at <b>${new Date().toString()}</b> : </p><p dir=${
-              req.body.rtl ? "rtl" : "ltr"
-            }>${req.body.message}</p><div
+        const options = {
+          from: process.env.FROM, // sender address (example: '"Mr. John" <john@someemailaccount.com>')
+          to: process.env.TO, // list of receivers
+          subject: `Message from: ${req.body.fName} ${req.body.lName}`, // Subject line
+          text: `Message from: ${req.body.fName} ${req.body.lName} (${
+            req.body.email
+          }) , sent at: ${new Date().toString()} : ${req.body.message}`, // plain text body
+          html: `<p>Message from: <b dir=${req.body.rtl ? "rtl" : "ltr"}>${ // html body
+            req.body.fName
+          } ${req.body.lName}</b> (<b>${
+            req.body.email
+          }</b>), sent at <b>${new Date().toString()}</b> : </p><p dir=${
+            req.body.rtl ? "rtl" : "ltr"
+          }>${req.body.message}</p><div
                         style="padding: 4px;
                         border: 1px solid black;
                         border-radius: 4px;
                         background-image: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)"
                   >
-                        <div>${iPStatusMessage}</div>
+                        <div>${
+                          ip // Determines what message will appear if the IP address is found, or if it's not found. Example just for convenience: "ip ? do this : do that".
+                            ? `<p style="display: inline">
+                                  <b style="color: #000000">This message was sent from the IP address (without certainty): </b>
+                              </p>
+                              <p style="display: inline; color: #ffffff">${ip}</p>`
+                            : `<p style="color: #000000">Attempt to retrieve the origin IP address of the message failed.</p>`
+                        }</div>
                         <div style="margin-top: 4px">
                         <p style="display: inline">
                         ${
-                          data.city
+                          data.success === undefined && data.city // If no errors are found and the "city" field is received (as a test), display location data. Otherwise, don't display location data.
                             ? `<b style="color: #000000">Approximated message location of origin (without certainty): </b>
                           </p>
                           <p style="display: inline; color: #ffffff">${data.city}, ${data.region_name}, ${data.country_name} ${data.zip}</p>`
                             : `<p style="color: #000000">No message approximated location of origin found.</p>`
                         }</div>
-                </div>`, // html body
-          };
+                </div>`,
+        };
 
-          // Send the message and send a response to the client.
+        // Send the message and send a response to the client.
 
-          transporter.sendMail(options, (err, info) => {
-            if (err) {
-              console.log(err);
-              res.status(500).send();
-            } else if (info) {
-              res.status(200).send();
-            }
-          });
-        } else {
-          // Error handling if fetch() can't reach the URL or no geodata received.
-
-          // Email options with the rest of the message.
-
-          const options = {
-            from: process.env.FROM, // sender address (example: '"Mr. John" <john@someemailaccount.com>')
-            to: process.env.TO, // list of receivers
-            subject: `Message from: ${req.body.fName} ${req.body.lName}`, // Subject line
-            text: `Message from: ${req.body.fName} ${req.body.lName} (${
-              req.body.email
-            }) , sent at: ${new Date().toString()} : ${req.body.message}`, // plain text body
-            html: `<p>Message from: <b dir=${req.body.rtl ? "rtl" : "ltr"}>${
-              req.body.fName
-            } ${req.body.lName}</b> (<b>${
-              req.body.email
-            }</b>), sent at <b>${new Date().toString()}</b> : </p><p dir=${
-              req.body.rtl ? "rtl" : "ltr"
-            }>${req.body.message}</p><div
-                  style="padding: 4px;
-                  border: 1px solid black;
-                  border-radius: 4px;
-                  background-image: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)"
-            >
-                  <div>${iPStatusMessage}</div>
-                  <div><p style="color: #000000">No message approximated location of origin found.</p></div>
-          </div>`, // html body
-          };
-
-          // Send the message and send a response to the client.
-
-          transporter.sendMail(options, (err, info) => {
-            if (err) {
-              console.log(err);
-              res.status(500).send();
-            } else if (info) {
-              res.status(200).send();
-            }
-          });
-        }
+        transporter.sendMail(options, (err, info) => {
+          if (err) {
+            console.log(err);
+            res.status(500).send();
+          } else if (info) {
+            res.status(200).send();
+          }
+        });
       };
       fetchData();
     } else {
