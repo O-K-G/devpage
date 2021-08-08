@@ -1,4 +1,10 @@
 .container {
+  padding-top: 20vh;
+  width: 100%;
+}
+
+.innerContainer {
+  margin-top: 10vh;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -6,7 +12,6 @@
   width: 100%;
   height: auto;
   position: relative;
-  padding-top: 20vh;
 }
 
 .title {
@@ -16,17 +21,23 @@
   top: 0;
   display: inline-block;
   text-align: center;
-  font-size: 5rem;
+  font-size: 5vw;
   transform: scaleY(0);
   overflow: hidden;
-  max-height: 6rem; /* Font size + 1rem; */
   width: 100%;
   padding: 0 16px 0 16px;
 }
 
+@media only screen and (max-width: 1300px) {
+  .innerContainer {
+    margin-top: 5vh;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
-  .container {
+  .innerContainer {
     flex-flow: column wrap;
     align-items: center;
+    margin-top: 1vh;
   }
 }

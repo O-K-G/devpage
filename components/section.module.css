@@ -29,16 +29,16 @@
 }
 
 .title {
-  font-size: 10rem;
+  font-size: 8vw;
 }
 
 .subtitle {
-  font-size: 8rem;
+  font-size: 6vw;
   font-weight: 300;
 }
 
 .smallSubtitle {
-  font-size: 2.5rem;
+  font-size: 2.1vw;
   font-weight: 100;
 }
 
@@ -59,30 +59,10 @@
     height: 80%;
     transform: skewY(45deg);
   }
-
-  .title {
-    font-size: 6rem;
-  }
-
-  .subtitle {
-    font-size: 4rem;
-  }
-
-  .smallSubtitle {
-    font-size: 2rem;
-  }
 }
 
-@media only screen and (max-width: 600px) {
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .subtitle {
-    font-size: 2rem;
-  }
-
+@media only screen and (max-width: 400px) {
   .smallSubtitle {
-    font-size: 1rem;
+    font-size: 3.5vw;
   }
 }

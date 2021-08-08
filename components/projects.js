@@ -15,10 +15,9 @@ const Projects = () => {
   return (
     <div className={classes.container}>
       <h1 className={classes.title} style={style.title} id="projectsTitle">
-        Text text text text text text text text Text text text text text text
-        text textText text text text text text text textText text text text text
-        text text textText text text text text text text text
+        SOME PAST PROJECTS
       </h1>
+      <div className={classes.innerContainer}>
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
         imageTitle="TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE"
@@ -52,6 +51,7 @@ const Projects = () => {
         imageAlt="Event Space Station"
         description="TEXT TEXT"
       />
+      </div>
     </div>
   );
 };
