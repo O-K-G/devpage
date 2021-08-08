@@ -96,7 +96,7 @@ const Form = (props) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(value),
-      });
+      }).catch((err) => console.log(err));
 
       // If the message was sent successfully.
 

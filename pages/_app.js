@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }) => {
       method: "POST",
       mode: "cors",
       credentials: "include",
-    });
+    }).catch((err) => console.log(err));
   }, []);
 
   return (
