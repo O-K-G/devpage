@@ -38,6 +38,6 @@
   .innerContainer {
     flex-flow: column wrap;
     align-items: center;
-    margin-top: 1vh;
+    margin-top: 0;
   }
 }

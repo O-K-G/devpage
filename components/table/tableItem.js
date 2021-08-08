@@ -17,7 +17,7 @@ const TableItem = (props) => {
     itemsText: {
       WebkitTextFillColor: !hover ? "transparent" : "#202E38",
       backgroundImage: props.background,
-      fontSize: props.itemsText?.length > 20 && "1rem"
+     // fontSize: props.itemsText?.length > 20 && "0.8vw"
     },
   };
 
@@ -29,7 +29,7 @@ const TableItem = (props) => {
       style={style.items}
     >
       <div className={classes.textBackground} style={style.textBackground}>
-        <p className={classes.itemsText} style={style.itemsText}>
+        <p className={props.itemsText?.length > 20 ? classes.extraText : classes.itemsText} style={style.itemsText}>
           {props.itemsText}
         </p>
       </div>
