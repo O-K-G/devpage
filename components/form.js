@@ -88,72 +88,67 @@ const Form = (props) => {
         backgroundImage:
           "linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)",
       });
-      try {
-        const response = await fetch("/api/send", {
-          method: "POST",
-          mode: "cors",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(value),
+      const response = await fetch("/api/send", {
+        method: "POST",
+        mode: "cors",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(value),
+      });
+
+      // If the message was sent successfully.
+
+      if (response.status === 200) {
+        props.setSentStatus({
+          sent: true,
+          message:
+            "Thank you, your message was sent successfully and I will reply soon.",
+          backgroundImage:
+            "linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)",
         });
-        await response;
-
-        // If the message was sent successfully.
-
-        if (response.status === 200) {
-          props.setSentStatus({
-            sent: true,
-            message:
-              "Thank you, your message was sent successfully and I will reply soon.",
-            backgroundImage:
-              "linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)",
-          });
-          setValue((prevValue) => ({
-            ...prevValue,
-            fName: "",
-            lName: "",
-            email: "",
-            message: "",
-          }));
-        }
-
-        // Something in the text fields validation still failed.
-        else if (response.status === 400) {
-          props.setSentStatus({
-            sent: true,
-            message:
-              "Hmmmmm... something invalid was sent to the server, so the message didn't go through.",
-            backgroundImage:
-              "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)",
-          });
-        }
-
-        // All other replies from the server.
-        else {
-          props.setSentStatus({
-            sent: true,
-            message:
-              "Sorry, the message didn't go through for some reason and the error was reported.",
-            backgroundImage:
-              "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)",
-          });
-        }
-
-        // Hides the modal after 10 seconds.
-        setTimeout(
-          () =>
-            props.setSentStatus({
-              sent: false,
-              message: "",
-              backgroundImage: "transparent",
-            }),
-          10000
-        );
-      } catch (error) {
-        console.warn(error);
+        setValue((prevValue) => ({
+          ...prevValue,
+          fName: "",
+          lName: "",
+          email: "",
+          message: "",
+        }));
       }
+
+      // Something in the text fields validation still failed.
+      else if (response.status === 400) {
+        props.setSentStatus({
+          sent: true,
+          message:
+            "Hmmmmm... something invalid was sent to the server, so the message didn't go through.",
+          backgroundImage:
+            "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)",
+        });
+      }
+
+      // All other replies from the server.
+      else {
+        props.setSentStatus({
+          sent: true,
+          message:
+            "Sorry, the message didn't go through for some reason and the error was reported.",
+          backgroundImage:
+            "linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)",
+        });
+      }
+
+      // Hides the modal after 10 seconds.
+      setTimeout(
+        () =>
+          props.setSentStatus({
+            sent: false,
+            message: "",
+            backgroundImage: "transparent",
+          }),
+        10000
+      );
     }
 
     // If errors were found on text fields validation.
