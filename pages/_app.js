@@ -1,7 +1,17 @@
 import "../styles/globals.css";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const MyApp = ({ Component, pageProps }) => {
+  // For page hits data, this notifies the server that the page is loaded. Completely optional.
+  useEffect(async () => {
+    await fetch("/api/load", {
+      method: "POST",
+      mode: "cors",
+      credentials: "include",
+    });
+  }, []);
+
   return (
     <>
       <Head>
