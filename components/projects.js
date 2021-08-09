@@ -41,7 +41,7 @@ const Projects = () => {
         imageTitle="Archaeology App"
         imageSrc="/images/typologyExercise.webp"
         imageAlt="Typology Exercise"
-        description="An embarrassing (&#128563;) early study project from the distant past when I only started to learn the ABCs of coding, before React, databases and whatnot. Oh my! &#128514; It was a concept app for exercising archaeological typology."
+        description="A study project from the distant past when I only started to learn the ABCs of coding. Wow! It has been a long road since then! &#128513; It was a concept app for exercising archaeological typology."
         url="https://github.com/O-K-G/ancient-study-projects/tree/master/Second%20website"
       />
 
@@ -49,8 +49,8 @@ const Projects = () => {
         backgroundImage="linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)"
         imageTitle="Events App"
         imageSrc="/images/eventSpace.webp"
-        imageAlt="Event Space Station"
-        description="An even more ancient embarassing study project from the distant past, from when I only started to learn the ABCs of coding. It was an events app. &#128514;"
+        imageAlt="Events Station"
+        description="An even more ancient study project from the distant past, from when I only started to learn the ABCs of coding. It was an events app and it was indeed a long road since. &#128514;"
         url="https://github.com/O-K-G/ancient-study-projects/tree/master/First%20website"
       />
       </div>

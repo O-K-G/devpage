@@ -56,8 +56,7 @@
   }
   
   .textBackground {
-    height: 80%;
-    transform: skewY(45deg);
+    height: 50%;
   }
 }
 
