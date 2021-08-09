@@ -59,12 +59,14 @@
 
 .title {
   text-align: center;
-  max-height: 3.5rem;
+  height: auto;
+  font-size: 2vw;
 }
 
 .text {
   text-align: left;
-  max-height: 26rem;
+  height: auto;
+  font-size: 1.5vw;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -72,5 +74,35 @@
     margin-top: 5vh;
     width: 70vw;
     height: 50vw;
+  }
+
+  .title {
+    font-size: 4vw;
+  }
+
+  .text {
+    font-size: 3.5vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .title {
+    font-size: 5vw;
+  }
+
+  .text {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+
+  .title {
+    font-size: 4vw;
+  }
+
+  .text {
+    font-size: 3.5vw;
   }
 }

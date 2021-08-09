@@ -12,14 +12,10 @@
 }
 
 .title {
-  z-index: 1;
   transition: 1s;
-  position: absolute;
-  top: 10vh;
   display: inline-block;
   text-align: center;
   font-size: 5vw;
-  max-height: 5vw;
   transform: scaleY(0);
   overflow: hidden;
   width: 100%;
@@ -35,7 +31,7 @@
 
 @media only screen and (max-width: 500px) {
   .mainContainer {
-    padding-bottom: 55vh;
+    padding-bottom: 80vh;
   }
 }
 
