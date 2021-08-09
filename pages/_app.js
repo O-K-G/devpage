@@ -1,17 +1,7 @@
 import "../styles/globals.css";
 import Head from "next/head";
-import { useEffect } from "react";
 
 const MyApp = ({ Component, pageProps }) => {
-  // For page hits data, this notifies the server that the page is loaded. Completely optional.
-  useEffect(async () => {
-    await fetch("/api/load", {
-      method: "POST",
-      mode: "cors",
-      credentials: "include",
-    }).catch((err) => console.log(err));
-  }, []);
-
   return (
     <>
       <Head>
@@ -27,9 +17,23 @@ const MyApp = ({ Component, pageProps }) => {
         />
         <meta name="author" content="Omri Geda" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/images/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/images/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/images/favicon/favicon-16x16.png"
+        />
         <link rel="manifest" href="/images/favicon/site.webmanifest" />
       </Head>
       <Component {...pageProps} />
