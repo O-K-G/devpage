@@ -16,7 +16,7 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>The Magical Web Developer</title>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta
           name="description"
           content="Omri Geda - Fullstack Web Developer"
