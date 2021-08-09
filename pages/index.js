@@ -20,12 +20,11 @@ const Home = () => {
 
   return (
     <>
-      <header></header>
       <main ref={myRef}>
         <Section
           id={1}
           title="WEB DEVELOPMENT"
-          subtitle="DESIGN & INNOVATION"
+          subtitle="IT'S ALL WITCHCRAFT"
           smallSubtitle="I DON'T LIVE IN THIS CITY, BUT IT'S A NICE BACKGROUND, DON'T YOU THINK?"
           src="/images/city.webp" /* Used under free for commercial use license with no attribution required from: https://pixabay.com/photos/cityscape-light-zoom-city-urban-2008177 */
           alt="City"
@@ -40,7 +39,7 @@ const Home = () => {
           id={2}
           title="TONS OF COFFEE"
           subtitle="FOR SMOOTH APPS"
-          smallSubtitle="I STUDIED ARCHAEOLOGY ONCE, IT COMES WITH THE COFFEE"
+          smallSubtitle="GOOD COFFEE IS THE REAL MAGIC"
           src="/images/coffee.webp" /* Used under free for commercial use license with no attribution required from: https://www.pexels.com/photo/cup-of-coffee-spilled-on-black-table-1235717 */
           alt="Coffee"
           paddingTop="50vh"
@@ -92,7 +91,7 @@ const Home = () => {
             priority={true}
           />
           </div>
-        <p className="footerText">Powered by Purrrrrrrrrrs &#169; {new Date().getFullYear() !== 2021 ? (`2021 - ${new Date().getFullYear()}`) : new Date().getFullYear()}</p>
+        <p className="footerText">POWERED BY PURRRRRS &#169; {new Date().getFullYear() !== 2021 ? (`2021 - ${new Date().getFullYear()}`) : new Date().getFullYear()}</p>
       </footer>
       <StatusModal sentStatus={sentStatus} />
     </>

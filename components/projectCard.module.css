@@ -1,7 +1,7 @@
 .card {
   background-color: transparent;
-  width: 570px;
-  height: 390px;
+  width: 30vw;
+  height: 20vw;
   perspective: 1000px;
   margin-top: 20vh;
   transition: 0.5s;
@@ -59,31 +59,50 @@
 
 .title {
   text-align: center;
-  max-height: 3.5rem;
+  height: auto;
+  font-size: 2vw;
 }
 
 .text {
   text-align: left;
-  max-height: 26rem;
-}
-@media only screen and (max-width: 1300px) {
-  .card {
-    width: 250px;
-    height: 144px;
-  }
+  height: auto;
+  font-size: 1.5vw;
 }
 
 @media only screen and (max-width: 1024px) {
   .card {
-    width: 570px;
-    height: 390px;
     margin-top: 5vh;
+    width: 70vw;
+    height: 50vw;
+  }
+
+  .title {
+    font-size: 4vw;
+  }
+
+  .text {
+    font-size: 3.5vw;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .card {
-    width: 250px;
-  height: 200px;
+
+  .title {
+    font-size: 5vw;
+  }
+
+  .text {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+
+  .title {
+    font-size: 4vw;
+  }
+
+  .text {
+    font-size: 3.5vw;
   }
 }

@@ -15,43 +15,45 @@ const Projects = () => {
   return (
     <div className={classes.container}>
       <h1 className={classes.title} style={style.title} id="projectsTitle">
-        Text text text text text text text text Text text text text text text
-        text textText text text text text text text textText text text text text
-        text text textText text text text text text text text
+        SOME PAST PROJECTS
       </h1>
+      <div className={classes.innerContainer}>
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
-        imageTitle="TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE"
+        imageTitle="polykick.com"
         imageSrc="/images/polykick.webp"
         imageAlt="polykick.com"
-        description="TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXT"
+        description="A wall feed project, with: React.js (hooks), Node.js, MongoDb, Material UI, Express.js, Mongoose, users management with Passport.js, and IP based geolocation."
         url="https://polykick.herokuapp.com"
       />
 
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
-        imageTitle="TITLE TITLE"
+        imageTitle="Code Snippets"
         imageSrc="/images/codeSnippets.webp"
         imageAlt="cup-o-code.herokuapp.com"
-        description="TEXT TEXT"
+        description="A place for code experiments which havne't found a home, yet. &#129514;&#128293;"
         url="https://cup-o-code.herokuapp.com"
       />
 
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)"
-        imageTitle="TITLE TITLE"
+        imageTitle="Archaeology App"
         imageSrc="/images/typologyExercise.webp"
         imageAlt="Typology Exercise"
-        description="TEXT TEXT"
+        description="An embarrassing (&#128563;) early study project from the distant past when I only started to learn the ABCs of coding, before React, databases and whatnot. Oh my! &#128514; It was a concept app for exercising archaeological typology."
+        url="https://github.com/O-K-G/ancient-study-projects/tree/master/Second%20website"
       />
 
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)"
-        imageTitle="TITLE TITLE"
+        imageTitle="Events App"
         imageSrc="/images/eventSpace.webp"
         imageAlt="Event Space Station"
-        description="TEXT TEXT"
+        description="An even more ancient embarassing study project from the distant past, from when I only started to learn the ABCs of coding. It was an events app. &#128514;"
+        url="https://github.com/O-K-G/ancient-study-projects/tree/master/First%20website"
       />
+      </div>
     </div>
   );
 };

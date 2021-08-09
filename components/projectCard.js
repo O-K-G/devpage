@@ -6,6 +6,9 @@ const ProjectCard = (props) => {
     cardBack: {
       backgroundImage: props.backgroundImage,
     },
+    title: {
+      cursor: props.url && "pointer",
+    },
   };
 
   return (
@@ -15,25 +18,31 @@ const ProjectCard = (props) => {
           <div className={classes.image}>
             <Image
               src={props.imageSrc}
-           objectFit="cover"
+              objectFit="cover"
               layout="fill"
               quality={100}
               alt={props.imageAlt}
               priority={true}
             />
           </div>
-
         </div>
-        <a href={props.url} target="_blank" rel="noopener noreferrer">
-          <div className={classes.cardBack} style={style.cardBack}>
-            <h1 className={classes.title}>{props.imageTitle.slice(0, 15)}</h1>
-            <p className={classes.text}>
-              {props.description.length > 243
-                ? props.description.slice(0, 73) + "..."
-                : props.description}
-            </p>
-          </div>
-        </a>
+        <div className={classes.cardBack} style={style.cardBack}>
+          <h1
+            className={classes.title}
+            style={style.title}
+            onClick={() =>
+              props.url &&
+              window.open(props.url, "_blank", "noopener, noreferrer")
+            }
+          >
+            {props.imageTitle.slice(0, 15)}
+          </h1>
+          <p className={classes.text}>
+            {props.description.length > 243
+              ? props.description.slice(0, 73) + "..."
+              : props.description}
+          </p>
+        </div>
       </div>
     </div>
   );

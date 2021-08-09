@@ -1,6 +1,6 @@
 .formButtonContainer {
   width: 100%;
-  height: 300px;
+  height: 50vh;
   position: absolute;
   display: flex;
   flex-flow: row wrap;
@@ -13,7 +13,7 @@
 }
 
 .formButton {
-  width: 300px;
+  width: 50vh;
   height: 100%;
   transition: 0.5s;
   padding: 16px;
@@ -44,7 +44,7 @@
 }
 
 .formButtonText {
-  font: 700 3rem "Poppins", sans-serif;
+  font: 700 3vw "Poppins", sans-serif;
   color: #000a35;
   text-align: center;
   display: inline-block;
@@ -55,60 +55,71 @@
 
 @media only screen and (max-width: 1300px) {
   .formButtonContainer {
-    height: 200px;
+    top: 40%;
+    height: 40vh;
   }
+  
   .formButton {
-    width: 200px;
-  }
-  .formButtonText {
-    font-size: 2rem;
+    width: 20vw;
+    height: 20vw;
   }
 }
 
 @media only screen and (max-width: 1024px) {
   .formButtonContainer {
-    height: 300px;
     top: 40%;
-    justify-content: flex-start;
+    height: 40vh;
   }
-
+  
   .formButton {
-    width: 300px;
+    width: 30vw;
+    height: 30vw;
   }
   .formButtonText {
-    font-size: 3.5rem;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .formButtonContainer {
-    height: 200px;
-    top: 60%;
-  }
-  .formButton {
-    width: 200px;
-  }
-  .formButtonText {
-    font-size: 2rem;
+    font-size: 4.5vw;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .formButtonContainer {
-    height: 180px;
-    top: 60%;
+    top: 50%;
   }
+
   .formButton {
-    width: 180px;
+    width: 28vw;
+    height: 28vw;
   }
+
   .formButtonText {
-    font-size: 2rem;
+    font-size: 4.5vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .formButtonContainer {
+    top: 60%;
+    height: 30vh;
+  }
+
+  .formButton {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  .formButtonText {
+    font-size: 6vw;
   }
 }
 
 @media only screen and (max-width: 300px) {
-  .formButtonText {
-    font-size: 1rem;
+  .formButtonContainer {
+    top: 60%;
+    height: 30vh;
+  }
+
+  .formButton {
+    
+    margin-left: auto;
+    margin-right: auto;
   }
 }
-
