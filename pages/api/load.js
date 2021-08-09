@@ -35,10 +35,13 @@ const load = (req, res) => {
         }&fields=city,region_name,country_name,zip`,
         {
           method: "GET",
+          headers: {
+            Accept: "application/json; charset=UTF-8",
+          },
         }
       ).catch((err) => console.log(err)); // Logs general errors.
 
-      getGeoData && (data = await setTimeout(() => {getGeoData.json()}, 15000)); // First checks if there even is an object fetched, to prevent code breaks.
+      getGeoData && (data = await getGeoData.json()); // First checks if there even is an object fetched, to prevent code breaks.
       data.success === false && console.log(data); // Logs ipstack.com's error messages.
       // If geodata was received successfully, proceed.
 
