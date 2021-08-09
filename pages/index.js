@@ -62,9 +62,6 @@ const Home = () => {
         />
         <Section
           id={4}
-          title="MAIN TITLE"
-          subtitle="TEXT TEXT TEXT"
-          smallSubtitle="TEXT TEXT TEXT TEXT"
           zIndex="4"
           offsetValue="-0.08"
           offset={offset}

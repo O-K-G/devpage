@@ -42,7 +42,9 @@ const Section = (props) => {
       display: props.id === 1 && "none",
     },
     textBackground: {
-      display: props.id === 1 && "block",
+      // "props.id === 1 && textPosition > -200" means the text background will disappear around section number 3. Just in case.
+      display: props.id === 1 && textPosition > -200 && "block",
+      transform: `translateY(${props.offset * 0.5}px) skewY(25deg)`,
     },
     title: {
       display: props.displayText && "block",
