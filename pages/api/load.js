@@ -38,7 +38,7 @@ const load = (req, res) => {
         }
       ).catch((err) => console.log(err)); // Logs general errors.
 
-      getGeoData && (data = (JSON.parse(await getGeoData.text()))); // First checks if there even is an object fetched, to prevent code breaks.
+      getGeoData && (data = await setTimeout(() => {getGeoData.json()}, 15000)); // First checks if there even is an object fetched, to prevent code breaks.
       data.success === false && console.log(data); // Logs ipstack.com's error messages.
       // If geodata was received successfully, proceed.
 
