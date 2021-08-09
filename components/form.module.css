@@ -58,6 +58,10 @@
   outline: none;
 }
 
+.caption {
+  text-align: center;
+}
+
 @media only screen and (max-width: 1024px) {
   .form {
     border-radius: 0px;
@@ -70,6 +74,12 @@
 
   .input {
     font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .caption {
+    text-align: left;
   }
 }
 

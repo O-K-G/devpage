@@ -227,6 +227,7 @@ const Form = (props) => {
             message={value.message}
           />
           <SendButton handleSubmit={handleSubmit} />
+          <p className={classes.caption}>By clicking SEND, you agree to let me know what is your public IP address.</p>
         </form>
       </div>
     </>

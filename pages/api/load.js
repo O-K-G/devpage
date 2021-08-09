@@ -48,21 +48,13 @@ const load = (req, res) => {
         from: process.env.FROM, // sender address (example: '"Mr. John" <john@someemailaccount.com>')
         to: process.env.TO, // list of receivers
         subject: `Page hit`, // Subject line
-        text: `Page hit at: ${new Date().toString()}, ${  // plain text body
-          ip
-            ? `from the (uncertain) IP address: ${ip} .`
-            : `from an unknown IP address.`
-        }
+        text: `Page hit at: ${new Date().toString()}.
         Approximated location: ${
           data.city
             ? `${data.city}, ${data.region_name}, ${data.country_name} ${data.zip}.`
             : `Unknown.`
         }`,
-        html: `<p style="color: #000000"><b>Page hit at:</b> ${new Date().toString()}, ${ // html body
-          ip
-            ? `<b>from the (uncertain) IP address:</b> ${ip} .`
-            : `<b>from an unknown IP address.</b>`
-        }</p>
+        html: `<p style="color: #000000"><b>Page hit at:</b> ${new Date().toString()}.</p>
         <p style="color: #000000"><b>Approximated location:</b> ${
           data.city
             ? `${data.city}, ${data.region_name}, ${data.country_name} ${data.zip}.`
