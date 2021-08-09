@@ -20,7 +20,6 @@ const Home = () => {
 
   return (
     <>
-      <header></header>
       <main ref={myRef}>
         <Section
           id={1}
@@ -40,7 +39,7 @@ const Home = () => {
           id={2}
           title="TONS OF COFFEE"
           subtitle="FOR SMOOTH APPS"
-          smallSubtitle="I STUDIED ARCHAEOLOGY ONCE, IT COMES WITH THE COFFEE"
+          smallSubtitle="GOOD COFFEE IS THE REAL MAGIC"
           src="/images/coffee.webp" /* Used under free for commercial use license with no attribution required from: https://www.pexels.com/photo/cup-of-coffee-spilled-on-black-table-1235717 */
           alt="Coffee"
           paddingTop="50vh"
