@@ -7,15 +7,15 @@ const TableItem = (props) => {
 
   const style = {
     items: {
-      backgroundImage: !props.title && props.background,
+      backgroundImage: props.background,
       transform: !hover ? "scale(1)" : "scale(1.5)",
       zIndex: !hover ? 0 : 1,
       display: !props.itemsText && "none",
       width: props.title && "100%",
-      borderBottom: props.title && "1px solid #ffffff"
     },
     textBackground: {
       backgroundColor: !hover ? "#202E38" : "transparent",
+      width: props.title && "100%",
     },
     itemsText: {
       WebkitTextFillColor: !hover ? "transparent" : "#202E38",
@@ -31,7 +31,12 @@ const TableItem = (props) => {
       style={style.items}
     >
       <div className={classes.textBackground} style={style.textBackground}>
-        <p className={props.itemsText?.length > 20 ? classes.extraText : classes.itemsText} style={style.itemsText}>
+        <p
+          className={
+            props.itemsText?.length > 20 ? classes.extraText : classes.itemsText
+          }
+          style={style.itemsText}
+        >
           {props.itemsText}
         </p>
       </div>
