@@ -1,6 +1,6 @@
 import "@fontsource/poppins";
 import classes from "./tableItem.module.css";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 
 const TableItem = (props) => {
   const [hover, setHover] = useState(false);
@@ -22,6 +22,11 @@ const TableItem = (props) => {
       backgroundImage: props.background,
     },
   };
+
+  // When clicking on an item on mobile, it will descale it when the user scrolls.
+  useMemo(() => {
+    hover && setHover(false);
+  }, [props.textPosition]);
 
   return (
     <li
