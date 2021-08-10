@@ -69,9 +69,17 @@
   font-size: 1.5vw;
 }
 
+.caption {
+  display: block;
+  position: relative;
+  text-align: center;
+  font-weight: 500;
+}
+
 @media only screen and (max-width: 1024px) {
   .card {
     margin-top: 5vh;
+    margin-bottom: 15vh;
     width: 70vw;
     height: 50vw;
   }
@@ -94,6 +102,10 @@
   .text {
     font-size: 4vw;
   }
+
+  .caption {
+    font-size: 3vw;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -104,5 +116,9 @@
 
   .text {
     font-size: 3.5vw;
+  }
+
+  .caption {
+    font-size: 4vw;
   }
 }
