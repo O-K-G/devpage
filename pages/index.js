@@ -25,7 +25,7 @@ const Home = () => {
           id={1}
           title="WEB DEVELOPMENT"
           subtitle="IT'S ALL WITCHCRAFT"
-          smallSubtitle="I DON'T LIVE IN THIS CITY, BUT IT'S A NICE BACKGROUND, DON'T YOU THINK?"
+          smallSubtitle="BLACK SPELLS AND DARK SORCERY"
           src="/images/city.jpg" /* Used under free for commercial use license with no attribution required from: https://pixabay.com/photos/cityscape-light-zoom-city-urban-2008177 */
           alt="City"
           paddingTop="30vh"
@@ -37,9 +37,9 @@ const Home = () => {
         />
         <Section
           id={2}
-          title="TONS OF COFFEE"
-          subtitle="FOR SMOOTH APPS"
-          smallSubtitle="GOOD COFFEE IS THE REAL MAGIC"
+          title="COFFEE"
+          subtitle="MAKES IT ALL HAPPEN"
+          smallSubtitle="BLACKEST MAGIC OF ALL, NO SUGAR"
           src="/images/coffee.jpg" /* Used under free for commercial use license with no attribution required from: https://www.pexels.com/photo/cup-of-coffee-spilled-on-black-table-1235717 */
           alt="Coffee"
           paddingTop="50vh"

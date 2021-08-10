@@ -37,7 +37,7 @@ const Table = (props) => {
   return (
     <div className={classes.mainContainer}>
       <h1 className={classes.title} style={style.title} id="tableTitle">
-        MY STACK
+        MY MAGICAL STACK
       </h1>
       <TableGroup
         groupTitleBackground={titlesBackground}
@@ -54,7 +54,7 @@ const Table = (props) => {
         groupTitleBackground={titlesBackground}
         groupTitleText="FRONTEND"
         itemBackground1={group2BackgroundColor}
-        itemsText1="React.js"
+        itemsText1="React.js (Hooks)"
         itemBackground2={group2BackgroundColor}
         itemsText2="Next.js"
         textPosition={props.textPosition}
@@ -125,19 +125,6 @@ const Table = (props) => {
         itemsText3="Functional Programming"
         itemBackground4={group8BackgroundColor}
         itemsText4="Object Oriented Programming"
-        textPosition={props.textPosition}
-      />
-      <TableGroup
-        groupTitleBackground={titlesBackground}
-        groupTitleText="EXTRAS"
-        itemBackground1={group9BackgroundColor}
-        itemsText1="jQuery"
-        itemBackground2={group9BackgroundColor}
-        itemsText2="EJS"
-        itemBackground3={group9BackgroundColor}
-        itemsText3="Adobe Illustrator / Photoshop"
-        itemBackground4={group9BackgroundColor}
-        itemsText4="Krita / Inkscape"
         textPosition={props.textPosition}
       />
     </div>
