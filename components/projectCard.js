@@ -1,5 +1,6 @@
 import classes from "./projectCard.module.css";
 import Image from "next/image";
+import ClickElement from "./UI/clickElement";
 
 const ProjectCard = (props) => {
   const style = {
@@ -24,6 +25,9 @@ const ProjectCard = (props) => {
               alt={props.imageAlt}
               priority={true}
             />
+          </div>
+          <div className={classes.sticker}>
+            <ClickElement />
           </div>
         </div>
         <div className={classes.cardBack} style={style.cardBack}>

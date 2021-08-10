@@ -76,6 +76,17 @@
   font-weight: 500;
 }
 
+.sticker {
+  width: 5vw;
+  height: 5vw;
+  background-color: rgba(133, 133, 133, 0.5);
+  display: block;
+  position: relative;
+  border-radius: 100px;
+  margin: 2vw 0 0 2vw;
+  padding: 16px;
+}
+
 @media only screen and (max-width: 1024px) {
   .card {
     margin-top: 5vh;
@@ -91,10 +102,14 @@
   .text {
     font-size: 3.5vw;
   }
+  .sticker {
+    width: 15vw;
+    height: 15vw;
+    padding: 16px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-
   .title {
     font-size: 5vw;
   }
@@ -109,7 +124,6 @@
 }
 
 @media only screen and (max-width: 400px) {
-
   .title {
     font-size: 4vw;
   }
