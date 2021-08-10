@@ -88,7 +88,7 @@ const Home = () => {
             priority={true}
           />
           </div>
-        <p className="footerText">POWERED BY PURRRRRS &#169; {new Date().getFullYear() !== 2021 ? (`2021 - ${new Date().getFullYear()}`) : new Date().getFullYear()}</p>
+        <p className="footerText">Powered by Puuuurrrrsss &#169; {new Date().getFullYear() !== 2021 ? (`2021 - ${new Date().getFullYear()}`) : new Date().getFullYear()}</p>
       </footer>
       <StatusModal sentStatus={sentStatus} />
     </>

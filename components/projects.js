@@ -18,6 +18,16 @@ const Projects = () => {
         SOME PAST PROJECTS
       </h1>
       <div className={classes.innerContainer}>
+
+      <ProjectCard
+        backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
+        imageTitle="This Very Page"
+        imageSrc="/images/devpage.webp"
+        imageAlt="This very page"
+        description="It's pretty self explanatory, isn't it? &#128521;"
+        url="https://github.com/O-K-G/devpage"
+      />
+
       <ProjectCard
         backgroundImage="linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%)"
         imageTitle="polykick.com"
@@ -50,7 +60,7 @@ const Projects = () => {
         imageTitle="Events App"
         imageSrc="/images/eventSpace.webp"
         imageAlt="Events Station"
-        description="An even more ancient study project from the distant past, from when I only started to learn the ABCs of coding. It was an events app and it was indeed a long road since. &#128514;"
+        description="An even more ancient study project from the distant past, from when I only started to learn the ABCs of coding. It was an events app and it has indeed been a long road since. &#128514;"
         url="https://github.com/O-K-G/ancient-study-projects/tree/master/First%20website"
       />
       </div>
