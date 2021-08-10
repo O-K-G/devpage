@@ -24,7 +24,7 @@ const Home = () => {
         <Section
           id={1}
           title="WEB DEVELOPMENT"
-          subtitle="IT'S ALL WITCHCRAFT"
+          subtitle="IT'S ALL WIZARDS"
           smallSubtitle="BLACK SPELLS AND DARK SORCERY"
           src="/images/city.jpg" /* Used under free for commercial use license with no attribution required from: https://pixabay.com/photos/cityscape-light-zoom-city-urban-2008177 */
           alt="City"

@@ -32,6 +32,7 @@ const TableItem = (props) => {
     <li
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onClick={() => setHover(true)} // Setting it like "setHover((prevValue) => !prevValue)" will result in unwanted double clicks in mobile.
       className={classes.items}
       style={style.items}
     >

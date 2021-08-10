@@ -5,7 +5,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>The Magical Web Developer</title>
+        <title>The Web Development Wizard</title>
         <meta charSet="UTF-8" />
         <meta
           name="description"
