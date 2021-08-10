@@ -1,7 +1,7 @@
 const ClickElement = () => {
   return (
     <svg
-      class="MuiSvgIcon-root jss178"
+      className="MuiSvgIcon-root jss178"
       focusable="false"
       viewBox="0 0 24 24"
       aria-hidden="true"
