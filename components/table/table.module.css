@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   align-content: flex-start;
   margin-top: 25vh;
   width: 100%;
@@ -20,24 +20,4 @@
   overflow: hidden;
   width: 100%;
   padding: 0 16px 0 16px;
-}
-
-@media only screen and (max-width: 900px) {
-  .title {
-    font-size: 6vw;
-    max-height: 7vw;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .mainContainer {
-    padding-bottom: 80vh;
-  }
-}
-
-@media only screen and (max-width: 300px) {
-  .title {
-    font-size: 7vw;
-    max-height: 8vw;
-  }
 }

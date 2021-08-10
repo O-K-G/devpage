@@ -5,6 +5,7 @@ const TableGroup = (props) => {
   return (
     <ul className={classes.groupsContainer}>
       <TableItem
+        title={true}
         background={props.groupTitleBackground}
         itemsText={props.groupTitleText}
       />
