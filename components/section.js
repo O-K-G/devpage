@@ -93,7 +93,11 @@ const Section = (props) => {
       {useMemo(() => {
         return (
           props.id === 3 && (
-            <Table offset={props.offset} offsetValue={props.offsetValue} />
+            <Table
+              offset={props.offset}
+              offsetValue={props.offsetValue}
+              textPosition={textPosition}
+            />
           )
         );
       }, [props.id, props.offset, props.offsetValue])}
