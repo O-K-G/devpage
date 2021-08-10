@@ -1,22 +1,27 @@
 .groupsContainer {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 0;
-    list-style-type: none;
-    width: 9%;
-  }
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0;
+  list-style-type: none;
+}
 
-  @media only screen and (max-width: 900px) {
-    .groupsContainer {
-      width: 20%;
-    }
+@media only screen and (max-width: 1024px) {
+  .groupsContainer {
+    width: 10%;
   }
+}
 
-  @media only screen and (max-width: 500px) {
-    .groupsContainer {
-      width: 50%;
-    }
+@media only screen and (max-width: 900px) {
+  .groupsContainer {
+    width: 20%;
   }
+}
+
+@media only screen and (max-width: 500px) {
+  .groupsContainer {
+    width: 50%;
+  }
+}

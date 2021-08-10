@@ -7,9 +7,12 @@ const TableItem = (props) => {
 
   const style = {
     items: {
-      backgroundImage: props.background,
+      backgroundImage: !props.title && props.background,
       transform: !hover ? "scale(1)" : "scale(1.5)",
       zIndex: !hover ? 0 : 1,
+      display: !props.itemsText && "none",
+      width: props.title && "100%",
+      borderBottom: props.title && "1px solid #ffffff"
     },
     textBackground: {
       backgroundColor: !hover ? "#202E38" : "transparent",
@@ -17,7 +20,6 @@ const TableItem = (props) => {
     itemsText: {
       WebkitTextFillColor: !hover ? "transparent" : "#202E38",
       backgroundImage: props.background,
-     // fontSize: props.itemsText?.length > 20 && "0.8vw"
     },
   };
 
