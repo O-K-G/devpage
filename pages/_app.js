@@ -13,7 +13,7 @@ const MyApp = ({ Component, pageProps }) => {
         />
         <meta
           name="keywords"
-          content="HTML, CSS, JavaScript, app, website, webapp, Node, Express, Passport, React, Next, Material-UI, Bootstrap, MongoDB, MySQL, SQL, NoSQL, RESTful, API, asynchronous, NPM, Git, GitHub, Bitbucket, Jira, Docker, jQuery, EJS ,fullstack, frontend, backend, design, cats, coffee, archaeology"
+          content="HTML, CSS, JavaScript, app, website, webapp, Node, Express, Passport, React, Next, Material-UI, Bootstrap, MongoDB, MySQL, SQL, NoSQL, RESTful, API, MERN, asynchronous, NPM, Git, GitHub, Bitbucket, Jira, Docker, jQuery, EJS ,fullstack, frontend, backend, design, cats, coffee, archaeology"
         />
         <meta name="author" content="Omri Geda" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
