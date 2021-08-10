@@ -16,7 +16,7 @@ const FormButton = (props) => {
         onClick={() => props.setOpen(true)}
       >
         <Image
-          src="/images/coffeeStain.webp" // Used under free for commercial use license with no attribution required from: https://pixabay.com/illustrations/old-paper-vintage-coffee-stain-2228749
+          src="/images/coffeeStain.jpg" // Used under free for commercial use license with no attribution required from: https://pixabay.com/illustrations/old-paper-vintage-coffee-stain-2228749
           alt="Coffee stain"
           layout="fill"
           quality={100}
