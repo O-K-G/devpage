@@ -23,7 +23,7 @@ const load = (req, res) => {
       req.connection.remoteAddress;
 
     // Fetch geodata according to the ip address.
-
+try {
     const fetchData = async () => {
       // ipstack.com's api returns the "success" object only when there's an error, and it's "success: false".
       let data = false; // Initially set as false, to prevent code breaks when no data is fetched.
@@ -35,17 +35,11 @@ const load = (req, res) => {
         }&fields=city,region_name,country_name,zip`,
         {
           method: "GET",
-          headers: {
-            Accept: "application/json; charset=UTF-8",
-          },
         }
-      ).catch((err) => console.log(err)); // Logs general errors.
-
+      );
       getGeoData && (data = await getGeoData.json()); // First checks if there even is an object fetched, to prevent code breaks.
-      const body = JSON.stringify(data);
-      const test = JSON.parse(body);
       data.success === false && console.log(data); // Logs ipstack.com's error messages.
-      const {city, region_name, country_name, zip} = test;
+      const {city, region_name, country_name, zip} = data;
 
      // If geodata was received successfully, proceed.
 
@@ -74,6 +68,9 @@ const load = (req, res) => {
       transporter.sendMail(options, (err) => err && console.log(err));
     };
     fetchData();
+  } catch (err) {
+    console.log(err);
+  }
 
    res.status(200).send();
   }
