@@ -1,7 +1,7 @@
 "use strict";
 import nodemailer from "nodemailer";
 
-const load = (req, res) => {
+const load = async (req, res) => {
   if (req.method === "POST") {
     // Configure mail account variables.
 
