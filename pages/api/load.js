@@ -23,7 +23,7 @@ const load = (req, res) => {
       req.connection.remoteAddress;
 
     // Fetch geodata according to the ip address.
-try {
+
     const fetchData = async () => {
       // ipstack.com's api returns the "success" object only when there's an error, and it's "success: false".
       let data = false; // Initially set as false, to prevent code breaks when no data is fetched.
@@ -32,18 +32,17 @@ try {
           ip ? ip : undefined // Returning "undefined" this way prevents code breaks if no IP address value is returned.
         }?access_key=${
           process.env.IPSTACK_API_KEY
-        }&fields=city,region_name,country_name,zip`,
+        }&fields=city,region_name,country_name,zip&output=json`,
         {
           method: "GET",
         }
-      );
+      ).catch((err) => console.log(err)); // Logs general errors.
+
       getGeoData && (data = await getGeoData.json()); // First checks if there even is an object fetched, to prevent code breaks.
       data.success === false && console.log(data); // Logs ipstack.com's error messages.
-      const {city, region_name, country_name, zip} = data;
+      // If geodata was received successfully, proceed.
 
-     // If geodata was received successfully, proceed.
-
-     // Email options with the rest of the message.
+      // Email options with the rest of the message.
 
       const options = {
         from: process.env.FROM, // sender address (example: '"Mr. John" <john@someemailaccount.com>')
@@ -52,13 +51,13 @@ try {
         text: `Page hit at: ${new Date().toString()}.
         Approximated location: ${
           data.city
-            ? `${city}, ${region_name}, ${country_name} ${zip}.`
+            ? `${data.city}, ${data.region_name}, ${data.country_name} ${data.zip}.`
             : `Unknown.`
         }`,
         html: `<p style="color: #000000"><b>Page hit at:</b> ${new Date().toString()}.</p>
         <p style="color: #000000"><b>Approximated location:</b> ${
           data.city
-            ? `${city}, ${region_name}, ${country_name} ${zip}.`
+            ? `${data.city}, ${data.region_name}, ${data.country_name} ${data.zip}.`
             : `Unknown.`
         }</p>`,
       };
@@ -68,9 +67,6 @@ try {
       transporter.sendMail(options, (err) => err && console.log(err));
     };
     fetchData();
-  } catch (err) {
-    console.log(err);
-  }
 
    res.status(200).send();
   }
