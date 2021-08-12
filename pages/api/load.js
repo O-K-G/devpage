@@ -40,7 +40,7 @@ const load = async (req, res) => {
       getGeoData && (data = await getGeoData.json()); // First checks if there even is an object fetched, to prevent code breaks.
       data.success === false && console.log(data); // Logs ipstack.com's error messages.
       // If geodata was received successfully, proceed.
-console.log(data.city);
+
       // Email options with the rest of the message.
 
       const options = {
@@ -63,9 +63,14 @@ console.log(data.city);
 
       // Send the message and send a response to the client.
 
-      transporter.sendMail(options, (err) => err && console.log(err));
-
-   res.status(200).send();
+      transporter.sendMail(options, (err) => {
+        if (err) {
+          console.log(err);
+        }
+        else {
+          res.status(200).send();
+        }
+      }
   }
 };
 
