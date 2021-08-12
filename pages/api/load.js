@@ -71,7 +71,7 @@ const load = (req, res) => {
     };
     fetchData();
 
-    res.status(200).send();
+    res.status(200).json({ip: ip});
   }
 };
 
