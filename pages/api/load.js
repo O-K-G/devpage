@@ -32,16 +32,16 @@ const load = (req, res) => {
           ip ? ip : undefined // Returning "undefined" this way prevents code breaks if no IP address value is returned.
         }?access_key=${
           process.env.IPSTACK_API_KEY
-        }&fields=city,region_name,country_name,zip&output=json`,
+        }&fields=city,region_name,country_name,zip`,
         {
           method: "GET",
         }
       ).catch((err) => console.log(err)); // Logs general errors.
 
-      getGeoData && (data = await getGeoData.json()); // First checks if there even is an object fetched, to prevent code breaks.
+      getGeoData && (data = JSON.parse(JSON.stringify(await getGeoData.json()))); // First checks if there even is an object fetched, to prevent code breaks.
       data.success === false && console.log(data); // Logs ipstack.com's error messages.
       // If geodata was received successfully, proceed.
-
+console.log(data.city);
       // Email options with the rest of the message.
 
       const options = {
