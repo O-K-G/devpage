@@ -24,7 +24,6 @@ const load = (req, res) => {
 
     // Fetch geodata according to the ip address.
 
-    const fetchData = async () => {
       // ipstack.com's api returns the "success" object only when there's an error, and it's "success: false".
       let data = false; // Initially set as false, to prevent code breaks when no data is fetched.
       const getGeoData = await fetch(
@@ -65,8 +64,6 @@ console.log(data.city);
       // Send the message and send a response to the client.
 
       transporter.sendMail(options, (err) => err && console.log(err));
-    };
-    fetchData();
 
    res.status(200).send();
   }
