@@ -19,14 +19,11 @@ const Home = () => {
   }
 
   useEffect(async () => {
-    let data;
     const response = await fetch("/api/load", {
       method: "POST",
       mode: "cors",
       credentials: "include",
     }).catch((err) => console.log(err));
-    response && (data = await response.json());
-    console.log(data);
   }, []);
 
   return (
