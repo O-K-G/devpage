@@ -1,7 +1,7 @@
 "use strict";
 import nodemailer from "nodemailer";
 
-const sendForm = (req, res) => {
+const sendForm = async (req, res) => {
   if (req.method === "POST") {
     if (
       // Client's request errors check.
@@ -36,7 +36,6 @@ const sendForm = (req, res) => {
 
       // Fetch geodata according to the ip address.
 
-      const fetchData = async () => {
         // ipstack.com's api returns the "success" object only when there's an error, and it's "success: false".
         let data = false; // Initially set as false, to prevent code breaks when no data is fetched.
         const getGeoData = await fetch(
@@ -105,8 +104,6 @@ const sendForm = (req, res) => {
             res.status(200).send();
           }
         });
-      };
-      fetchData();
     } else {
       res
         .status(400) // In case that for some reason more than 50\300 or 0 characters are sent to the backend.

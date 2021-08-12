@@ -1,7 +1,16 @@
 import "../styles/globals.css";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const MyApp = ({ Component, pageProps }) => {
+  useEffect(async () => {
+    await fetch("/api/load", {
+      method: "POST",
+      mode: "cors",
+      credentials: "include",
+    }).catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <Head>
