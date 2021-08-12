@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Section from "../components/section";
 import Form from "../components/form";
 import StatusModal from "../components/statusModal";
@@ -17,6 +17,14 @@ const Home = () => {
   const scrollToToP = () => {
     return myRef.current.scrollIntoView({ behavior: 'smooth' });
   }
+
+  useEffect(async () => {
+    await fetch("/api/load", {
+      method: "POST",
+      mode: "cors",
+      credentials: "include",
+    }).catch((err) => console.log(err));
+  }, []);
 
   return (
     <>
