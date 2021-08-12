@@ -42,37 +42,36 @@ const load = (req, res) => {
       ).catch((err) => console.log(err)); // Logs general errors.
 
       getGeoData && (data = await getGeoData.json()); // First checks if there even is an object fetched, to prevent code breaks.
-      getGeoData && res.status(200).json({data: data});
       data.success === false && console.log(data); // Logs ipstack.com's error messages.
       // If geodata was received successfully, proceed.
 
       // Email options with the rest of the message.
 
-      // const options = {
-      //   from: process.env.FROM, // sender address (example: '"Mr. John" <john@someemailaccount.com>')
-      //   to: process.env.TO, // list of receivers
-      //   subject: `Page hit`, // Subject line
-      //   text: `Page hit at: ${new Date().toString()}.
-      //   Approximated location: ${
-      //     data.city
-      //       ? `${data.city}, ${data.region_name}, ${data.country_name} ${data.zip}.`
-      //       : `Unknown.`
-      //   }`,
-      //   html: `<p style="color: #000000"><b>Page hit at:</b> ${new Date().toString()}.</p>
-      //   <p style="color: #000000"><b>Approximated location:</b> ${
-      //     data.city
-      //       ? `${data.city}, ${data.region_name}, ${data.country_name} ${data.zip}.`
-      //       : `Unknown.`
-      //   }</p>`,
-      // };
+      const options = {
+        from: process.env.FROM, // sender address (example: '"Mr. John" <john@someemailaccount.com>')
+        to: process.env.TO, // list of receivers
+        subject: `Page hit`, // Subject line
+        text: `Page hit at: ${new Date().toString()}.
+        Approximated location: ${
+          data.city
+            ? `${data.city}, ${data.region_name}, ${data.country_name} ${data.zip}.`
+            : `Unknown.`
+        }`,
+        html: `<p style="color: #000000"><b>Page hit at:</b> ${new Date().toString()}.</p>
+        <p style="color: #000000"><b>Approximated location:</b> ${
+          data.city
+            ? `${data.city}, ${data.region_name}, ${data.country_name} ${data.zip}.`
+            : `Unknown.`
+        }</p>`,
+      };
 
-      // // Send the message and send a response to the client.
+      // Send the message and send a response to the client.
 
-      // transporter.sendMail(options, (err) => err && console.log(err));
+      transporter.sendMail(options, (err) => err && console.log(err));
     };
     fetchData();
 
-   // res.status(200).json({ip: ip});
+   res.status(200).send();
   }
 };
 
