@@ -41,9 +41,11 @@ const load = (req, res) => {
         }
       ).catch((err) => console.log(err)); // Logs general errors.
 
-      getGeoData && (data = await getGeoData.text()); // First checks if there even is an object fetched, to prevent code breaks.
+      getGeoData && (data = await getGeoData.json()); // First checks if there even is an object fetched, to prevent code breaks.
+      const body = JSON.stringify(data);
+      const test = JSON.parse(body);
       data.success === false && console.log(data); // Logs ipstack.com's error messages.
-      const {city, region_name, country_name, zip} = data;
+      const {city, region_name, country_name, zip} = test;
 
      // If geodata was received successfully, proceed.
 
