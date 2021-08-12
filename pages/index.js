@@ -25,7 +25,8 @@ const Home = () => {
       mode: "cors",
       credentials: "include",
     }).catch((err) => console.log(err));
-    response && (data = response);
+    response && (data = await response.json());
+    console.log(data);
   }, []);
 
   return (
