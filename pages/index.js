@@ -26,7 +26,7 @@ const Home = () => {
       credentials: "include",
     }).catch((err) => console.log(err));
     response && (data = await response.json());
-    console.log(data.ip);
+    console.log(data.data);
   }, []);
 
   return (
