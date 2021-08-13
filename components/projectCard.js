@@ -1,24 +1,17 @@
-import React, { useState } from "react";
 import classes from "./projectCard.module.css";
 import Image from "next/image";
 import ClickElement from "./UI/clickElement";
 
 const ProjectCard = (props) => {
-  const [click, setClick] = useState(false);
-
   const style = {
-    card: { transform: click && "rotateY(180deg)" },
     cardBack: {
       backgroundImage: props.backgroundImage,
-    },
-    caption: {
-      cursor: props.url && "pointer",
     },
   };
 
   return (
-    <div className={classes.card} onClick={() => setClick((prevValue) => !prevValue)}>
-      <div className={classes.cardInner} style={style.card}>
+    <div className={classes.card}>
+      <div className={classes.cardInner}>
         <div className={classes.cardFront}>
           <div className={classes.image}>
             <Image
@@ -43,15 +36,16 @@ const ProjectCard = (props) => {
           </p>
         </div>
       </div>
-      <p
-        className={classes.caption}
-        style={style.caption}
-        onClick={() =>
-          props.url && window.open(props.url, "_blank", "noopener, noreferrer")
-        }
-      >
-        Click here to see the code on GitHub
-      </p>
+      {props.url && (
+        <p
+          className={classes.caption}
+          onClick={() =>
+            window.open(props.url, "_blank", "noopener, noreferrer")
+          }
+        >
+          Click here to see the code on GitHub
+        </p>
+      )}
     </div>
   );
 };
