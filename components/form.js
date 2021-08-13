@@ -1,10 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./form.module.css";
 import ElementsGroup from "./UI/elementsGroup";
 import SendButton from "./UI/sendButton";
 import ExitButton from "./UI/exitButton";
 
 const Form = (props) => {
+  const handleNav = () => {
+    window.history.back(); // Goes back in the browser's history record.
+    props.setOpen(false); // Closes the form window.
+  };
+
+  // To add back button functionality, a record to window.history is added.
+
+  useEffect(() => {
+    //Instead of useRouter's Shallow Routing, in this case, use window.history.
+    window.history.pushState(
+      {
+        url: "/message",
+      },
+      "",
+      "/message"
+    );
+  }, []);
+
+  useEffect(() => {
+    const handleBack = () => {
+      props.setOpen(false); // Closes the form window.
+    };
+
+    // An event listener for navigation events.
+    window.addEventListener("popstate", handleBack);
+
+    // Cleanup.
+    return () => window.removeEventListener("popstate", handleBack);
+  }, [props]);
+
   const [error, setError] = useState(false);
   const [value, setValue] = useState({
     fName: "",
@@ -159,14 +189,11 @@ const Form = (props) => {
 
   return (
     <>
-      <div
-        className={classes.formBackground}
-        onClick={() => props.setOpen(false)}
-      />
+      <div className={classes.formBackground} onClick={handleNav} />
       <div className={classes.formContainer}>
         <form className={classes.form}>
           <h1 className={classes.title}>Send me a Message</h1>
-          <ExitButton setOpen={props.setOpen} />
+          <ExitButton handleNav={handleNav} />
           <input
             type="text"
             name="fName"
@@ -227,7 +254,10 @@ const Form = (props) => {
             message={value.message}
           />
           <SendButton handleSubmit={handleSubmit} />
-          <p className={classes.caption}>By clicking SEND, you agree to let me know what is your public IP address.</p>
+          <p className={classes.caption}>
+            By clicking SEND, you agree to let me know what is your public IP
+            address.
+          </p>
         </form>
       </div>
     </>
