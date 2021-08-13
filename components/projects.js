@@ -34,7 +34,7 @@ const Projects = () => {
         imageSrc="/images/polykick.webp"
         imageAlt="polykick.com"
         description="A wall feed project, with: React.js (hooks), Node.js, MongoDb, Material UI, Express.js, Mongoose, users management with Passport.js, and IP based geolocation."
-        url="https://polykick.herokuapp.com"
+        url="https://github.com/O-K-G/polykick"
       />
 
       <ProjectCard
@@ -43,7 +43,7 @@ const Projects = () => {
         imageSrc="/images/codeSnippets.webp"
         imageAlt="cup-o-code.herokuapp.com"
         description="A place for code experiments which havne't found a home, yet. &#129514;&#128293;"
-        url="https://cup-o-code.herokuapp.com"
+        url="https://github.com/O-K-G/code-snippets"
       />
 
       <ProjectCard

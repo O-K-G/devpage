@@ -7,9 +7,6 @@ const ProjectCard = (props) => {
     cardBack: {
       backgroundImage: props.backgroundImage,
     },
-    caption: {
-      cursor: props.url && "pointer",
-    },
   };
 
   return (
@@ -39,15 +36,16 @@ const ProjectCard = (props) => {
           </p>
         </div>
       </div>
-      <p
-        className={classes.caption}
-        style={style.caption}
-        onClick={() =>
-          props.url && window.open(props.url, "_blank", "noopener, noreferrer")
-        }
-      >
-        Click here to see the code on GitHub
-      </p>
+      {props.url && (
+        <p
+          className={classes.caption}
+          onClick={() =>
+            window.open(props.url, "_blank", "noopener, noreferrer")
+          }
+        >
+          Click here to see the code on GitHub
+        </p>
+      )}
     </div>
   );
 };

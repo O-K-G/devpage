@@ -5,6 +5,11 @@
   perspective: 1000px;
   margin-top: 20vh;
   transition: 0.5s;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .cardInner {
@@ -70,10 +75,14 @@
 }
 
 .caption {
-  display: block;
+  display: inline-block;
   position: relative;
   text-align: center;
   font-weight: 500;
+  cursor: pointer;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sticker {
@@ -129,7 +138,8 @@
   }
 
   .text {
-    font-size: 3.5vw;
+    font-size: 3vw;
+    padding-top: 0;
   }
 
   .caption {
