@@ -1,9 +1,13 @@
+import React, { useState } from "react";
 import classes from "./projectCard.module.css";
 import Image from "next/image";
 import ClickElement from "./UI/clickElement";
 
 const ProjectCard = (props) => {
+  const [click, setClick] = useState(false);
+
   const style = {
+    card: { transform: click && "rotateY(180deg)" },
     cardBack: {
       backgroundImage: props.backgroundImage,
     },
@@ -13,8 +17,8 @@ const ProjectCard = (props) => {
   };
 
   return (
-    <div className={classes.card}>
-      <div className={classes.cardInner}>
+    <div className={classes.card} onClick={() => setClick((prevValue) => !prevValue)}>
+      <div className={classes.cardInner} style={style.card}>
         <div className={classes.cardFront}>
           <div className={classes.image}>
             <Image
