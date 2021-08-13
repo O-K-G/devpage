@@ -25,7 +25,7 @@ const TableItem = (props) => {
 
   // When clicking on an item on mobile, it will descale it when the user scrolls.
   useMemo(() => {
-    hover && setHover(false);
+    props.textPosition && setHover(false);
   }, [props.textPosition]);
 
   return (
