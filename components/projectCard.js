@@ -37,13 +37,23 @@ const ProjectCard = (props) => {
         </div>
       </div>
       {props.url && (
-        <p
-          className={classes.caption}
-          onClick={() =>
-            window.open(props.url, "_blank", "noopener, noreferrer")
-          }
-        >
-          Click here to see the code on GitHub
+        <p className={classes.caption}>
+          <span
+            onClick={() =>
+              window.open(props.url, "_blank", "noopener, noreferrer")
+            }
+          >
+            Code on GitHub
+          </span>
+          {props.projectUrl && (
+            <span
+              onClick={() =>
+                window.open(props.projectUrl, "_blank", "noopener, noreferrer")
+              }
+            >
+              &nbsp;|&nbsp;Online project
+            </span>
+          )}
         </p>
       )}
     </div>
