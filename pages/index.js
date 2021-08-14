@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Section from "../components/section";
 import Form from "../components/form";
 import StatusModal from "../components/statusModal";
-import Image from "next/image";
+import Footer from "../components/footer";
 
 const Home = () => {
   const [offset, setOffset] = useState(0);
@@ -13,10 +13,6 @@ const Home = () => {
     message: "",
     backgroundImage: "transparent",
   });
-
-  const scrollToToP = () => {
-    return myRef.current.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <>
@@ -77,36 +73,7 @@ const Home = () => {
           setSentStatus={setSentStatus}
         />
       )}
-      <footer>
-        <div className="placeHolder">
-          <Image
-            src="/images/witch.svg" // Used under free for commercial use license with no attribution required from: https://openclipart.org/detail/287475/witch-and-cat-on-broomstick-silhouette
-            alt="cat"
-            height="1080"
-            width="1920"
-            quality={100}
-            priority={true}
-          />
-          <p>"Stop hissing Mr. Jiggles!</p>
-          <p>We have a fetch request to perform and all I see is your butt!"</p>
-        </div>
-        <div className="footerLogo" onClick={scrollToToP}>
-          <Image
-            src="/images/cat.svg" // No copyright. https://openclipart.org/detail/267720/cat-black-1
-            alt="cat"
-            height="1080"
-            width="1920"
-            quality={100}
-            priority={true}
-          />
-        </div>
-        <p className="footerText">
-          Powered by Puuuurrrrsss &#169;{" "}
-          {new Date().getFullYear() !== 2021
-            ? `2021 - ${new Date().getFullYear()}`
-            : new Date().getFullYear()}
-        </p>
-      </footer>
+        <Footer myRef={myRef}/>
       <StatusModal sentStatus={sentStatus} />
     </>
   );
