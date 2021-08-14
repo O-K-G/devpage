@@ -18,7 +18,7 @@ const Footer = (props) => {
             quality={100}
             priority={true}
           />
-          <p>Web developers on the way to fix an API.</p>
+          <p>&ldquo;Gonna&lsquo; go fetch() me some JSON goodness my sweeties!&rdquo;</p>
         </div>
         <div className={classes.footerLogo} onClick={scrollToToP}>
           <Image
