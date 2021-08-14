@@ -35,6 +35,7 @@ const Projects = () => {
         imageAlt="polykick.com"
         description="A wall feed project, with: React.js (hooks), Node.js, MongoDb, Material UI, Express.js, Mongoose, users management with Passport.js, and IP based geolocation."
         url="https://github.com/O-K-G/polykick"
+        projectUrl="https://polykick.herokuapp.com"
       />
 
       <ProjectCard
@@ -44,6 +45,7 @@ const Projects = () => {
         imageAlt="cup-o-code.herokuapp.com"
         description="A place for code experiments which havne't found a home, yet. &#129514;&#128293;"
         url="https://github.com/O-K-G/code-snippets"
+        projectUrl="https://cup-o-code.herokuapp.com"
       />
 
       <ProjectCard

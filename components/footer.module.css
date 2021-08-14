@@ -1,0 +1,75 @@
+.footer {
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.placeHolder {
+  transform: translateY(-20vh);
+  width: 25vw;
+}
+
+.placeHolder p {
+  color: #1252ff;
+  opacity: 0.25;
+  font: 700 1vw "Poppins", sans-serif;
+  margin: 0;
+  text-align: left;
+}
+
+.footerLogo {
+  width: 10%;
+  cursor: pointer;
+}
+
+.footerText {
+  padding: 0;
+  margin: 0 0 1vh 0;
+  color: #555555;
+  font-weight: 500;
+  font-size: 1vw;
+}
+
+@media only screen and (max-width: 1024px) {
+  .placeHolder {
+    width: 50vw;
+  }
+
+  .placeHolder p {
+    font-size: 2vw;
+  }
+
+  .footerLogo {
+    width: 25%;
+  }
+
+  .footerText {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .placeHolder {
+    transform: translateY(-35vh);
+    width: 60vw;
+  }
+  .placeHolder p {
+    font-size: 3vw;
+  }
+  .footerText {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .placeHolder {
+    transform: translateY(-40vh);
+    width: 60vw;
+  }
+  .footerText {
+    font-size: 3vw;
+  }
+}

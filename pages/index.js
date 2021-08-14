@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Section from "../components/section";
 import Form from "../components/form";
 import StatusModal from "../components/statusModal";
-import Image from "next/image";
+import Footer from "../components/footer";
 
 const Home = () => {
   const [offset, setOffset] = useState(0);
@@ -14,18 +14,14 @@ const Home = () => {
     backgroundImage: "transparent",
   });
 
-  const scrollToToP = () => {
-    return myRef.current.scrollIntoView({ behavior: 'smooth' });
-  }
-
   return (
     <>
       <main ref={myRef}>
         <Section
           id={1}
           title="WEB DEVELOPMENT"
-          subtitle="IT'S ALL WIZARDS"
-          smallSubtitle="BLACK SPELLS AND DARK SORCERY"
+          subtitle="IT'S ALL MAGIC"
+          smallSubtitle="WIZARDS, WITCHES, INCANTATIONS AND CATS"
           src="/images/city.jpg" /* Used under free for commercial use license with no attribution required from: https://pixabay.com/photos/cityscape-light-zoom-city-urban-2008177 */
           alt="City"
           paddingTop="30vh"
@@ -77,19 +73,7 @@ const Home = () => {
           setSentStatus={setSentStatus}
         />
       )}
-      <footer>
-      <div className="footerLogo" onClick={scrollToToP}>
-      <Image
-            src="/images/cat.svg" // No copyright. https://openclipart.org/detail/267720/cat-black-1
-            alt="cat"
-            height="1080"
-            width="1920"
-            quality={100}
-            priority={true}
-          />
-          </div>
-        <p className="footerText">Powered by Puuuurrrrsss &#169; {new Date().getFullYear() !== 2021 ? (`2021 - ${new Date().getFullYear()}`) : new Date().getFullYear()}</p>
-      </footer>
+        <Footer myRef={myRef}/>
       <StatusModal sentStatus={sentStatus} />
     </>
   );
