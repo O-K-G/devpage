@@ -9,15 +9,14 @@
 
 .placeHolder {
   transform: translateY(-20vh);
-  width: 25vw;
+  width: 35vw;
 }
 
 .placeHolder p {
-  color: #1252ff;
-  opacity: 0.25;
+  color: #555555;
   font: 700 1vw "Poppins", sans-serif;
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .footerLogo {
@@ -35,7 +34,8 @@
 
 @media only screen and (max-width: 1024px) {
   .placeHolder {
-    width: 50vw;
+    transform: translateY(-35vh);
+    width: 60vw;
   }
 
   .placeHolder p {
@@ -57,7 +57,7 @@
     width: 60vw;
   }
   .placeHolder p {
-    font-size: 3vw;
+    font-size: 2vw;
   }
   .footerText {
     font-size: 4vw;
