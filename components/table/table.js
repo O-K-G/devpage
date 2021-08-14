@@ -26,8 +26,6 @@ const Table = (props) => {
     "linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)";
   const group8BackgroundColor =
     "linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)";
-  const group9BackgroundColor =
-    "linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)";
 
   const style = {
     title: {
