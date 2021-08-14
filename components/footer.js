@@ -10,6 +10,7 @@ const Footer = (props) => {
     return (
         <footer className={classes.footer}>
         <div className={classes.placeHolder}>
+        <div className={classes.placeHolderContainer}>
           <Image
             src="/images/witch.svg" // Used under free for commercial use license with no attribution required from: https://openclipart.org/detail/287475/witch-and-cat-on-broomstick-silhouette
             alt="cat"
@@ -18,6 +19,7 @@ const Footer = (props) => {
             quality={100}
             priority={true}
           />
+          </div>
           <p>&ldquo;Gonna&lsquo; go fetch() me some JSON goodness my sweeties!&rdquo;</p>
           <p>~ A magical web developer on the job, with a backseat passenger.</p>
         </div>
