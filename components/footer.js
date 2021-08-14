@@ -19,6 +19,7 @@ const Footer = (props) => {
             priority={true}
           />
           <p>&ldquo;Gonna&lsquo; go fetch() me some JSON goodness my sweeties!&rdquo;</p>
+          <p>~ A magical web developer on the job, with a passenger.</p>
         </div>
         <div className={classes.footerLogo} onClick={scrollToToP}>
           <Image
