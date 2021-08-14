@@ -9,6 +9,16 @@
 
 .placeHolder {
   transform: translateY(-20vh);
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.placeHolderContainer {
   width: 35vw;
 }
 
@@ -35,11 +45,14 @@
 @media only screen and (max-width: 1024px) {
   .placeHolder {
     transform: translateY(-35vh);
+  }
+
+  .placeHolderContainer {
     width: 60vw;
   }
 
   .placeHolder p {
-    font-size: 1.75vw;
+    font-size: 2vw;
   }
 
   .footerLogo {
@@ -52,10 +65,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .placeHolder {
-    transform: translateY(-35vh);
-    width: 60vw;
-  }
   .footerText {
     font-size: 4vw;
   }
@@ -64,7 +73,6 @@
 @media only screen and (max-width: 400px) {
   .placeHolder {
     transform: translateY(-40vh);
-    width: 60vw;
   }
   .footerText {
     font-size: 3vw;
