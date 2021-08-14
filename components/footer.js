@@ -18,8 +18,8 @@ const Footer = (props) => {
             quality={100}
             priority={true}
           />
-          <p>"Stop hissing Mr. Jiggles!</p>
-          <p>We have a fetch() request to perform and all I see is your butt!"</p>
+          <p>&quot;Stop hissing Mr. Jiggles!</p>
+          <p>We have a fetch() request to perform and all I see is your butt!&quot;</p>
         </div>
         <div className={classes.footerLogo} onClick={scrollToToP}>
           <Image
