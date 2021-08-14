@@ -13,11 +13,10 @@
 }
 
 .placeHolder p {
-  color: #1252ff;
-  opacity: 0.25;
+  color: #555555;
   font: 700 1vw "Poppins", sans-serif;
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .footerLogo {
@@ -57,7 +56,7 @@
     width: 60vw;
   }
   .placeHolder p {
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
   .footerText {
     font-size: 4vw;
