@@ -39,7 +39,7 @@
   }
 
   .placeHolder p {
-    font-size: 2vw;
+    font-size: 1.75vw;
   }
 
   .footerLogo {
@@ -55,9 +55,6 @@
   .placeHolder {
     transform: translateY(-35vh);
     width: 60vw;
-  }
-  .placeHolder p {
-    font-size: 2vw;
   }
   .footerText {
     font-size: 4vw;
