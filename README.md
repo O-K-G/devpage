@@ -1,1 +1,3 @@
-This is a Next.js landing page under construction and still in progress. The readme file will be expanded later on.
+# Personal Landing Page
+This is my landing page which is meant to provide an overview of my stack and past projects.<br>
+The actual page is available [here](https://okg.vercel.app).<br>
