@@ -21,3 +21,33 @@ body {
 img {
   -webkit-user-drag: none;
 }
+
+/* Scroll bars configuration - Still experimental and won't work everywhere, like in FireFox (as for until August 2021). */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #000000 0%, #ffffff 100%);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to bottom, #000000 0%, #ffffff 100%);
+  border: 1px solid hsla(216, 95%, 63%, 0.5);
+  border-radius: 10px;
+}
+
+/* Handle on active */
+::-webkit-scrollbar-thumb:active {
+  border: 1px solid hsla(0, 0%, 100%, 0.5);
+}
