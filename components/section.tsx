@@ -5,7 +5,7 @@ import textScaler from "./UI/textScaler";
 import Image from "next/image";
 import Parallax from "./UI/parallax";
 import Table from "./table/table";
-import Projects from "./projects.js";
+import Projects from "./projects";
 import FormButton from "./formButton";
 
 const Section = (props) => {
