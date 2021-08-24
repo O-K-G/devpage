@@ -1,7 +1,7 @@
 import classes from "./charactersCounter.module.css";
 
 const CharactersCounter = (props) => {
-  const style = {
+  const style: any = {
     charactersCounter: {
       visibility: props.message.length === 0 ? "hidden" : "visible",
     },

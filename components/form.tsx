@@ -118,7 +118,7 @@ const Form = (props) => {
         backgroundImage:
           "linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)",
       });
-      const response = await fetch("/api/send", {
+      const response: any = await fetch("/api/send", {
         method: "POST",
         mode: "cors",
         credentials: "include",
@@ -202,7 +202,7 @@ const Form = (props) => {
             className={classes.input}
             dir={value.rtl ? "rtl" : "ltr"}
             placeholder="First name"
-            maxLength="50"
+            maxLength={50}
             style={style.fName}
           />
           <br />
@@ -216,7 +216,7 @@ const Form = (props) => {
             className={classes.input}
             dir={value.rtl ? "rtl" : "ltr"}
             placeholder="Last name"
-            maxLength="50"
+            maxLength={50}
             style={style.lName}
           />
           <br />
@@ -229,21 +229,20 @@ const Form = (props) => {
             onChange={handleChange}
             className={classes.input}
             placeholder="Your email"
-            maxLength="50"
+            maxLength={50}
             style={style.email}
           />
           <br />
           <br />
 
           <textarea
-            type="message"
             name="message"
             value={value.message}
             onChange={handleChange}
             className={classes.input}
-            rows="10"
-            cols="30"
-            maxLength="300"
+            rows={10}
+            cols={30}
+            maxLength={300}
             placeholder="Your message"
             dir={value.rtl ? "rtl" : "ltr"}
             style={style.message}
