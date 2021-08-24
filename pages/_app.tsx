@@ -1,8 +1,9 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import { useEffect } from "react";
+import { AppProps } from 'next/app';
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     const fetchData = async () => {
     await fetch("/api/load", {
