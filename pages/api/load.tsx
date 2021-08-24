@@ -1,7 +1,8 @@
 "use strict";
 import nodemailer from "nodemailer";
+import { NextApiRequest, NextApiResponse } from 'next';
 
-const load = async (req, res) => {
+const load = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     // Configure mail account variables.
 
@@ -20,12 +21,12 @@ const load = async (req, res) => {
     const ip =
       req.headers["x-forwarded-for"] ||
       "".split(",")[0] ||
-      req.connection.remoteAddress;
+      req.socket.remoteAddress;
 
     // Fetch geodata according to the ip address.
 
     // ipstack.com's api returns the "success" object only when there's an error, and it's "success: false".
-    let data = false; // Initially set as false, to prevent code breaks when no data is fetched.
+    let data: any = false; // Initially set as false, to prevent code breaks when no data is fetched.
     const getGeoData = await fetch(
       `http://api.ipstack.com/${
         ip ? ip : undefined // Returning "undefined" this way prevents code breaks if no IP address value is returned.
@@ -67,7 +68,7 @@ const load = async (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.status(200).send();
+        res.status(200).send("OK");
       }
     });
   }

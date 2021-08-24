@@ -5,11 +5,11 @@ import textScaler from "./UI/textScaler";
 import Image from "next/image";
 import Parallax from "./UI/parallax";
 import Table from "./table/table";
-import Projects from "./projects.js";
+import Projects from "./projects";
 import FormButton from "./formButton";
 
 const Section = (props) => {
-  const [textPosition, setTextPosition] = useState(false);
+  const [textPosition, setTextPosition] = useState<number | boolean>(false);
   const textScaleY = useRef(null);
   props.id && GetPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
   useMemo(() => {
@@ -27,7 +27,7 @@ const Section = (props) => {
     }, 1000);
   }, [setTextPosition]);
 
-  const style = {
+  const style: any = {
     body: {
       backgroundColor: props.backgroundColor,
       paddingTop: props.paddingTop,
