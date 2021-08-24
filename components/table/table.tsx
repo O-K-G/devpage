@@ -41,7 +41,7 @@ const Table = (props) => {
         groupTitleBackground={titlesBackground}
         groupTitleText="CORE"
         itemBackground1={group1BackgroundColor}
-        itemsText1="JavaScript"
+        itemsText1="JavaScript / TypeScript"
         itemBackground2={group1BackgroundColor}
         itemsText2="HTML"
         itemBackground3={group1BackgroundColor}
