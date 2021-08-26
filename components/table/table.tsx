@@ -75,6 +75,8 @@ const Table = (props) => {
         itemsText1="Material UI"
         itemBackground2={group4BackgroundColor}
         itemsText2="Bootstrap"
+        itemBackground3={group4BackgroundColor}
+        itemsText3="Tailwindcss"
         textPosition={props.textPosition}
       />
       <TableGroup
