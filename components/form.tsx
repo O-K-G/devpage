@@ -4,10 +4,10 @@ import ElementsGroup from "./UI/elementsGroup";
 import SendButton from "./UI/sendButton";
 import ExitButton from "./UI/exitButton";
 
-const Form = (props) => {
+const Form = ({ setOpen, setSentStatus }) => {
   const handleNav = () => {
     window.history.back(); // Goes back in the browser's history record.
-    props.setOpen(false); // Closes the form window.
+    setOpen(false); // Closes the form window.
   };
 
   // To add back button functionality, a record to window.history is added.
@@ -25,7 +25,7 @@ const Form = (props) => {
 
   useEffect(() => {
     const handleBack = () => {
-      props.setOpen(false); // Closes the form window.
+      setOpen(false); // Closes the form window.
     };
 
     // An event listener for navigation events.
@@ -33,7 +33,7 @@ const Form = (props) => {
 
     // Cleanup.
     return () => window.removeEventListener("popstate", handleBack);
-  }, [props]);
+  }, [setOpen]);
 
   const [error, setError] = useState(false);
   const [value, setValue] = useState({
@@ -112,7 +112,7 @@ const Form = (props) => {
       // If no errors were found:
 
       setError(false);
-      props.setSentStatus({
+      setSentStatus({
         sent: true,
         message: "Sending...",
         backgroundImage:
@@ -131,7 +131,7 @@ const Form = (props) => {
       // If the message was sent successfully.
 
       if (response.status === 200) {
-        props.setSentStatus({
+        setSentStatus({
           sent: true,
           message:
             "Thank you, your message was sent successfully and I will reply soon.",
@@ -149,7 +149,7 @@ const Form = (props) => {
 
       // Something in the text fields validation still failed.
       else if (response.status === 400) {
-        props.setSentStatus({
+        setSentStatus({
           sent: true,
           message:
             "Hmmmmm... something invalid was sent to the server, so the message didn't go through.",
@@ -160,7 +160,7 @@ const Form = (props) => {
 
       // All other replies from the server.
       else {
-        props.setSentStatus({
+        setSentStatus({
           sent: true,
           message:
             "Sorry, the message didn't go through for some reason and the error was reported.",
@@ -172,7 +172,7 @@ const Form = (props) => {
       // Hides the modal after 10 seconds.
       setTimeout(
         () =>
-          props.setSentStatus({
+          setSentStatus({
             sent: false,
             message: "",
             backgroundImage: "transparent",

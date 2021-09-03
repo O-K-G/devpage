@@ -1,8 +1,8 @@
 import classes from "./sendButton.module.css";
 
-const SendButton = (props) => {
+const SendButton = ({handleSubmit}) => {
   return (
-    <div className={classes.container} onClick={props.handleSubmit}>
+    <div className={classes.container} onClick={handleSubmit}>
     <svg
       className={classes.button}
       focusable="false"

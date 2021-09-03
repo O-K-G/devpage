@@ -1,10 +1,10 @@
 import Image from "next/image";
 import classes from "./footer.module.css";
 
-const Footer = (props) => {
+const Footer = ({myRef}) => {
 
     const scrollToToP = () => {
-        return props.myRef.current.scrollIntoView({ behavior: "smooth" });
+        return myRef.current.scrollIntoView({ behavior: "smooth" });
       };
 
     return (

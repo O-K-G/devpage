@@ -1,34 +1,50 @@
 import classes from "./tableGroup.module.css";
 import TableItem from "./tableItem";
 
-const TableGroup = (props) => {
+const TableGroup = ({
+  groupTitleBackground,
+  groupTitleText,
+  textPosition,
+  itemBackground1,
+  itemBackground2,
+  itemBackground3,
+  itemBackground4,
+  itemsText1,
+  itemsText2,
+  itemsText3,
+  itemsText4,
+}) => {
   return (
     <ul className={classes.groupsContainer}>
       <TableItem
         title={true}
-        background={props.groupTitleBackground}
-        itemsText={props.groupTitleText}
-        textPosition={props.textPosition}
+        background={groupTitleBackground}
+        itemsText={groupTitleText}
+        textPosition={textPosition}
       />
       <TableItem
-        background={props.itemBackground1}
-        itemsText={props.itemsText1}
-        textPosition={props.textPosition}
+        title={undefined}
+        background={itemBackground1}
+        itemsText={itemsText1}
+        textPosition={textPosition}
       />
       <TableItem
-        background={props.itemBackground2}
-        itemsText={props.itemsText2}
-        textPosition={props.textPosition}
+        title={undefined}
+        background={itemBackground2}
+        itemsText={itemsText2}
+        textPosition={textPosition}
       />
       <TableItem
-        background={props.itemBackground3}
-        itemsText={props.itemsText3}
-        textPosition={props.textPosition}
+        title={undefined}
+        background={itemBackground3}
+        itemsText={itemsText3}
+        textPosition={textPosition}
       />
       <TableItem
-        background={props.itemBackground4}
-        itemsText={props.itemsText4}
-        textPosition={props.textPosition}
+        title={undefined}
+        background={itemBackground4}
+        itemsText={itemsText4}
+        textPosition={textPosition}
       />
     </ul>
   );

@@ -3,7 +3,7 @@ import Image from "next/image";
 import "@fontsource/la-belle-aurore";
 import classes from "./formButton.module.css";
 
-const FormButton = (props) => {
+const FormButton = ({setOpen}) => {
   const [mouseEnter, setMouseEnter] = useState(false);
   return (
     <div
@@ -13,7 +13,7 @@ const FormButton = (props) => {
         className={classes.formButton}
         onMouseEnter={() => setMouseEnter(true)}
         onMouseLeave={() => setMouseEnter(false)}
-        onClick={() => props.setOpen(true)}
+        onClick={() => setOpen(true)}
       >
         <Image
           src="/images/coffeeStain.jpg" // Used under free for commercial use license with no attribution required from: https://pixabay.com/illustrations/old-paper-vintage-coffee-stain-2228749

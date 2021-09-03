@@ -3,7 +3,7 @@ import classes from "./table.module.css";
 import TableGroup from "./tableGroup";
 import Observe from "../UI/observe";
 
-const Table = (props) => {
+const Table = ({ textPosition }) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   Observe(isIntersecting, setIsIntersecting, "tableTitle");
@@ -46,7 +46,9 @@ const Table = (props) => {
         itemsText2="HTML"
         itemBackground3={group1BackgroundColor}
         itemsText3="CSS"
-        textPosition={props.textPosition}
+        itemBackground4={undefined}
+        itemsText4={undefined}
+        textPosition={textPosition}
       />
       <TableGroup
         groupTitleBackground={titlesBackground}
@@ -55,7 +57,11 @@ const Table = (props) => {
         itemsText1="React.js (Hooks)"
         itemBackground2={group2BackgroundColor}
         itemsText2="Next.js"
-        textPosition={props.textPosition}
+        itemBackground3={undefined}
+        itemsText3={undefined}
+        itemBackground4={undefined}
+        itemsText4={undefined}
+        textPosition={textPosition}
       />
       <TableGroup
         groupTitleBackground={titlesBackground}
@@ -66,7 +72,9 @@ const Table = (props) => {
         itemsText2="Express.js"
         itemBackground3={group3BackgroundColor}
         itemsText3="Passport.js"
-        textPosition={props.textPosition}
+        itemBackground4={undefined}
+        itemsText4={undefined}
+        textPosition={textPosition}
       />
       <TableGroup
         groupTitleBackground={titlesBackground}
@@ -77,7 +85,9 @@ const Table = (props) => {
         itemsText2="Bootstrap"
         itemBackground3={group4BackgroundColor}
         itemsText3="Tailwindcss"
-        textPosition={props.textPosition}
+        itemBackground4={undefined}
+        itemsText4={undefined}
+        textPosition={textPosition}
       />
       <TableGroup
         groupTitleBackground={titlesBackground}
@@ -90,7 +100,7 @@ const Table = (props) => {
         itemsText3="Google Cloud"
         itemBackground4={group5BackgroundColor}
         itemsText4="SQL/NoSQL"
-        textPosition={props.textPosition}
+        textPosition={textPosition}
       />
       <TableGroup
         groupTitleBackground={titlesBackground}
@@ -99,7 +109,11 @@ const Table = (props) => {
         itemsText1="RESTful API"
         itemBackground2={group6BackgroundColor}
         itemsText2="JSON"
-        textPosition={props.textPosition}
+        itemBackground3={undefined}
+        itemsText3={undefined}
+        itemBackground4={undefined}
+        itemsText4={undefined}
+        textPosition={textPosition}
       />
       <TableGroup
         groupTitleBackground={titlesBackground}
@@ -112,7 +126,7 @@ const Table = (props) => {
         itemsText3="GitHub / GitLab / BitBucket"
         itemBackground4={group7BackgroundColor}
         itemsText4="DOCKER"
-        textPosition={props.textPosition}
+        textPosition={textPosition}
       />
       <TableGroup
         groupTitleBackground={titlesBackground}
@@ -125,7 +139,7 @@ const Table = (props) => {
         itemsText3="Functional Programming"
         itemBackground4={group8BackgroundColor}
         itemsText4="Object Oriented Programming"
-        textPosition={props.textPosition}
+        textPosition={textPosition}
       />
     </div>
   );

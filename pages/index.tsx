@@ -30,6 +30,8 @@ const Home = () => {
           offset={offset}
           setOffset={setOffset}
           displayText={true}
+          setOpen={setOpen}
+          backgroundColor={undefined}
         />
         <Section
           id={2}
@@ -55,6 +57,13 @@ const Home = () => {
           offset={offset}
           offsetValue={offset <= 1100 ? "0.05" : "0.01"}
           setOffset={setOffset}
+          displayText={undefined}
+          src={undefined}
+          alt={undefined}
+          title={undefined}
+          subtitle={undefined}
+          smallSubtitle={undefined}
+          setOpen={undefined}
         />
         <Section
           id={4}
@@ -63,13 +72,21 @@ const Home = () => {
           offset={offset}
           setOffset={setOffset}
           backgroundColor="#000000"
+          paddingTop={undefined}
+          displayText={undefined}
+          src={undefined}
+          alt={undefined}
+          title={undefined}
+          subtitle={undefined}
+          smallSubtitle={undefined}
+          setOpen={undefined}
         />
       </main>
       {open && (
         <Form
-          open={open}
+          // open={open}
           setOpen={setOpen}
-          sentStatus={sentStatus}
+          // sentStatus={sentStatus}
           setSentStatus={setSentStatus}
         />
       )}

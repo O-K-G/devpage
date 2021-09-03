@@ -2,10 +2,18 @@ import classes from "./projectCard.module.css";
 import Image from "next/image";
 import ClickElement from "./UI/clickElement";
 
-const ProjectCard = (props) => {
+const ProjectCard = ({
+  backgroundImage,
+  imageSrc,
+  imageAlt,
+  imageTitle,
+  description,
+  url,
+  projectUrl,
+}) => {
   const style = {
     cardBack: {
-      backgroundImage: props.backgroundImage,
+      backgroundImage: backgroundImage,
     },
   };
 
@@ -15,11 +23,11 @@ const ProjectCard = (props) => {
         <div className={classes.cardFront}>
           <div className={classes.image}>
             <Image
-              src={props.imageSrc}
+              src={imageSrc}
               objectFit="cover"
               layout="fill"
               quality={100}
-              alt={props.imageAlt}
+              alt={imageAlt}
               priority={true}
             />
           </div>
@@ -28,27 +36,25 @@ const ProjectCard = (props) => {
           </div>
         </div>
         <div className={classes.cardBack} style={style.cardBack}>
-          <h1 className={classes.title}>{props.imageTitle.slice(0, 15)}</h1>
+          <h1 className={classes.title}>{imageTitle.slice(0, 15)}</h1>
           <p className={classes.text}>
-            {props.description.length > 243
-              ? props.description.slice(0, 73) + "..."
-              : props.description}
+            {description.length > 243
+              ? description.slice(0, 73) + "..."
+              : description}
           </p>
         </div>
       </div>
-      {props.url && (
+      {url && (
         <p className={classes.caption}>
           <span
-            onClick={() =>
-              window.open(props.url, "_blank", "noopener, noreferrer")
-            }
+            onClick={() => window.open(url, "_blank", "noopener, noreferrer")}
           >
             Code on GitHub
           </span>
-          {props.projectUrl && (
+          {projectUrl && (
             <span
               onClick={() =>
-                window.open(props.projectUrl, "_blank", "noopener, noreferrer")
+                window.open(projectUrl, "_blank", "noopener, noreferrer")
               }
             >
               &nbsp;|&nbsp;Online project
