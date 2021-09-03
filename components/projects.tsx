@@ -26,6 +26,7 @@ const Projects = () => {
         imageAlt="This very page"
         description="It's pretty self explanatory, isn't it? &#128521;"
         url="https://github.com/O-K-G/devpage"
+        projectUrl={undefined}
       />
 
       <ProjectCard
@@ -55,6 +56,7 @@ const Projects = () => {
         imageAlt="Typology Exercise"
         description="A study project from the distant past when I only started to learn the ABCs of coding. Wow! It has been a long road since then! &#128513; It was a concept app for exercising archaeological typology."
         url="https://github.com/O-K-G/ancient-study-projects/tree/master/Second%20website"
+        projectUrl={undefined}
       />
 
       <ProjectCard
@@ -64,6 +66,7 @@ const Projects = () => {
         imageAlt="Events Station"
         description="An even more ancient study project from the distant past, from when I only started to learn the ABCs of coding. It was an events app and it has indeed been a long road since. &#128514;"
         url="https://github.com/O-K-G/ancient-study-projects/tree/master/First%20website"
+        projectUrl={undefined}
       />
       </div>
     </div>
