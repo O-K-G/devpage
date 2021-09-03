@@ -3,14 +3,14 @@ import AlignRightButton from "./alignRightButton";
 import CharactersCounter from "../charactersCounter";
 import classes from "./elementsGroup.module.css";
 
-const ElementsGroup = (props) => {
+const ElementsGroup = ({handleLtr, handleRtl, message}) => {
   return (
     <div className={classes.mainContainer}>
       <div className={classes.elementsGroup1}>
-        <AlignLeftButton handleLtr={props.handleLtr} />
-        <AlignRightButton handleRtl={props.handleRtl} />
+        <AlignLeftButton handleLtr={handleLtr} />
+        <AlignRightButton handleRtl={handleRtl} />
       </div>
-      <CharactersCounter message={props.message} />
+      <CharactersCounter message={message} />
     </div>
   );
 };

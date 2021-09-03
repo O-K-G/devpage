@@ -1,14 +1,14 @@
 import classes from "./charactersCounter.module.css";
 
-const CharactersCounter = (props) => {
+const CharactersCounter = ({message}) => {
   const style: any = {
     charactersCounter: {
-      visibility: props.message.length === 0 ? "hidden" : "visible",
+      visibility: message.length === 0 ? "hidden" : "visible",
     },
   };
   return (
     <p className={classes.charactersCounter} style={style.charactersCounter}>
-      {300 - props.message.length} characters left
+      {300 - message.length} characters left
     </p>
   );
 };

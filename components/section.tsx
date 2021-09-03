@@ -8,14 +8,29 @@ import Table from "./table/table";
 import Projects from "./projects";
 import FormButton from "./formButton";
 
-const Section = (props) => {
+const Section = ({
+  id,
+  offset,
+  setOffset,
+  offsetValue,
+  backgroundColor,
+  paddingTop,
+  zIndex,
+  displayText,
+  src,
+  alt,
+  title,
+  subtitle,
+  smallSubtitle,
+  setOpen,
+}) => {
   const [textPosition, setTextPosition] = useState<number | boolean>(false);
   const textScaleY = useRef(null);
-  props.id && GetPosition(props.id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
+  id && GetPosition(id, setTextPosition, textPosition); // Gets the section's text top position on screen, in rounded percents.
   useMemo(() => {
     return textScaler(textPosition, textScaleY); // Scales the text according to it's position on screen.
   }, [textPosition]);
-  Parallax(props.offset, props.setOffset); // Passes the current and new offset parameters to the parallax function.
+  Parallax(offset, setOffset); // Passes the current and new offset parameters to the parallax function.
 
   // All the CSS values are located in the CSS file unless dynamic CSS values are needed here in the 'style' object.
 
@@ -29,59 +44,59 @@ const Section = (props) => {
 
   const style: any = {
     body: {
-      backgroundColor: props.backgroundColor,
-      paddingTop: props.paddingTop,
-      zIndex: props.zIndex,
-      transform: `translateY(${props.offset * props.offsetValue}px)`,
-      transition: props.id === 3 && "0.3s",
+      backgroundColor: backgroundColor,
+      paddingTop: paddingTop,
+      zIndex: zIndex,
+      transform: `translateY(${offset * offsetValue}px)`,
+      transition: id === 3 && "0.3s",
     },
     imageBackground: {
-      transform: props.id === 1 && `translateY(${props.offset * 0.1}px)`,
+      transform: id === 1 && `translateY(${offset * 0.1}px)`,
     },
     sectionShadows: {
-      display: props.id === 1 && "none",
+      display: id === 1 && "none",
     },
     textBackground: {
       // "props.id === 1 && textPosition > -200" means the text background will disappear around section number 3. Just in case.
-      display: props.id === 1 && textPosition > -200 && "block",
-      transform: `translateY(${props.offset}px) skewY(25deg)`,
+      display: id === 1 && textPosition > -200 && "block",
+      transform: `translateY(${offset}px) skewY(25deg)`,
     },
     title: {
-      display: props.displayText && "block",
+      display: displayText && "block",
       transition: ".3s ease-out",
       transform:
         textScaleY &&
-        `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
-      textAlign: props.id === 2 && "right",
-      paddingRight: props.id === 2 && "16px",
+        `scaleY(${textScaleY.current}) translateY(${offset * -0.1}px)`,
+      textAlign: id === 2 && "right",
+      paddingRight: id === 2 && "16px",
     },
     subtitle: {
-      display: props.displayText && "block",
+      display: displayText && "block",
       transition: ".6s ease-out",
       transform:
         textScaleY &&
-        `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
-      textAlign: props.id === 2 && "right",
-      paddingRight: props.id === 2 && "16px",
+        `scaleY(${textScaleY.current}) translateY(${offset * -0.1}px)`,
+      textAlign: id === 2 && "right",
+      paddingRight: id === 2 && "16px",
     },
     smallSubtitle: {
-      display: props.displayText && "block",
+      display: displayText && "block",
       transition: ".8s ease-out",
       transform:
         textScaleY &&
-        `scaleY(${textScaleY.current}) translateY(${props.offset * -0.1}px)`,
-      textAlign: props.id === 2 && "right",
-      paddingRight: props.id === 2 && "16px",
+        `scaleY(${textScaleY.current}) translateY(${offset * -0.1}px)`,
+      textAlign: id === 2 && "right",
+      paddingRight: id === 2 && "16px",
     },
   };
 
   return (
     <section className={classes.body} style={style.body}>
-      {props.src && (
+      {src && (
         <div className={classes.imageBackground} style={style.imageBackground}>
           <Image
-            src={props.src}
-            alt={props.alt}
+            src={src}
+            alt={alt}
             layout="fill"
             objectFit="cover"
             quality={100}
@@ -90,38 +105,38 @@ const Section = (props) => {
         </div>
       )}
       <div className={classes.sectionShadows} style={style.sectionShadows} />
-      {props.id === 3 && (
+      {id === 3 && (
         <Table
-          offset={props.offset}
-          offsetValue={props.offsetValue}
+          // offset={offset}
+          // offsetValue={offsetValue}
           textPosition={textPosition}
         />
       )}
 
-      <div id={props.id}>
+      <div id={id}>
         {useMemo(() => {
-          return props.id === 4 && <Projects />;
-        }, [props.id])}
+          return id === 4 && <Projects />;
+        }, [id])}
         <div className={classes.textBackground} style={style.textBackground} />
-        {props.title && (
+        {title && (
           <h1 className={classes.title} style={style.title}>
-            {props.title.slice(0, 22)}
+            {title.slice(0, 22)}
           </h1>
         )}
 
-        {props.subtitle && (
+        {subtitle && (
           <h3 className={classes.subtitle} style={style.subtitle}>
-            {props.subtitle.slice(0, 28)}
+            {subtitle.slice(0, 28)}
           </h3>
         )}
-        {props.smallSubtitle && (
+        {smallSubtitle && (
           <h5 className={classes.smallSubtitle} style={style.smallSubtitle}>
-            {props.smallSubtitle}
+            {smallSubtitle}
           </h5>
         )}
         {useMemo(() => {
-          return props.id === 2 && <FormButton setOpen={props.setOpen} />;
-        }, [props.id, props.setOpen])}
+          return id === 2 && <FormButton setOpen={setOpen} />;
+        }, [id, setOpen])}
       </div>
     </section>
   );
